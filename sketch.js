@@ -10,7 +10,10 @@ var currentScene;
 
 var drawScene1 =function(){
     currentScene = 1;
-   
+
+      image("/Community-game-James-John-Daniel/pictures/Startscreen.jpeg",100,100
+      );  
+      
 };
 
 var drawScene5 =function(){
