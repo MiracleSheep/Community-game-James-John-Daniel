@@ -4,9 +4,6 @@ function setup() {
 }
 
 function draw() {  
-	background(100);
-	fill(66, 134, 244);
-	ellipse(210,300,50,50);
 
 }
 var currentScene;
@@ -18,7 +15,9 @@ var drawScene1 =function(){
 
 var drawScene5 =function(){
     currentScene = 5;
- 
+ background(100);
+	fill(66, 134, 244);
+	ellipse(210,300,50,50);
 };
 
 var drawScene2 = function(){
