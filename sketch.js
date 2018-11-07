@@ -41,6 +41,7 @@ var drawScene4 = function(){
 
 drawScene1();
 
+
 mouseClicked=function(){
     if(currentScene === 1){
       drawScene2();  
