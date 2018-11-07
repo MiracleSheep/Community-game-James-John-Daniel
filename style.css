@@ -17,8 +17,8 @@ text-Align:center;
 	background-color:rgb(255,255,255);
 	
 	border:ridge 5px;
-margin-left:300px;
-	margin-right:300px;
+margin-left:400px;
+	margin-right:400px;
 }
 
 .i{
@@ -28,7 +28,7 @@ margin-left:1000px;
 }
 .yo {
 
-margin-left:1000px;
+margin-left:900px;
 	padding:50px;
 	background-color:rgb(255, 255, 255)
 
@@ -45,14 +45,14 @@ margin:200;
 
 .h{
 background-color: rgb(21, 196, 85);
-margin-right:1000px;
+margin-right:900px;
 
 
 }
 
 ul{
 background-color: rgb(232, 237, 30);
-margin-right:1000px;
+margin-right:900px;
 	padding:50px;
 
 }
