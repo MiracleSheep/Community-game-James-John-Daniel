@@ -3,7 +3,7 @@ var img;
 
 function setup() {
   createCanvas(400, 400);
-background(1,1,1);
+
 	img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
 }
 
@@ -27,7 +27,7 @@ var drawScene5 =function(){
 
 var drawScene2 = function(){
     currentScene = 2;
-
+background(1,1,1);
 image(img, 100, 100);
 };
 
