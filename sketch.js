@@ -4,7 +4,7 @@ var img;
 function setup() {
   createCanvas(400, 400);
 background(1,1,1);
-	img = loadImage("assets/moonwalk.jpg"); 
+	img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
 }
 
 function draw() {  
@@ -15,20 +15,20 @@ var currentScene;
 var drawScene1 =function(){
     currentScene = 1;
 
-
-};
-
-var drawScene5 =function(){
-    currentScene = 5;
  background(100);
 	fill(66, 134, 244);
 	ellipse(210,300,50,50);
 };
 
+var drawScene5 =function(){
+    currentScene = 5;
+
+};
+
 var drawScene2 = function(){
     currentScene = 2;
 
-image(img, 0, 0);
+image(img, 100, 100);
 };
 
 
