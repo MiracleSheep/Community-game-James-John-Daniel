@@ -1,6 +1,10 @@
+
+var img;
+
 function setup() {
   createCanvas(400, 400);
-
+background(1,1,1);
+	img = loadImage("assets/moonwalk.jpg"); 
 }
 
 function draw() {  
@@ -11,15 +15,7 @@ var currentScene;
 var drawScene1 =function(){
     currentScene = 1;
 
-document.getElementById('file-input').onchange = function (e) {
-    loadImage(
-        e.target.files[0],
-        function (img) {
-            document.body.appendChild(img);
-        },
-        {maxWidth: 600} // Options
-    );
-};
+
 };
 
 var drawScene5 =function(){
@@ -32,7 +28,7 @@ var drawScene5 =function(){
 var drawScene2 = function(){
     currentScene = 2;
 
-
+image(img, 0, 0);
 };
 
 
