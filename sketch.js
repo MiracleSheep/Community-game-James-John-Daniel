@@ -11,9 +11,15 @@ var currentScene;
 var drawScene1 =function(){
     currentScene = 1;
 
-     load-image("/Community-game-James-John-Daniel/pictures/Startscreen.jpeg",100,100
-      );  
-      
+document.getElementById('file-input').onchange = function (e) {
+    loadImage(
+        e.target.files[0],
+        function (img) {
+            document.body.appendChild(img);
+        },
+        {maxWidth: 600} // Options
+    );
+};
 };
 
 var drawScene5 =function(){
