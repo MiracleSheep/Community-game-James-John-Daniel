@@ -1,10 +1,9 @@
 
-var img;
+
 
 function setup() {
   createCanvas(400, 400);
-
-	img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
+background(100);
 }
 
 function draw() {  
@@ -15,7 +14,7 @@ var currentScene;
 var drawScene1 =function(){
     currentScene = 1;
 
- background(100);
+ 
 	fill(66, 134, 244);
 	ellipse(210,300,50,50);
 };
@@ -23,12 +22,46 @@ var drawScene1 =function(){
 var drawScene5 =function(){
     currentScene = 5;
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 };
 
 var drawScene2 = function(){
     currentScene = 2;
+//Option page
+	background();
+	textSize(18);
+	text("Options",100,100);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-image(img, 100, 100);
 };
 
 
