@@ -1,90 +1,51 @@
-
-
-
 function setup() {
   createCanvas(400, 400);
-background(100);
 }
 
-function draw() {  
 
-}
 var currentScene;
 
 var drawScene1 =function(){
     currentScene = 1;
-
- 
-	fill(66, 134, 244);
-	ellipse(210,300,50,50);
+    background(200, 175, 175);
+   
 };
 
 var drawScene5 =function(){
     currentScene = 5;
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    background(150, 150, 175);
 };
 
 var drawScene2 = function(){
     currentScene = 2;
-//Option page
-	background(100);
-	textSize(18);
-	text("Options",100,100);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+background(199, 40, 199);
 
 };
 
 
 var drawScene3 = function(){
     currentScene = 3;
+background(0, 51, 255);
 
 
 };
 
 var drawScene4 = function(){
     currentScene = 4;
+background(255, 255, 255);
 
 
 };
 
 drawScene1();
 
-
 mouseClicked=function(){
     if(currentScene === 1){
       drawScene2();  
     }
- 
+    else if(currentScene === 5){
+     drawScene1();  
+    }
      else if(currentScene === 2){
      drawScene3();  
     }
@@ -96,8 +57,5 @@ mouseClicked=function(){
      drawScene5 ();
      
      }
-   else if(currentScene === 5){
-     drawScene1();  
-    }
-
 };
+
