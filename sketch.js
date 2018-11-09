@@ -48,7 +48,7 @@ var drawScene5 =function(){
 var drawScene2 = function(){
     currentScene = 2;
 //Option page
-	background();
+	background(100);
 	textSize(18);
 	text("Options",100,100);
 	
@@ -84,9 +84,7 @@ mouseClicked=function(){
     if(currentScene === 1){
       drawScene2();  
     }
-    else if(currentScene === 5){
-     drawScene1();  
-    }
+ 
      else if(currentScene === 2){
      drawScene3();  
     }
@@ -98,4 +96,8 @@ mouseClicked=function(){
      drawScene5 ();
      
      }
+   else if(currentScene === 5){
+     drawScene1();  
+    }
+
 };
