@@ -1,8 +1,9 @@
+var currentScene = 1;
 function setup() {
   createCanvas(400, 400);
 }
-
-var currentScene;
+function draw(){
+//var currentScene;
 
 var drawScene1 =function(){
     currentScene = 1;
@@ -39,8 +40,9 @@ var drawScene5 =function(){
 
 
 };
-
+if(currentScene ===1){
 drawScene1();
+}
 
 mouseClicked=function(){
     if(currentScene === 1){
@@ -63,3 +65,4 @@ mouseClicked=function(){
 };
 
 
+}
