@@ -3,9 +3,13 @@
 var img;
 
 var currentScene = 1;
+
+function preload() {
+	img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
+}
 function setup() {
   createCanvas(400, 400);
-  	img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
+  
 }
 function draw(){
 
