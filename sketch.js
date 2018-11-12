@@ -2,19 +2,18 @@ function setup() {
   createCanvas(400, 400);
 }
 
-
 var currentScene;
 
 var drawScene1 =function(){
     currentScene = 1;
     background(200, 175, 175);
    
+
+
+
+
 };
 
-var drawScene5 =function(){
-    currentScene = 5;
-    background(150, 150, 175);
-};
 
 var drawScene2 = function(){
     currentScene = 2;
@@ -33,6 +32,10 @@ background(0, 51, 255);
 var drawScene4 = function(){
     currentScene = 4;
 background(255, 255, 255);
+};
+var drawScene5 =function(){
+    currentScene = 5;
+    background(150, 150, 175);
 
 
 };
@@ -58,4 +61,5 @@ mouseClicked=function(){
      
      }
 };
+
 
