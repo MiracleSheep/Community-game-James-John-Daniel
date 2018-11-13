@@ -24,8 +24,15 @@ background(0, 0, 0);
 	textSize(18);
 	fill(250,0,0)
 	text("Game Options",125,50);
+//make button function with prototypes yes,no ,check if yesno
+
+var optionButton = function(r,g,x,y){
+fill(this.r,this.g,0);
+rect(this.x,this.y,30,10);
 
 
+
+};
 
 
 
