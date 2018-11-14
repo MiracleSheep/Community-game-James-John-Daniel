@@ -7,7 +7,7 @@ var currentScene = 1;
 
 function setup() {
   createCanvas(400, 400);
-  img = loadImage("Community-game-James-John-Daniel/pictures/Startscreen.jpeg"); 
+  img = loadImage("https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/Startscreen.jpeg"); 
 }
 function draw(){
 
