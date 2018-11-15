@@ -1,3 +1,4 @@
+
 var img;
 var cnv;
 
@@ -62,20 +63,20 @@ drawScene1();
 }
 
 mouseClicked=function(){
-    if(currentScene === 1){
+    if( keyIsPressed && keyCode === 13 && currentScene === 1){
       drawScene2();  
     }
-    else if(currentScene === 5){
+    else if( keyIsPressed && keyCode === 13 && currentScene === 5){
      drawScene1();  
     }
-     else if(currentScene === 2){
+     else if( keyIsPressed && keyCode === 13 && currentScene === 2){
      drawScene3();  
     }
-     else if(currentScene === 3){
+     else if( keyIsPressed && keyCode === 13 && currentScene === 3){
      drawScene4 ();
      
      }
-     else if(currentScene === 4){
+     else if(keyIsPressed && keyCode === 13 && currentScene === 4){
      drawScene5 ();
      
      }
