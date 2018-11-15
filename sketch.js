@@ -19,7 +19,7 @@ var currentScene = 1;
 
 
 function setup() {
-  cnv = createCanvas(400, 400);
+  cnv = createCanvas(500, 500);
   centerCanvas();
   background(255, 0, 200);
   img = loadImage("pictures/Startscreen.jpeg"); 
