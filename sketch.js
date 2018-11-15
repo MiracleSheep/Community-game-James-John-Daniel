@@ -1,12 +1,27 @@
-
-
 var img;
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 1;
+  cnv.position(x, y);
+}
+
+
+
+function windowResized() {
+  centerCanvas();
+}
+
+
 
 var currentScene = 1;
 
 
 function setup() {
-  createCanvas(400, 400);
+  cnv = createCanvas(400, 400);
+  centerCanvas();
+  background(255, 0, 200);
   img = loadImage("pictures/Startscreen.jpeg"); 
 }
 function draw(){
