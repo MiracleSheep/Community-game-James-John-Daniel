@@ -4,7 +4,6 @@ html, body {
 }
 canvas {
   display: block;
-	width:20;
  justify-content: center;
 }
 body {
@@ -17,35 +16,31 @@ text-Align:center;
 	background-color:rgb(255,255,255);
 	
 	border:ridge 5px;
-margin-left:400px;
-	margin-right:400px;
+margin-left:20%;
+	margin-right:20%;
 }
 
-.i{
+.What {
 	background-color:rgb(21, 196, 85);
+	margin-top:10%;
 	
-margin-left:1000px;
+margin-left:80%;
 }
-.yo {
+.about {
 
-margin-left:900px;
-	padding:50px;
+margin-left:65%;
+	padding:5%;
 	background-color:rgb(255, 255, 255)
 
 
 
 }
 
-script {
 
-margin:200;
-
-}
-
-
-.h{
+.how{
+	margin-top:10%;
 background-color: rgb(21, 196, 85);
-margin-right:900px;
+margin-right:80%;
 
 
 
@@ -53,8 +48,8 @@ margin-right:900px;
 
 ul{
 background-color: rgb(232, 237, 30);
-margin-right:900px;
-	padding:50px;
+margin-right:65%;
+	padding:5%;
 	
 
 }
