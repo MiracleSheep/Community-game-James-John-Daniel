@@ -62,7 +62,7 @@ if(currentScene ===1){
 drawScene1();
 }
 
-mouseClicked=function(){
+
     if( keyIsPressed && keyCode === 13 && currentScene === 1){
       drawScene2();  
     }
@@ -78,9 +78,9 @@ mouseClicked=function(){
      }
      else if(keyIsPressed && keyCode === 13 && currentScene === 4){
      drawScene5 ();
-     
      }
+     
 };
 
 
-}
+
