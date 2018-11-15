@@ -1,12 +1,27 @@
-
-
 var img;
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
+
+
+function windowResized() {
+  centerCanvas();
+}
+
+
 
 var currentScene = 1;
 
 
 function setup() {
-  createCanvas(400, 400);
+  cnv = createCanvas(400, 400);
+  centerCanvas();
+  background(255, 0, 200);
   img = loadImage("pictures/Startscreen.jpeg"); 
 }
 function draw(){
@@ -14,15 +29,19 @@ function draw(){
 var drawScene1 =function(){
     currentScene = 1;
     background(200, 175, 175);
-   image(img, 100, 100);
+   image(img, 100, 100, 50,50);
 
 };
 
 var drawScene2 = function(){
     currentScene = 2;
-background(199, 40, 199);
-};
+background(0, 0, 0);
+	textSize(18);
+	fill(250,0,0)
+	text("Game Options",125,50);
 
+};
+	
 var drawScene3 = function(){
     currentScene = 3;
 background(0, 51, 255);
