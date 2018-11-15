@@ -30,7 +30,7 @@ function draw(){
 var drawScene1 =function(){
     currentScene = 1;
     background(200, 175, 175);
-   image(img, 100, 100, 50,50);
+   image(img, 100, 100, 400,400);
 
 };
 
