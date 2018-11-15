@@ -3,7 +3,7 @@ var cnv;
 
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 1;
+  var y = (windowHeight - height) / 0;
   cnv.position(x, y);
 }
 
@@ -29,7 +29,7 @@ function draw(){
 var drawScene1 =function(){
     currentScene = 1;
     background(200, 175, 175);
-   image(img, 100, 100);
+   image(img, 100, 100, 50,50);
 
 };
 
@@ -39,25 +39,9 @@ background(0, 0, 0);
 	textSize(18);
 	fill(250,0,0)
 	text("Game Options",125,50);
-//make button function with prototypes yes,no ,check if yesno
-
-var optionButton = function(r,g,x,y){
-fill(this.r,this.g,0);
-rect(this.x,this.y,30,10);
-
-
 
 };
-
-
-
-
-
-
-
-
-
-};
+	
 var drawScene3 = function(){
     currentScene = 3;
 background(0, 51, 255);
