@@ -1,4 +1,5 @@
 
+
 	//this is the button function for the options
 	var optionButton = function(config) {
     this.x = config.x || 0;
@@ -80,19 +81,27 @@ var drawScene2 = function(){
 background(0, 0, 0);
 	textSize(18);
 	fill(250,0,0)
-	text("Game Options",125,50);
+	text("Game Options",190,50);
+	text("Arena",50,200);
+	text("Difficulty",50,350);
 	
-var btn1 = new Button({
-/*
-add properties and draw buttons
-	x: ,
-    y: ,
-    width: ,
-    height: ,
-    color: color(),
-    label: 
-*/
+
+var btn1 = new optionButton({
+
+
+	x:200  ,
+    y: 220,
+    width: 50,
+    height: 20,
+    color: color(255),
+    label: "City"
+	
+
 });
+	
+	btn1.draw();
+	
+
 		};
 	
 var drawScene3 = function(){
@@ -109,7 +118,7 @@ var drawScene5 =function(){
     currentScene = 5;
     background(150, 150, 175);
 };
-  
+
 if(currentScene ===1){
 drawScene1();
 }
@@ -133,3 +142,6 @@ drawScene1();
      }
      
 }
+
+
+
