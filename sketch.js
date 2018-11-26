@@ -1,5 +1,4 @@
 
-
 	//this is the button function for the options
 	var optionButton = function(config) {
     this.x = config.x || 0;
@@ -84,9 +83,10 @@ background(0, 0, 0);
 	text("Game Options",190,50);
 	text("Arena",50,200);
 	text("Difficulty",50,350);
+	text("Or",250,225);
 	
 
-var btn1 = new optionButton({
+var CITY = new optionButton({
 
 
 	x:200  ,
@@ -99,8 +99,21 @@ var btn1 = new optionButton({
 
 });
 	
-	btn1.draw();
+	var FIELDS = new optionButton({
+
+
+	x:320  ,
+    y: 220,
+    width: 50,
+    height: 20,
+    color: color(255),
+    label: "Fields"
 	
+
+});
+	
+	CITY.draw();
+	FIELDS.draw();
 
 		};
 	
@@ -142,6 +155,3 @@ drawScene1();
      }
      
 }
-
-
-
