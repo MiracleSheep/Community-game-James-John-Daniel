@@ -1,4 +1,3 @@
-
 	//this is the button function for the options
 	var optionButton = function(config) {
     this.x = config.x || 0;
@@ -61,7 +60,7 @@ var currentScene = 1;
 
 
 function setup() {
-  cnv = createCanvas(500, 500);
+  cnv = createCanvas(300, 300);
   centerCanvas();
   background(255, 0, 200);
   img = loadImage("pictures/Startscreen.jpeg"); 
