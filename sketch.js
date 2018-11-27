@@ -34,44 +34,6 @@ optionButton.prototype.isMouseInside = function() {
 };
 
 
-
-	//this is the button function for the options
-	var optionButton = function(config) {
-    this.x = config.x || 0;
-    this.y = config.y || 0;
-    this.width = config.width || 84;
-    this.height = config.height || 50;
-    this.label = config.label || "Click";
-    this.color = config.color || color(207, 85, 85);
-    this.onClick = config.onClick || function() {};
-};
-
-
-optionButton.prototype.draw = function() {
-    if (this.isMouseInside() && mouseIsPressed) {
-        fill(255, 255, 255);
-    }
-    else {
-       fill(this.color); 
-    }
-    rectMode(CENTER);
-    rect(this.x, this.y, this.width, this.height, 5);
-    fill(0, 0, 0);
-    textSize(18);
-    textAlign(CENTER, CENTER);
-    text(this.label, this.x, this.y);
-};
-
-
-optionButton.prototype.isMouseInside = function() {
-    return mouseX > this.x-this.width/2 &&
-           mouseX < (this.x + this.width/2) &&
-           mouseY > this.y - this.height/2 &&
-           mouseY < (this.y + this.height/2);
-};
-
-
-
 optionButton.prototype.handleMouseClick = function() {
     if (this.isMouseInside()) {
 		}
@@ -121,6 +83,8 @@ background(0, 0, 0);
 	text("Arena",50,200);
 	text("Difficulty",50,350);
 	text("Or",250,225);
+	text("Or",165,380);
+	text("Or",300,380);
 	
 
 var CITY = new optionButton({
@@ -149,6 +113,47 @@ var CITY = new optionButton({
 
 });
 	
+	var Difficultye = new optionButton({
+
+
+	x:100  ,
+    y: 400,
+    width: 70,
+    height: 50,
+    color: color(255),
+    label: "Normal"
+	
+
+});
+	
+	var Difficultym = new optionButton({
+
+
+	x:250  ,
+    y: 400,
+    width: 70,
+    height: 50,
+    color: color(255),
+    label: "Overkill"
+	
+
+});
+	
+	var Difficultyh = new optionButton({
+
+
+	x:400  ,
+    y: 400,
+    width: 125,
+    height: 50,
+    color: color(255),
+    label: "Death sentence"
+	
+
+});
+	Difficultyh.draw();
+	Difficultym.draw();
+	Difficultye.draw();
 	CITY.draw();
 	FIELDS.draw();
 
@@ -170,25 +175,28 @@ var drawScene5 =function(){
 };
 
 if(currentScene ===1){
-drawScene1();
+drawScene2();
 }
 
 
     if( keyIsPressed && keyCode === 13 && currentScene === 1){
-      drawScene2();  
+      drawScene2();
+	  
+			
     }
     else if( keyIsPressed && keyCode === 13 && currentScene === 5){
-     drawScene1();  
-    }
+     drawScene1();
+	   }
      else if( keyIsPressed && keyCode === 13 && currentScene === 2){
      drawScene3();  
-    }
+	  }
      else if( keyIsPressed && keyCode === 13 && currentScene === 3){
      drawScene4 ();
-     
+	   
      }
      else if(keyIsPressed && keyCode === 13 && currentScene === 4){
      drawScene5 ();
+	    
      }
      
 }
