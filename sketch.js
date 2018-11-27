@@ -138,24 +138,24 @@ drawScene1();
 
     if( keyIsPressed && keyCode === 13 && currentScene === 1){
       drawScene2();
-	    delay(1000)
+	    delay(1000);
     }
     else if( keyIsPressed && keyCode === 13 && currentScene === 5){
      drawScene1();
-	    delay(1000)
+	    delay(1000);
     }
      else if( keyIsPressed && keyCode === 13 && currentScene === 2){
      drawScene3();  
-	     delay(1000)
+	     delay(1000);
     }
      else if( keyIsPressed && keyCode === 13 && currentScene === 3){
      drawScene4 ();
-	     delay(1000)
+	     delay(1000);
      
      }
      else if(keyIsPressed && keyCode === 13 && currentScene === 4){
      drawScene5 ();
-	     delay(1000)
+	     delay(1000);
      }
      
 }
