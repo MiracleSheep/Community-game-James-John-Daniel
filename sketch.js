@@ -1,3 +1,9 @@
+//THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
+var Background = 0;
+var PlayerNum = 0;
+var Difficulty = 0;  
+
+
 //this is the button function for the options
 	var optionButton = function(config) {
     this.x = config.x || 0;
@@ -88,7 +94,7 @@ background(0, 0, 0);
 	text("Player Number",50,110);
 	text("Or",240,170);
 	
-	var P1 = new optionButton({
+var P1 = new optionButton({
 
 
 	x:200  ,
@@ -96,12 +102,17 @@ background(0, 0, 0);
     width: 50,
     height: 20,
     color: color(221, 51, 51),
-    label: "1"
+    label: "1",
 	
+onClick: function() {
+PlayerNum = 1;
+		
+		
+}
 
 });
 	
-	var P2 = new optionButton({
+var P2 = new optionButton({
 
 
 	x:300  ,
@@ -109,8 +120,11 @@ background(0, 0, 0);
     width: 50,
     height: 20,
     color: color(13, 107, 229),
-    label: "2"
+    label: "2",
+		onClick: function() {
+PlayerNum = 2;
 	
+}
 
 });
 
@@ -122,8 +136,10 @@ var CITY = new optionButton({
     width: 50,
     height: 20,
     color: color(165, 165, 155),
-    label: "City"
-	
+    label: "City",
+		onClick: function() {
+Background = 1;
+}
 
 });
 	
@@ -135,8 +151,10 @@ var CITY = new optionButton({
     width: 50,
     height: 20,
     color: color(219, 226, 13),
-    label: "Fields"
-	
+    label: "Fields",
+		onClick: function() {
+Background = 2;
+}
 
 });
 	
@@ -148,8 +166,10 @@ var CITY = new optionButton({
     width: 70,
     height: 50,
     color: color(144, 234, 18),
-    label: "Normal"
-	
+    label: "Normal",
+	onClick: function() {
+Difficulty = 1;
+}
 
 });
 	
@@ -161,8 +181,10 @@ var CITY = new optionButton({
     width: 70,
     height: 50,
     color: color(211, 229, 13),
-    label: "Overkill"
-	
+    label: "Overkill",
+	onClick: function() {
+ Difficulty = 2;
+}
 
 });
 	
@@ -174,8 +196,10 @@ var CITY = new optionButton({
     width: 135,
     height: 50,
     color: color(244, 176, 66),
-    label: "Death Sentence"
-	
+    label: "Death Sentence",
+		onClick: function() {
+Difficulty = 3;
+}
 
 });
 	
@@ -187,7 +211,10 @@ var CITY = new optionButton({
     width: 60,
     height: 20,
     color: color(255),
-    label: "NEXT"
+    label: "NEXT",
+				onClick: function() {
+
+}
 	
 
 });
@@ -217,7 +244,7 @@ var drawScene5 =function(){
 };
 
 if(currentScene ===1){
-drawScene2();
+drawScene1();
 }
 
 
