@@ -74,6 +74,7 @@ optionButton.prototype.isMouseInside = function() {
 
 optionButton.prototype.handleMouseClick = function() {
     if (this.isMouseInside()) {
+	    this.onClick();
 		}
 }
 	    
@@ -153,6 +154,11 @@ var CITY = new optionButton({
 	FIELDS.draw();
 
 		};
+	var mouseClicked = function{
+	CITY.handleMouseClick();
+	FIELDS.handleMouseClick();
+	};
+	
 	
 var drawScene3 = function(){
     currentScene = 3;
