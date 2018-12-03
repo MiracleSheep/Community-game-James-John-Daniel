@@ -253,19 +253,6 @@ drawScene1();
 	  
 			
     }
-    else if( keyIsPressed && keyCode === 13 && currentScene === 5){
-     drawScene1();
-	   }
-     else if( keyIsPressed && keyCode === 13 && currentScene === 2){
-     drawScene3();  
-	  }
-     else if( keyIsPressed && keyCode === 13 && currentScene === 3){
-     drawScene4 ();
-	   
-     }
-     else if(keyIsPressed && keyCode === 13 && currentScene === 4){
-     drawScene5 ();
-	    
-     }
+
      
 }
