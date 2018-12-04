@@ -84,7 +84,7 @@ var drawScene2 = function(){
     currentScene = 2;
 background(0, 0, 0);
 	textSize(18);
-	fill(250,0,0)
+	fill(250,0,0);
 	text("Game Options",190,50);
 	text("Arena",50,220);
 	text("Difficulty",50,350);
