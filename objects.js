@@ -47,3 +47,127 @@ optionButton.prototype.handleMouseClick = function() {
 }
 	
 
+var P1 = new optionButton({
+
+
+	x:200  ,
+    y: 160,
+    width: 50,
+    height: 20,
+    color: color(221, 51, 51),
+    label: "1",
+	
+onClick: function() {
+PlayerNum = 1;
+		
+		
+}
+
+});
+	
+var P2 = new optionButton({
+
+
+	x:300  ,
+    y: 160,
+    width: 50,
+    height: 20,
+    color: color(13, 107, 229),
+    label: "2",
+		onClick: function() {
+PlayerNum = 2;
+	
+}
+
+});
+
+var CITY = new optionButton({
+
+
+	x:200  ,
+    y: 270,
+    width: 50,
+    height: 20,
+    color: color(165, 165, 155),
+    label: "City",
+		onClick: function() {
+Background = 1;
+}
+
+});
+	
+	var FIELDS = new optionButton({
+
+
+	x:300  ,
+    y: 270,
+    width: 50,
+    height: 20,
+    color: color(219, 226, 13),
+    label: "Fields",
+		onClick: function() {
+Background = 2;
+}
+
+});
+	
+	var Difficultye = new optionButton({
+
+
+	x:100  ,
+    y: 400,
+    width: 70,
+    height: 50,
+    color: color(144, 234, 18),
+    label: "Normal",
+	onClick: function() {
+Difficulty = 1;
+}
+
+});
+	
+	var Difficultym = new optionButton({
+
+
+	x:250  ,
+    y: 400,
+    width: 70,
+    height: 50,
+    color: color(211, 229, 13),
+    label: "Overkill",
+	onClick: function() {
+ Difficulty = 2;
+}
+
+});
+	
+	var Difficultyh = new optionButton({
+
+
+	x:400  ,
+    y: 400,
+    width: 135,
+    height: 50,
+    color: color(244, 176, 66),
+    label: "Death Sentence",
+		onClick: function() {
+Difficulty = 3;
+}
+
+});
+	
+		var Next = new optionButton({
+
+
+	x:430  ,
+    y: 460,
+    width: 60,
+    height: 20,
+    color: color(255),
+    label: "NEXT",
+				onClick: function() {
+
+}
+	
+
+});
