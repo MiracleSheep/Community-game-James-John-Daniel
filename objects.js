@@ -1,3 +1,4 @@
+
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 var Background = 0;
 var PlayerNum = 0;
@@ -19,7 +20,7 @@ var Difficulty = 0;
 optionButton.prototype.draw = function() {
     if (this.isMouseInside() && mouseIsPressed) {
         fill(255, 255, 255);
-    }
+		}
     else {
        fill(this.color); 
     }
@@ -58,3 +59,4 @@ this.hp = hp
 
 
 //And here we will put the characters and prototypes
+
