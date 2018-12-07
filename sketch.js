@@ -1,6 +1,5 @@
 
-
-	    
+var currentScene = 1;
 var img;
 var cnv;
 
@@ -18,7 +17,7 @@ function windowResized() {
 
 
 
-var currentScene = 1;
+
 
 
 function setup() {
@@ -79,7 +78,7 @@ var P2 = new optionButton({
     label: "2",
 		onClick: function() {
 PlayerNum = 2;
-	
+	console.log("I was clicked");
 }
 
 });
@@ -144,7 +143,8 @@ Difficulty = 1;
 
 });
 	
-	var Difficultyh = new optionButton({
+  
+var Difficultyh = new optionButton({
 
 
 	x:400  ,
@@ -156,9 +156,8 @@ Difficulty = 1;
 		onClick: function() {
 Difficulty = 3;
 }
+})
 
-});
-	
 		var Next = new optionButton({
 
 
@@ -175,7 +174,8 @@ Difficulty = 3;
 
 });
 
-	Difficultyh.draw();
+	
+  Difficultyh.draw();
 	Difficultym.draw();
 	Difficultye.draw();
 	CITY.draw();
@@ -202,12 +202,19 @@ var drawScene5 =function(){
     background(150, 150, 175);
 };
 
-if(currentScene ===1){
-drawScene3();
-}
+  
+  if(currentScene === 1){
+    drawScene1();
+    
+  }
 
 
-    if( keyIsPressed && keyCode === 13 && currentScene === 1){
+  if(currentScene === 2){
+    drawScene2();
+    
+  }
+
+    if( keyIsPressed && keyCode === 13 ){
       drawScene2();
 	  
 			
