@@ -60,6 +60,7 @@ var P1 = new optionButton({
   	color: color(221, 51, 51),
   	label: "1",	
 	onClick: function() {
+	console.log("I be clicked");
 	PlayerNum = 1;
 		
 		
