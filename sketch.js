@@ -1,5 +1,7 @@
 
+
 var currentScene = 1;
+
 var img;
 var cnv;
 
@@ -184,6 +186,11 @@ Difficulty = 3;
   P2.draw();
 	Next.draw();
 		};
+	var mouseClicked = function{
+	CITY.handleMouseClick();
+	FIELDS.handleMouseClick();
+	};
+	
 	
 var drawScene3 = function(){
     currentScene = 3;
@@ -214,11 +221,9 @@ var drawScene5 =function(){
     
   }
 
-    if( keyIsPressed && keyCode === 13 ){
-      drawScene2();
-	  
-			
+
+    if( keyIsPressed && keyCode === 13 && currentScene === 1){
+      drawScene2();		
     }
 
-     
 }
