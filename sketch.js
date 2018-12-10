@@ -186,10 +186,15 @@ Difficulty = 3;
   P2.draw();
 	Next.draw();
 		};
-	var mouseClicked = function{
+	var mouseClicked = function {
 	CITY.handleMouseClick();
 	FIELDS.handleMouseClick();
-	};
+	Difficultyh.handleMouseClick();
+	Difficultye.handleMouseClick();
+	Difficultym.handleMouseClick();
+	P1.handleMouseClick();
+	P2.handleMouseClick();
+	}
 	
 	
 var drawScene3 = function(){
