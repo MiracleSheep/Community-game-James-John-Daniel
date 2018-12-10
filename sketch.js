@@ -1,51 +1,7 @@
-//THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
-var Background = 0;
-var PlayerNum = 0;
-var Difficulty = 0;  
 
 
-//this is the button function for the options
-	var optionButton = function(config) {
-    this.x = config.x || 0;
-    this.y = config.y || 0;
-    this.width = config.width || 84;
-    this.height = config.height || 50;
-    this.label = config.label || "Click";
-    this.color = config.color || color(207, 85, 85);
-    this.onClick = config.onClick || function() {};
-};
+var currentScene = 1;
 
-
-optionButton.prototype.draw = function() {
-    if (this.isMouseInside() && mouseIsPressed) {
-        fill(255, 255, 255);
-    }
-    else {
-       fill(this.color); 
-    }
-    rectMode(CENTER);
-    rect(this.x, this.y, this.width, this.height, 5);
-    fill(0, 0, 0);
-    textSize(18);
-    textAlign(CENTER, CENTER);
-    text(this.label, this.x, this.y);
-};
-
-
-optionButton.prototype.isMouseInside = function() {
-    return mouseX > this.x-this.width/2 &&
-           mouseX < (this.x + this.width/2) &&
-           mouseY > this.y - this.height/2 &&
-           mouseY < (this.y + this.height/2);
-};
-
-
-optionButton.prototype.handleMouseClick = function() {
-    if (this.isMouseInside()) {
-	    this.onClick();
-		}
-}
-	    
 var img;
 var cnv;
 
@@ -63,7 +19,7 @@ function windowResized() {
 
 
 
-var currentScene = 1;
+
 
 
 function setup() {
@@ -85,7 +41,7 @@ var drawScene2 = function(){
     currentScene = 2;
 background(0, 0, 0);
 	textSize(18);
-	fill(250,0,0)
+	fill(250,0,0);
 	text("Game Options",190,50);
 	text("Arena",50,220);
 	text("Difficulty",50,350);
@@ -95,15 +51,15 @@ background(0, 0, 0);
 	text("Player Number",50,110);
 	text("Or",240,170);
 	
-var P1 = new optionButton({
+	var P1 = new optionButton({
 
 
-	x:200  ,
-    y: 160,
-    width: 50,
-    height: 20,
-    color: color(221, 51, 51),
-    label: "1",
+	x:200,
+  y:160,
+  width: 50,
+  height: 20,
+  color: color(221, 51, 51),
+  label: "1",
 	
 onClick: function() {
 PlayerNum = 1;
@@ -124,7 +80,7 @@ var P2 = new optionButton({
     label: "2",
 		onClick: function() {
 PlayerNum = 2;
-	
+	console.log("I was clicked");
 }
 
 });
@@ -189,7 +145,8 @@ Difficulty = 1;
 
 });
 	
-	var Difficultyh = new optionButton({
+  
+var Difficultyh = new optionButton({
 
 
 	x:400  ,
@@ -201,9 +158,8 @@ Difficulty = 1;
 		onClick: function() {
 Difficulty = 3;
 }
+})
 
-});
-	
 		var Next = new optionButton({
 
 
@@ -219,7 +175,9 @@ Difficulty = 3;
 	
 
 });
-	Difficultyh.draw();
+
+	
+  Difficultyh.draw();
 	Difficultym.draw();
 	Difficultye.draw();
 	CITY.draw();
@@ -236,7 +194,9 @@ Difficulty = 3;
 	
 var drawScene3 = function(){
     currentScene = 3;
-background(0, 51, 255);
+background(255);
+	Health(10,10,150,20);
+	Health(340,10,150,20);
 
 };
 
@@ -249,12 +209,21 @@ var drawScene5 =function(){
     background(150, 150, 175);
 };
 
-if(currentScene ===1){
-drawScene1();
-}
+  
+  if(currentScene === 1){
+    drawScene1();
+    
+  }
+
+
+  if(currentScene === 2){
+    drawScene2();
+    
+  }
 
 
     if( keyIsPressed && keyCode === 13 && currentScene === 1){
       drawScene2();		
     }
+
 }
