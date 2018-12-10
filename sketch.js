@@ -184,7 +184,8 @@ var Next = new optionButton({
   	P2.draw();
 	Next.draw();
 	
-		};
+};
+	
 var mouseClicked = function() {
 	CITY.handleMouseClick();
 	FIELDS.handleMouseClick();
@@ -194,7 +195,7 @@ var mouseClicked = function() {
 	P1.handleMouseClick();
 	P2.handleMouseClick();
 	Next.handleMouseClick();
-	};
+};
 	
 	
 var drawScene3 = function(){
@@ -209,6 +210,7 @@ var drawScene4 = function(){
 	currentScene = 4;
 	background(255, 255, 255);
 };
+	
 var drawScene5 =function(){
 	currentScene = 5;
 	background(150, 150, 175);
