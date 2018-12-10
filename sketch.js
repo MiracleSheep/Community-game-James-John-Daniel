@@ -88,59 +88,59 @@ PlayerNum = 2;
 var CITY = new optionButton({
 
 
-	x:200  ,
-    y: 270,
-    width: 50,
-    height: 20,
-    color: color(165, 165, 155),
-    label: "City",
-		onClick: function() {
-Background = 1;
+	x: 200 ,
+   	y: 270,
+    	width: 50,
+   	 height: 20,
+    	color: color(165, 165, 155),
+    	label: "City",
+	onClick: function() {
+	Background = 1;
 }
 
 });
 	
-	var FIELDS = new optionButton({
+var FIELDS = new optionButton({
 
 
-	x:300  ,
-    y: 270,
-    width: 50,
-    height: 20,
-    color: color(219, 226, 13),
-    label: "Fields",
-		onClick: function() {
-Background = 2;
+	x: 300,
+    	y: 270,
+  	width: 50,
+   	height: 20,
+    	color: color(219, 226, 13),
+    	label: "Fields",
+	onClick: function() {
+	Background = 2;
 }
 
 });
 	
-	var Difficultye = new optionButton({
+var Difficultye = new optionButton({
 
 
 	x:100  ,
-    y: 400,
-    width: 70,
-    height: 50,
-    color: color(144, 234, 18),
-    label: "Normal",
+    	y: 400,
+   	 width: 70,
+    	height: 50,
+    	color: color(144, 234, 18),
+    	label: "Normal",
 	onClick: function() {
-Difficulty = 1;
+	Difficulty = 1;
 }
 
 });
 	
-	var Difficultym = new optionButton({
+var Difficultym = new optionButton({
 
 
-	x:250  ,
-    y: 400,
-    width: 70,
-    height: 50,
-    color: color(211, 229, 13),
-    label: "Overkill",
+	x: 250,
+    	y: 400,
+    	width: 70,
+    	height: 50,
+    	color: color(211, 229, 13),
+    	label: "Overkill",
 	onClick: function() {
- Difficulty = 2;
+ 	Difficulty = 2;
 }
 
 });
@@ -153,7 +153,7 @@ var Difficultyh = new optionButton({
 	y: 400,
 	width: 135,
 	height: 50,
-	color: color(244, 176, 66);
+	color: color(244, 176, 66),
 	label: "Death Sentence",
 	onClick: function() {
 	Difficulty = 3;
@@ -217,19 +217,18 @@ var drawScene5 =function(){
 };
 
   
-  if(currentScene === 1){
+if(currentScene === 1){
     drawScene1();
     
   }
 
 
-  if(currentScene === 2){
+if(currentScene === 2){
     drawScene2();
     
   }
 
-
-    if( keyIsPressed && keyCode === 13 && currentScene === 1){
+if( keyIsPressed && keyCode === 13 && currentScene === 1){
       drawScene2();		
     }
 
