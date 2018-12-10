@@ -6,15 +6,15 @@ var img;
 var cnv;
 
 function centerCanvas() {
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 0;
-  cnv.position(x, y);
+  	var x = (windowWidth - width) / 2;
+ 	 var y = (windowHeight - height) / 0;
+  	cnv.position(x, y);
 }
 
 
 
 function windowResized() {
-  centerCanvas();
+  	centerCanvas();
 }
 
 
@@ -23,23 +23,23 @@ function windowResized() {
 
 
 function setup() {
-  cnv = createCanvas(500, 500);
-  centerCanvas();
-  background(255, 0, 200);
-  img = loadImage("pictures/Startscreen.jpeg"); 
+  	cnv = createCanvas(500, 500);
+  	centerCanvas();
+  	background(255, 0, 200);
+  	img = loadImage("pictures/Startscreen.jpeg"); 
 }
 function draw(){
 
 var drawScene1 =function(){
-    currentScene = 1;
-    background(200, 175, 175);
-   image(img, 0, 0, 500,500);
+    	currentScene = 1;
+   	background(200, 175, 175);
+   	image(img, 0, 0, 500,500);
 
 };
 
 var drawScene2 = function(){
-    currentScene = 2;
-background(0, 0, 0);
+    	currentScene = 2;
+	background(0, 0, 0);
 	textSize(18);
 	fill(250,0,0);
 	text("Game Options",190,50);
@@ -51,18 +51,16 @@ background(0, 0, 0);
 	text("Player Number",50,110);
 	text("Or",240,170);
 	
-	var P1 = new optionButton({
-
+var P1 = new optionButton({
 
 	x:200,
-  y:160,
-  width: 50,
-  height: 20,
-  color: color(221, 51, 51),
-  label: "1",
-	
-onClick: function() {
-PlayerNum = 1;
+  	y:160,
+  	width: 50,
+  	height: 20,
+  	color: color(221, 51, 51),
+  	label: "1",	
+	onClick: function() {
+	PlayerNum = 1;
 		
 		
 }
@@ -73,13 +71,13 @@ var P2 = new optionButton({
 
 
 	x:300  ,
-    y: 160,
-    width: 50,
-    height: 20,
-    color: color(13, 107, 229),
-    label: "2",
-		onClick: function() {
-PlayerNum = 2;
+    	y: 160,
+    	width: 50,
+    	height: 20,
+    	color: color(13, 107, 229),
+    	label: "2",
+	onClick: function() {
+	PlayerNum = 2;
 	console.log("I was clicked");
 }
 
@@ -91,7 +89,7 @@ var CITY = new optionButton({
 	x: 200 ,
    	y: 270,
     	width: 50,
-   	 height: 20,
+   	height: 20,
     	color: color(165, 165, 155),
     	label: "City",
 	onClick: function() {
