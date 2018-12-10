@@ -186,7 +186,7 @@ Difficulty = 3;
   P2.draw();
 	Next.draw();
 		};
-	var mouseClicked = function{
+	var mouseClicked = function() {
 	CITY.handleMouseClick();
 	FIELDS.handleMouseClick();
 	};
