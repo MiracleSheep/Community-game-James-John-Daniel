@@ -149,64 +149,69 @@ Difficulty = 1;
 var Difficultyh = new optionButton({
 
 
-	x:400  ,
-    y: 400,
-    width: 135,
-    height: 50,
-    color: color(244, 176, 66),
-    label: "Death Sentence",
-		onClick: function() {
-Difficulty = 3;
+	x: 400,
+	y: 400,
+	width: 135,
+	height: 50,
+	color: color(244, 176, 66);
+	label: "Death Sentence",
+	onClick: function() {
+	Difficulty = 3;
 }
 })
 
-		var Next = new optionButton({
+var Next = new optionButton({
 
 
-	x:430  ,
-    y: 460,
-    width: 60,
-    height: 20,
-    color: color(255),
-    label: "NEXT",
-				onClick: function() {
+	x:430,
+	y: 460,
+	width: 60,
+	height: 20,
+	color: color(255),
+	label: "NEXT",
+	onClick: function() {
 
 }
 	
 
 });
-
-	
-  Difficultyh.draw();
+ 	Difficultyh.draw();
 	Difficultym.draw();
 	Difficultye.draw();
 	CITY.draw();
 	FIELDS.draw();
 	P1.draw();
-  P2.draw();
+  	P2.draw();
 	Next.draw();
+	
 		};
-	var mouseClicked = function() {
+var mouseClicked = function() {
 	CITY.handleMouseClick();
 	FIELDS.handleMouseClick();
+	Difficultyh.handleMouseClick();
+	Difficultym.handleMouseClick();
+	Difficultye.handleMouseClick();
+	P1.handleMouseClick();
+	P2.handleMouseClick();
+	Next.handleMouseClick();
 	};
 	
 	
 var drawScene3 = function(){
-    currentScene = 3;
-background(255);
+   	currentScene = 3;
+	background(255);
 	Health(10,10,150,20);
 	Health(340,10,150,20);
 
 };
 
 var drawScene4 = function(){
-    currentScene = 4;
-background(255, 255, 255);
+	currentScene = 4;
+	background(255, 255, 255);
 };
 var drawScene5 =function(){
-    currentScene = 5;
-    background(150, 150, 175);
+	currentScene = 5;
+	background(150, 150, 175);
 };
 
   
