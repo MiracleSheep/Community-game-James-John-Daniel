@@ -1,8 +1,11 @@
 
 
+
 var currentScene = 1;
 
 var img;
+var img1;
+var img2;
 var cnv;
 
 function centerCanvas() {
@@ -27,7 +30,12 @@ function setup() {
   	centerCanvas();
   	background(255, 0, 200);
   	img = loadImage("pictures/Startscreen.jpeg"); 
+		img1 = loadImage("pictures/grassland01a_soruve.png"); 
+		img2 = loadImage("pictures/japan_street01.png"); 
 }
+	
+
+
 function draw(){
 
 var drawScene1 =function(){
@@ -43,52 +51,21 @@ var drawScene2 = function(){
 	textSize(18);
 	fill(250,0,0);
 	text("Game Options",190,50);
-	text("Arena",50,220);
-	text("Difficulty",50,350);
-	text("Or",240,275);
-	text("Or",165,380);
-	text("Or",300,380);
-	text("Player Number",50,110);
-	text("Or",240,170);
+	text("Arena",50,100);
+	text("Difficulty",50,280);
+	text("Or",260,150);
+	text("Or",165,360);
+	text("Or",300,360);
+	image(img1, 50, 200);
+	image(img2, 50, 0);
 	
-var P1 = new optionButton({
-
-	x:200,
-  	y:160,
-  	width: 50,
-  	height: 20,
-  	color: color(221, 51, 51),
-  	label: "1",	
-	onClick: function() {																				 function() {
-	console.log("I be clicked");
-	PlayerNum = 1;
-		
-		
-}
-
-});
 	
-var P2 = new optionButton({
-
-
-	x:300  ,
-    	y: 160,
-    	width: 50,
-    	height: 20,
-    	color: color(13, 107, 229),
-    	label: "2",
-	onClick: function() {
-	PlayerNum = 2;
-	console.log("I was clicked");
-}
-
-});
 
 var CITY = new optionButton({
 
 
-	x: 200 ,
-   	y: 270,
+	x: 180 ,
+   	y: 150,
     	width: 50,
    	height: 20,
     	color: color(165, 165, 155),
@@ -102,8 +79,8 @@ var CITY = new optionButton({
 var FIELDS = new optionButton({
 
 
-	x: 300,
-    	y: 270,
+	x: 360,
+    	y: 150,
   	width: 50,
    	height: 20,
     	color: color(219, 226, 13),
@@ -118,7 +95,7 @@ var Difficultye = new optionButton({
 
 
 	x:100  ,
-    	y: 400,
+    	y: 360,
    	 width: 70,
     	height: 50,
     	color: color(144, 234, 18),
@@ -133,7 +110,7 @@ var Difficultym = new optionButton({
 
 
 	x: 250,
-    	y: 400,
+    	y: 360,
     	width: 70,
     	height: 50,
     	color: color(211, 229, 13),
@@ -149,7 +126,7 @@ var Difficultyh = new optionButton({
 
 
 	x: 400,
-	y: 400,
+	y: 360,
 	width: 135,
 	height: 50,
 	color: color(244, 176, 66),
@@ -179,8 +156,6 @@ var Next = new optionButton({
 	Difficultye.draw();
 	CITY.draw();
 	FIELDS.draw();
-	P1.draw();
-  	P2.draw();
 	Next.draw();
 	
 };
@@ -191,8 +166,6 @@ var mouseClicked = function() {
 	Difficultyh.handleMouseClick();
 	Difficultym.handleMouseClick();
 	Difficultye.handleMouseClick();
-	P1.handleMouseClick();
-	P2.handleMouseClick();
 	Next.handleMouseClick();
 };
 	
@@ -217,7 +190,7 @@ var drawScene5 =function(){
 
   
 if(currentScene === 1){
-    drawScene1();
+    drawScene2();
     
   }
 
