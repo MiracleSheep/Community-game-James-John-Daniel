@@ -1,6 +1,8 @@
 
 
 
+
+
 var currentScene = 1;
 
 var img;
@@ -10,7 +12,7 @@ var cnv;
 
 function centerCanvas() {
   	var x = (windowWidth - width) / 2;
- 	 var y = (windowHeight - height) / 0;
+ 	var y = (windowHeight - height) / 0;
   	cnv.position(x, y);
 }
 
@@ -30,8 +32,8 @@ function setup() {
   	centerCanvas();
   	background(255, 0, 200);
   	img = loadImage("pictures/Startscreen.jpeg"); 
-		img1 = loadImage("pictures/grassland01a_soruve.png"); 
-		img2 = loadImage("pictures/japan_street01.png"); 
+	img1 = loadImage("pictures/grassland01a_soruve.png"); 
+	img2 = loadImage("pictures/japan_street01.png"); 
 }
 	
 
@@ -56,8 +58,8 @@ var drawScene2 = function(){
 	text("Or",260,150);
 	text("Or",165,360);
 	text("Or",300,360);
-	image(img1, 360, 200,50,50);
-	image(img2, 180, 200,50,50);
+	image(img1, 340, 200,50,50);
+	image(img2, 160, 200,50,50);
 	
 	
 
@@ -72,7 +74,7 @@ var CITY = new optionButton({
     	label: "City",
 	onClick: function() {
 	Background = 1;
-	console.log("background = 1");
+	console.log(Background);
 }
 
 });
