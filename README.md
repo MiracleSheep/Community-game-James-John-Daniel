@@ -29,6 +29,9 @@ Which is why we're making a fighting game!<br>
 - Its a 3rd person game.
 - Theres 2 characters, a "ninja guy" and "lexus?".
 - The characters fight until one of them has no health left on the bar.
+- The characters have different moves to fight and they also have dodge moves to dodge the other persons attacks.
+
 # How to play
-- player one is "a,w,s,d" and second player we still not sure.
-- the fighting buttons we are still making.
+- At the start you will see a start screen that says press "ENTER" to start, when you press "Enter" it will change a scene to the option scene after that you it will ask you to pick the map, how many players are you playing with and the difficulty after you choose the stuff that you wanted, it's the best part you fianlly get to play the game!
+- To move player one you must use "a,w,s,d" and to move the second player (we still not sure).
+- The fighting buttons are still in progress.
