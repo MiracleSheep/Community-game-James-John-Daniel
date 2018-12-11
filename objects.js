@@ -1,4 +1,5 @@
 
+
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 var Background = 0;
 var PlayerNum = 0;
@@ -16,13 +17,13 @@ var Difficulty = 0;
     this.onClick = config.onClick || function() {};
 };
 
-
 optionButton.prototype.draw = function() {
     if (this.isMouseInside() && mouseIsPressed) {
-        fill(255, 255, 255);
+    	  console.log("Filling all white");
+			  fill(255, 255, 255);
 		}
     else {
-       fill(this.color); 
+			  fill(this.color); 
     }
     rectMode(CENTER);
     rect(this.x, this.y, this.width, this.height, 5);
@@ -43,8 +44,9 @@ optionButton.prototype.isMouseInside = function() {
 
 optionButton.prototype.handleMouseClick = function() {
     if (this.isMouseInside()) {
-		}
-}
+        this.onClick();
+    }
+};
 	
 
 //Now we put health code here
@@ -59,4 +61,17 @@ this.hp = hp
 
 
 //And here we will put the characters and prototypes
+var person = function(x,y,width,height,img) {
+this.x = x
+this.y = y
+this.width = width
+this.height = height
+this.img = img
 
+};
+
+
+person.prototype.draw = function(){
+ image(img, this.x, this.y, this.width,this.height);
+};
+ 
