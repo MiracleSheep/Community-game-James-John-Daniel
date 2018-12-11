@@ -56,8 +56,8 @@ var drawScene2 = function(){
 	text("Or",260,150);
 	text("Or",165,360);
 	text("Or",300,360);
-	image(img1, 50, 200);
-	image(img2, 50, 0);
+	image(img1, 360, 200,50,50);
+	image(img2, 180, 200,50,50);
 	
 	
 
@@ -72,6 +72,7 @@ var CITY = new optionButton({
     	label: "City",
 	onClick: function() {
 	Background = 1;
+	console.log("background = 1");
 }
 
 });
@@ -146,7 +147,7 @@ var Next = new optionButton({
 	color: color(255),
 	label: "NEXT",
 	onClick: function() {
-
+drawscene3();
 }
 	
 
