@@ -23,44 +23,44 @@ function windowResized() {
 }
 
 
-
-
-
-
 function setup() {
   	cnv = createCanvas(500, 500);
   	centerCanvas();
   	background(255, 0, 200);
   	img = loadImage("pictures/Startscreen.jpeg"); 
-	img1 = loadImage("pictures/grassland01a_soruve.png"); 
-	img2 = loadImage("pictures/japan_street01.png"); 
+	  img1 = loadImage("pictures/grassland01a_soruve.png"); 
+	  img2 = loadImage("pictures/japan_street01.png"); 
 }
-	
 
 
-function draw(){
-
-var drawScene1 =function(){
-    	currentScene = 1;
+var drawScene1 = function() {
+    currentScene = 1;
    	background(200, 175, 175);
    	image(img, 0, 0, 500,500);
 
 };
 
-var drawScene2 = function(){
-    	currentScene = 2;
-	background(0, 0, 0);
-	textSize(18);
-	fill(250,0,0);
-	text("Game Options",190,50);
-	text("Arena",50,100);
-	text("Difficulty",50,280);
-	text("Or",260,150);
-	text("Or",165,360);
-	text("Or",300,360);
-	image(img1, 340, 200,50,50);
-	image(img2, 160, 200,50,50);
+var drawScene3 = function(){
+   	currentScene = 3;
+	background(255);
+	Health(10,10,150,20);
+	Health(340,10,150,20);
+
+};
+
+var drawScene4 = function(){
+	currentScene = 4;
+	background(255, 255, 255);
+};
 	
+var drawScene5 = function(){
+	currentScene = 5;
+	background(150, 150, 175);
+};
+
+var drawScene2 = function(event) {
+	
+  currentScene = 2;
 	
 
 var CITY = new optionButton({
@@ -74,7 +74,7 @@ var CITY = new optionButton({
     	label: "City",
 	onClick: function() {
 	Background = 1;
-	console.log(Background);
+	console.log("City - click: " + Background);
 }
 
 });
@@ -140,8 +140,6 @@ var Difficultyh = new optionButton({
 })
 
 var Next = new optionButton({
-
-
 	x:430,
 	y: 460,
 	width: 60,
@@ -149,51 +147,53 @@ var Next = new optionButton({
 	color: color(255),
 	label: "NEXT",
 	onClick: function() {
-drawscene3();
-}
+	  currentScene = 3;
+		drawScene3();
+		console.log("NEXT: " + currentScene);
+  }
 	
 
 });
+	
+	if( event === "click" ) {
+		console.log("scene2 click");
+		CITY.handleMouseClick();
+	  FIELDS.handleMouseClick();
+	  Difficultyh.handleMouseClick();
+		Difficultym.handleMouseClick();
+		Difficultye.handleMouseClick();
+		Next.handleMouseClick();
+	} else {
+	background(0, 0, 0);
+	textSize(18);
+	fill(250,0,0);
+	text("Game Options",190,50);
+	text("Arena",50,100);
+	text("Difficulty",50,280);
+	text("Or",260,150);
+	text("Or",165,360);
+	text("Or",300,360);
+	image(img1, 340, 200,50,50);
+	image(img2, 160, 200,50,50);
  	Difficultyh.draw();
 	Difficultym.draw();
 	Difficultye.draw();
 	CITY.draw();
 	FIELDS.draw();
 	Next.draw();
-	
-};
-	
-var mouseClicked = function() {
-	CITY.handleMouseClick();
-	FIELDS.handleMouseClick();
-	Difficultyh.handleMouseClick();
-	Difficultym.handleMouseClick();
-	Difficultye.handleMouseClick();
-	Next.handleMouseClick();
-};
-	
-	
-var drawScene3 = function(){
-   	currentScene = 3;
-	background(255);
-	Health(10,10,150,20);
-	Health(340,10,150,20);
+
+	}
+	console.log("Scene2 - draw(" + event + ")");
 
 };
-
-var drawScene4 = function(){
-	currentScene = 4;
-	background(255, 255, 255);
-};
 	
-var drawScene5 =function(){
-	currentScene = 5;
-	background(150, 150, 175);
-};
+	
 
-  
+
+function draw() {
+	
 if(currentScene === 1){
-    drawScene2();
+    drawScene1();
     
   }
 
@@ -203,8 +203,17 @@ if(currentScene === 2){
     
   }
 
-if( keyIsPressed && keyCode === 13 && currentScene === 1){
+if( keyIsPressed && keyCode === 13 ){
       drawScene2();		
-    }
+  }
+
 
 }
+
+mouseClicked = function() {
+	  console.log("Mouse was clicked");
+	if( currentScene === 2 ) {
+	  drawScene2("click");
+	}
+};
+
