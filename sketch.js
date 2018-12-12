@@ -33,14 +33,14 @@ function setup() {
 	  img2 = loadImage("pictures/japan_street01.png"); 
 }
 
-var rab = function(){
+var beam = function(){
     rect(470 ,mry,30,100);
 	fill(35, 211, 211);
     ellipse(mrx,mry,40,40);
     
     mrx -= random(20);
    
-    if(mrx < -250) {
+    if(mrx < -100) {
         
         mrx = 500;
         mry = random(0, 400);
@@ -74,7 +74,7 @@ var drawScene1 = function() {
 	fill(0);
 	text("Press Enter to Start!",200,300);
 	text("Made by John Khalife, Daniel Figotin and James Yee",110,480);
-rab();
+beam();
 };
 
 var drawScene3 = function(){
@@ -88,7 +88,19 @@ var drawScene3 = function(){
 	if(Background === 2) {
 	image(img1, 0, 0, 800,500);
 	}
+	
+	var Lexus = new character ({
+	
+	
+	
+	})
 
+	var Bandit = new character ({
+	
+	
+	
+	})
+	
 };
 
 var drawScene4 = function(){
