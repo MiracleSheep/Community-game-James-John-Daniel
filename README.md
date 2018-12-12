@@ -20,7 +20,7 @@ Which is why we're making a fighting game!<br>
 3. What We Are "Thinking" About Doing
 - We are trying to figure out how to make the buttons go to the scene that they are supposed to go to.
 - We are trying to put some "cool" images to the option scene.
--
+- We may change the start screen
 -
 
 # Wiki 
