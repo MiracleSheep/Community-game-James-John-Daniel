@@ -21,7 +21,7 @@ function windowResized() {
 
 
 function setup() {
-  	cnv = createCanvas(500, 500);
+  	cnv = createCanvas(800, 500);
   	centerCanvas();
   	background(255, 0, 200);
   	img = loadImage("pictures/LogoMakr_0cfjro.png"); 
@@ -45,10 +45,10 @@ var drawScene3 = function(){
 	Health(10,10,150,20);
 	Health(340,10,150,20);
 	if(Background === 1) {
-		image(img2, 0, 0, 500,500);
+		image(img2, 0, 0, 800,500);
 	}					 					 
 	if(Background === 2) {
-	image(img1, 0, 0, 500,500);
+	image(img1, 0, 0, 800,500);
 	}
 
 };
