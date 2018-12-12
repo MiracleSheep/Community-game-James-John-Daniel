@@ -6,6 +6,10 @@ var img;
 var img1;
 var img2;
 var cnv;
+var mrx = 0;
+var mry = 0;
+var mrx2 = 0;
+var mry2 = 0;
 
 function centerCanvas() {
   	var x = (windowWidth - width) / 2;
@@ -21,7 +25,7 @@ function windowResized() {
 
 
 function setup() {
-  	cnv = createCanvas(800, 500);
+  	cnv = createCanvas(500, 500);
   	centerCanvas();
   	background(255, 0, 200);
   	img = loadImage("pictures/LogoMakr_0cfjro.png"); 
@@ -29,14 +33,48 @@ function setup() {
 	  img2 = loadImage("pictures/japan_street01.png"); 
 }
 
+var rab = function(){
+    rect(470 ,mry,30,100);
+	fill(35, 211, 211);
+    ellipse(mrx,mry,40,40);
+    
+    mrx -= random(20);
+   
+    if(mrx < -250) {
+        
+        mrx = 500;
+        mry = random(0, 400);
+        
+    }
+	fill(0);
+    rect(0 ,mry2,30,100);
+	fill(35, 211, 211);
+    ellipse(mrx2,mry2,40,40);
+    
+    mrx2 += random(20);
+   
+    if(mrx2 > 500) {
+        
+        mrx2 = 0;
+        mry2 = random(0, 400);
+        
+    }
+ 
+	
+	
+	
+	
+};
+
 
 var drawScene1 = function() {
     currentScene = 1;
-   	background(255);
+   	background(150);
    	image(img, 100, 150, 300,120);
+	fill(0);
 	text("Press Enter to Start!",200,300);
 	text("Made by John Khalife, Daniel Figotin and James Yee",110,480);
-
+rab();
 };
 
 var drawScene3 = function(){
