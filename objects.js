@@ -19,7 +19,7 @@ var Difficulty = 0;
 
 optionButton.prototype.draw = function() {
     if (this.isMouseInside() && mouseIsPressed) {
-    	  console.log("Filling all white");
+   // 	  console.log("Filling all white");
 			  fill(255, 255, 255);
 		}
     else {
