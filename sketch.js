@@ -32,8 +32,8 @@ function setup() {
 
 var drawScene1 = function() {
     currentScene = 1;
-   	background(200, 175, 175);
-   	image(img, 200, 200, 200,200);
+   	background(255);
+   	image(img, 200, 200, 300,300);
 
 };
 
