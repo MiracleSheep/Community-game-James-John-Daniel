@@ -1,8 +1,5 @@
 
 
-
-
-
 var currentScene = 1;
 
 var img;
@@ -45,6 +42,12 @@ var drawScene3 = function(){
 	background(255);
 	Health(10,10,150,20);
 	Health(340,10,150,20);
+	if(Background === 1) {
+		image(img2, 0, 0, 500,500);
+	}					 					 
+	if(Background === 2) {
+	image(img1, 0, 0, 500,500);
+	}
 
 };
 
@@ -74,7 +77,7 @@ var CITY = new optionButton({
     	label: "City",
 	onClick: function() {
 	Background = 1;
-	console.log("City - click: " + Background);
+	console.log("CITY has been clicked" + Background);
 }
 
 });
@@ -90,6 +93,7 @@ var FIELDS = new optionButton({
     	label: "Fields",
 	onClick: function() {
 	Background = 2;
+	console.log("FIELDS has been clicked" + Background);
 }
 
 });
@@ -105,6 +109,7 @@ var Difficultye = new optionButton({
     	label: "Normal",
 	onClick: function() {
 	Difficulty = 1;
+	console.log("NORMAL has been clicked" + Difficulty);
 }
 
 });
@@ -120,6 +125,7 @@ var Difficultym = new optionButton({
     	label: "Overkill",
 	onClick: function() {
  	Difficulty = 2;
+	console.log("OVERKILL has been clicked" + Difficulty);
 }
 
 });
@@ -136,6 +142,7 @@ var Difficultyh = new optionButton({
 	label: "Death Sentence",
 	onClick: function() {
 	Difficulty = 3;
+	console.log("DEATH has been clicked" + Difficulty);
 }
 })
 
@@ -149,14 +156,14 @@ var Next = new optionButton({
 	onClick: function() {
 	  currentScene = 3;
 		drawScene3();
-		console.log("NEXT: " + currentScene);
+//		console.log("NEXT: " + currentScene);
   }
 	
 
 });
 	
 	if( event === "click" ) {
-		console.log("scene2 click");
+	//	console.log("scene2 click");
 		CITY.handleMouseClick();
 	  FIELDS.handleMouseClick();
 	  Difficultyh.handleMouseClick();
@@ -183,7 +190,7 @@ var Next = new optionButton({
 	Next.draw();
 
 	}
-	console.log("Scene2 - draw(" + event + ")");
+//	console.log("Scene2 - draw(" + event + ")");
 
 };
 	
@@ -193,7 +200,7 @@ var Next = new optionButton({
 function draw() {
 	
 if(currentScene === 1){
-    drawScene1();
+    drawScene3();
     
   }
 
@@ -211,9 +218,8 @@ if( keyIsPressed && keyCode === 13 ){
 }
 
 mouseClicked = function() {
-	  console.log("Mouse was clicked");
+//	  console.log("Mouse was clicked");
 	if( currentScene === 2 ) {
 	  drawScene2("click");
 	}
 };
-
