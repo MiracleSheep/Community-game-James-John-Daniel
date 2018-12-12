@@ -24,7 +24,7 @@ function setup() {
   	cnv = createCanvas(500, 500);
   	centerCanvas();
   	background(255, 0, 200);
-  	img = loadImage("pictures/Startscreen.jpeg"); 
+  	img = loadImage("pictures/LogoMakr_0cfjro.png"); 
 	  img1 = loadImage("pictures/grassland01a_soruve.png"); 
 	  img2 = loadImage("pictures/japan_street01.png"); 
 }
@@ -33,7 +33,7 @@ function setup() {
 var drawScene1 = function() {
     currentScene = 1;
    	background(200, 175, 175);
-   	image(img, 0, 0, 500,500);
+   	image(img, 200, 200, 200,200);
 
 };
 
