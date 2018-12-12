@@ -61,17 +61,16 @@ this.hp = hp
 
 
 //And here we will put the characters and prototypes
-var person = function(x,y,width,height,img) {
-this.x = x
-this.y = y
-this.width = width
-this.height = height
-this.img = img
+var character = function(){
+var x = this.x
+var y = this.y
+var width = this.width
+var length = this.length
+var img = this.img
 
 };
 
+character.prototype.jump = function() {
 
-person.prototype.draw = function(){
- image(img, this.x, this.y, this.width,this.height);
 };
- 
+
