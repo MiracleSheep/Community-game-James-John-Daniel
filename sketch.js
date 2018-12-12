@@ -69,7 +69,7 @@ var rab = function(){
 
 var drawScene1 = function() {
     currentScene = 1;
-   	background(150);
+   	background(255);
    	image(img, 100, 150, 300,120);
 	fill(0);
 	text("Press Enter to Start!",200,300);
