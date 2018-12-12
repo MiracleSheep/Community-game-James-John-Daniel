@@ -33,7 +33,7 @@ function setup() {
 var drawScene1 = function() {
     currentScene = 1;
    	background(255);
-   	image(img, 200, 200, 250,100);
+   	image(img, 100, 150, 300,120);
 	text("Press Enter to Start!",200,300);
 	text("Made by John Khalife, Daniel Figotin and James Yee",110,480);
 
