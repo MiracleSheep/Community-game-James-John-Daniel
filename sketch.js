@@ -39,7 +39,7 @@ var beam = function(){
 	fill(35, 211, 211);
     ellipse(mrx,mry,40,40);
     
-    mrx -= random(20);
+    mrx -= random(10);
    
     if(mrx < -100) {
         
@@ -52,7 +52,7 @@ var beam = function(){
 	fill(35, 211, 211);
     ellipse(mrx2,mry2,40,40);
     
-    mrx2 += random(20);
+    mrx2 += random(10);
    
     if(mrx2 > 500) {
         
