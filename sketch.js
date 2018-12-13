@@ -244,7 +244,7 @@ var Next = new optionButton({
 function draw() {
 	
 if(currentScene === 1){
-    drawScene3();
+    drawScene1();
     
   }
 
