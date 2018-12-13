@@ -1,5 +1,7 @@
 
 
+
+
 var currentScene = 1;
 
 var img;
@@ -27,7 +29,7 @@ function windowResized() {
 function setup() {
   	cnv = createCanvas(500, 500);
   	centerCanvas();
-  	background(255, 0, 200);
+  	background(0);
   	img = loadImage("pictures/LogoMakr_0cfjro.png"); 
 	  img1 = loadImage("pictures/grassland01a_soruve.png"); 
 	  img2 = loadImage("pictures/japan_street01.png"); 
@@ -89,18 +91,8 @@ var drawScene3 = function(){
 	image(img1, 0, 0, 800,500);
 	}
 	
-	var Lexus = new character ({
-	
-	
-	
-	})
-
-	var Bandit = new character ({
-	
-	
-	
-	})
-	
+	Lexus.draw();
+	Bandit.draw();
 };
 
 var drawScene4 = function(){
@@ -252,7 +244,7 @@ var Next = new optionButton({
 function draw() {
 	
 if(currentScene === 1){
-    drawScene1();
+    drawScene3();
     
   }
 
@@ -261,6 +253,28 @@ if(currentScene === 2){
     drawScene2();
     
   }
+	
+	if(currentScene === 3){
+    drawScene3();
+    if( keyIsPressed) {
+			console.log("KeyCode: " + keyCode );
+		}
+		
+		// Up: w
+    if( keyIsPressed && keyCode === 119 ){
+      Lexus.hop();		
+		} else {
+			Lexus.fall();
+		} 
+		
+		// Up: o
+		if( keyIsPressed && keyCode === 111 ){
+      Bandit.hop();		
+		} else {
+			Bandit.fall();
+		} 
+  }
+
 
 if( keyIsPressed && keyCode === 13 ){
       drawScene2();		
