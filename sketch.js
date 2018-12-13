@@ -63,14 +63,14 @@ var beam = function(){
  if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
 	 image(img3, mrx,mry, 100,100);
 		 }
-
+/*
 	 if( mrx >= 470 && mrx <= 500 && mry >= (mry2 - 40/2) && mry <= (mry2 + 40/2)){ || mrx2 >= 30 && mrx2 <= 0 && mry >= (mry2 - 40/2) && mry <= (mry2 + 40/2)){
 		 	image(img3, mrx,mry, 100,100);
 		 }
 
 };
 
-
+*/
 var drawScene1 = function() {
     currentScene = 1;
    	background(255);
