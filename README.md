@@ -11,16 +11,18 @@ Which is why we're making a fighting game!<br>
 - We have the start screen.
 - We have different maps for the game.
 - We have different diffculties.
+- We have the character objects.
+
 
 2. Still Needs To Be Done
 - We still need to make the characters.
-- We still need to make, when a button is pressed it needs go to a specific scene for example, when you choose a specific map it goes to that map scene.
-- We need to make the option scene a bit more "cool" so, we need to put like images.
-- We need to make the fighting buttons.
+- 
+- 
+- 
 
 3. What We Are "Thinking" About Doing
-- We are trying to figure out how to make the buttons go to the scene that they are supposed to go to.
-- We are trying to put some "cool" images to the option scene.
+- 
+- 
 -
 -
 
