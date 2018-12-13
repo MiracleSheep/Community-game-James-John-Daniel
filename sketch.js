@@ -60,11 +60,14 @@ var beam = function(){
         mry2 = random(0, 400);
         
     }
- if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
+ if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2) || mrx >= 470 && mrx <= 500 && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
 		 	image(img3, mrx,mry, 100,100);
 		 }
 
-	
+	 if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2) || mrx2 >= 30 && mrx <= 0 && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
+		 	image(img3, mrx,mry, 100,100);
+		 }
+
 };
 
 
