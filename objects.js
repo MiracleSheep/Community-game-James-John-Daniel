@@ -61,16 +61,59 @@ this.hp = hp
 
 
 //And here we will put the characters and prototypes
-var character = function(){
-var x = this.x
-var y = this.y
-var width = this.width
-var length = this.length
-var img = this.img
+var character = function(config) {
+	this.color = config.color || 'blue';
+	this.x = config.x;
+	this.y = config.y;
+	this.width = config.width;
+	this.height = config.height;
+	this.up = config.up;
+	this.down = config.down;
+};
+
+character.prototype.draw = function() {
+  fill(this.color);
+	// console.log(this.x,this.y,this.width,this.height);
+ //   image(this.img, this.x, this.y, 40, 40);
+	rect(this.x,this.y,this.width,this.height);
+};
+
+character.prototype.hop = function() {
+//    this.img = getImage("creatures/Hopper-Jumping");
+	
+	  if( this.y >= this.height ) {
+      this.y -= 7;
+		}
+   // console.log("hop " + this.y);
+};
+
+character.prototype.fall = function() {
+ //   this.img = getImage("creatures/Hopper-Happy");
+  if( this.y <= ( 500 - this.height ) ) {
+	  this.y += 5;
+	}
+   // console.log("fall " + this.y);
 
 };
 
-character.prototype.jump = function() {
+var Lexus = new character ({
+	color: 'red',
+	x:100,
+		y:200,
+		width:50,
+		height:50,
+		up:50,
+		down:50
+	})
 
-};
-
+	var Bandit = new character ({
+		x:300,
+		y:200,
+		width:50,
+		height:50,
+		up:50,
+		down:50
+	
+	
+	})
+	
