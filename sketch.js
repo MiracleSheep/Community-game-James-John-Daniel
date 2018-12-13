@@ -61,7 +61,7 @@ var beam = function(){
         
     }
  if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
-		 	image(img3, mrx,mry, 50,50);
+		 	image(img3, mrx,mry, 100,100);
 		 }
 
 	
