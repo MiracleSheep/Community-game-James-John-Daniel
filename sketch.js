@@ -1,12 +1,10 @@
 
-
-
-
 var currentScene = 1;
 
 var img;
 var img1;
 var img2;
+var img3;
 var cnv;
 var mrx = 0;
 var mry = 0;
@@ -33,6 +31,7 @@ function setup() {
   	img = loadImage("pictures/LogoMakr_0cfjro.png"); 
 	  img1 = loadImage("pictures/grassland01a_soruve.png"); 
 	  img2 = loadImage("pictures/japan_street01.png"); 
+	  img3 = loadImage("pictures/download.png");
 }
 
 var beam = function(){
@@ -61,12 +60,10 @@ var beam = function(){
         mry2 = random(0, 400);
         
     }
-  if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) || mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
-		image(img3, mrx, mry, 50,50);
+ if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) || mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
+		 	image(img3, mrx,mry, 50,50);
 		 }
-	
-	
-	
+
 	
 };
 
