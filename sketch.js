@@ -39,7 +39,7 @@ var beam = function(){
 	fill(35, 211, 211);
     ellipse(mrx,mry,40,40);
     
-    mrx -= random(10);
+    mrx -= random(15);
    
     if(mrx < -100) {
         
@@ -52,7 +52,7 @@ var beam = function(){
 	fill(35, 211, 211);
     ellipse(mrx2,mry2,40,40);
     
-    mrx2 += random(10);
+    mrx2 += random(15);
    
     if(mrx2 > 500) {
         
@@ -64,7 +64,7 @@ var beam = function(){
 		 	image(img3, mrx,mry, 100,100);
 		 }
 
-	 if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2) || mrx2 >= 30 && mrx <= 0 && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
+	 if(mrx >= mrx2 - 40/2 && mrx <= (mrx2 + 40/2) && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2) || mrx2 >= 30 && mrx2 <= 0 && mry >= mry2 - 40/2 && mry <= (mry2 + 40/2)){
 		 	image(img3, mrx,mry, 100,100);
 		 }
 
