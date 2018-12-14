@@ -65,6 +65,10 @@ var beam = function(){
 		 }
 
 	 if( mrx2 >= 470 && mrx2 <= 500 && mry2 >= mry && mry2 <= (mry + 100)){
+		 	image(img3, mrx2,mry2, 100,100);
+		 }
+	
+	 if( mrx >= 30 && mrx <= 0 && mry >= mry2 && mry <= (mry2 + 100)){
 		 	image(img3, mrx,mry, 100,100);
 		 }
 
