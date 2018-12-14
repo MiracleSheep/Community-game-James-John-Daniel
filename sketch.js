@@ -235,6 +235,25 @@ var Next = new optionButton({
 	FIELDS.draw();
 	Next.draw();
 
+		};
+	var mouseClicked = function() {
+	CITY.handleMouseClick();
+	FIELDS.handleMouseClick();
+	Difficultyh.handleMouseClick();
+	Difficultye.handleMouseClick();
+	Difficultym.handleMouseClick();
+	P1.handleMouseClick();
+	P2.handleMouseClick();
+	}
+	
+	
+var drawScene3 = function(){
+    currentScene = 3;
+background(255);
+	Health(10,10,150,20);
+	Health(340,10,150,20);
+
+
 	}
 //	console.log("Scene2 - draw(" + event + ")");
 
