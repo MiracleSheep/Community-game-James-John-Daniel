@@ -69,7 +69,7 @@ var beam = function(){
 		 }
 	
 	 if( mrx <= 30 && mrx >= 0 && mry >= mry2 && mry <= (mry2 + 100)){
-		 	image(img3, mrx - 30,mry - 30, 100,100);
+		 	image(img3, mrx2 - 30,mry2 - 30, 100,100);
 		 }
 
 };
