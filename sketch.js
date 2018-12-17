@@ -65,11 +65,11 @@ var beam = function(){
 		 }
 
 	 if( mrx2 >= 470 && mrx2 <= 500 && mry2 >= mry && mry2 <= (mry + 100)){
-		 	image(img3, mrx2 - 30,mry  - 30, 100,100);
+		 	image(img3, mrx - 30,mry  - 30, 100,100);
 		 }
 	
 	 if( mrx <= 30 && mrx >= 0 && mry >= mry2 && mry <= (mry2 + 100)){
-		 	image(img3, mrx - 30,mry2 - 30, 100,100);
+		 	image(img3, mrx - 30,mry - 30, 100,100);
 		 }
 
 };
@@ -88,8 +88,7 @@ beam();
 var drawScene3 = function(){
    	currentScene = 3;
 	background(255);
-	Health(10,10,150,20);
-	Health(340,10,150,20);
+
 	if(Background === 1) {
 		image(img2, 0, 0, 800,500);
 	}					 					 
