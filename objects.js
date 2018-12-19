@@ -1,153 +1,144 @@
+  //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
+  var Background = 0;
+  var PlayerNum = 0;
+  var Difficulty = 0;
+ 
+  /*
+  MAKE KEY PRESSED AT SAMETIME STUFF HERE. URL TO WEB HERE: https://stackoverflow.com/questions/5203407/how-to-detect-if-multiple-keys-are-pressed-at-once-using-javascript
 
-//THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
-var Background = 0;
-var PlayerNum = 0;
-var Difficulty = 0;  
-var AttackX;//variable just for now
-var hp = 150;
-var AttackD;//variable just for now
-var AttackY;//variable just for now
-/*
-MAKE KEY PRESSED AT SAMETIME STUFF HERE. URL TO WEB HERE: https://stackoverflow.com/questions/5203407/how-to-detect-if-multiple-keys-are-pressed-at-once-using-javascript
+  var map = {}; // You could also use an array
+  onkeydown = onkeyup = function(e){
+      e = e || event; // to deal with IE
+      map[e.keyCode] = e.type == 'keydown';
+       insert conditional here 
+  }
+  */
+  //this is the button function for the options
+  var optionButton = function(config) {
+      this.x = config.x || 0;
+      this.y = config.y || 0;
+      this.width = config.width || 84;
+      this.height = config.height || 50;
+      this.label = config.label || "Click";
+      this.color = config.color || color(207, 85, 85);
+      this.onClick = config.onClick || function() {};
 
-var map = {}; // You could also use an array
-onkeydown = onkeyup = function(e){
-    e = e || event; // to deal with IE
-    map[e.keyCode] = e.type == 'keydown';
-     insert conditional here 
-}
-*/
-//this is the button function for the options
-	var optionButton = function(config) {
-    this.x = config.x || 0;
-    this.y = config.y || 0;
-    this.width = config.width || 84;
-    this.height = config.height || 50;
-    this.label = config.label || "Click";
-    this.color = config.color || color(207, 85, 85);
-    this.onClick = config.onClick || function() {};
-};
+  };
 
-optionButton.prototype.draw = function() {
-    if (this.isMouseInside() && mouseIsPressed) {
-   // 	  console.log("Filling all white");
-			  fill(255, 255, 255);
-		}
-    else {
-			  fill(this.color); 
-    }
-    rectMode(CENTER);
-    rect(this.x, this.y, this.width, this.height, 5);
-    fill(0, 0, 0);
-    textSize(18);
-    textAlign(CENTER, CENTER);
-    text(this.label, this.x, this.y);
-};
+  optionButton.prototype.draw = function() {
+      if (this.isMouseInside() && mouseIsPressed) {
+          // 	  console.log("Filling all white");
+          fill(255, 255, 255);
+      } else {
+          fill(this.color);
+      }
+      rectMode(CENTER);
+      rect(this.x, this.y, this.width, this.height, 5);
+      fill(0, 0, 0);
+      textSize(18);
+      textAlign(CENTER, CENTER);
+      text(this.label, this.x, this.y);
+  };
 
 
-optionButton.prototype.isMouseInside = function() {
-    return mouseX > this.x-this.width/2 &&
-           mouseX < (this.x + this.width/2) &&
-           mouseY > this.y - this.height/2 &&
-           mouseY < (this.y + this.height/2);
-};
+  optionButton.prototype.isMouseInside = function() {
+      return mouseX > this.x - this.width / 2 &&
+          mouseX < (this.x + this.width / 2) &&
+          mouseY > this.y - this.height / 2 &&
+          mouseY < (this.y + this.height / 2);
+  };
 
 
-optionButton.prototype.handleMouseClick = function() {
-    if (this.isMouseInside()) {
-        this.onClick();
-    }
-};
+  optionButton.prototype.handleMouseClick = function() {
+      if (this.isMouseInside()) {
+          this.onClick();
+      }
+  };
+
+
+
+  //And here we will put the characters and prototypes
+  var character = function(config) {
+      this.color = config.color || 'blue';
+      this.x = config.x; //x pos of character
+      this.y = config.y; // y pos of character
+      this.width = config.width; // width of character
+      this.height = config.height; //height of character
+      this.img = config.img; //put img of character that user selects
+      this.hp = config.hp;
+      this.hy = config.hy;
+      this.hx = config.hx;
+			this.AD = config.AD;
+			this.AX = config.AX;
+			this.AY = config.AY;
+  };
+
+			 character.prototype.draw = function() {
+      fill(this.color);
+      rect(this.x, this.y, this.width, this.height);
+			fill(56, 188, 72); 
+				rect(this.hx, this.hy, this.hp, 20);
+  }; 
+
+
+  character.prototype.hop = function() {
+    
+      if (this.y >= this.height) {
+          this.y -= 7;
+      }
+      
+  };
+
+  character.prototype.fall = function() {
+		
+      if (this.y <= (500 - this.height)) {
+          this.y += 5;
+      }
+     
+
+  };
+
+  character.prototype.hitbox = function() {
+      if (this.AX <= this.x && this.AX >= (this.x - 50) && this.AY >= this.y && this.AY <= (this.y - 100)) {
+         this.hp -= this.AD;
+
+      }
+		
 	
 
-//Now we put health code here
-
-var Health = function(x,y){
-	fill(37, 198, 45);
-	this.x = x
-this.y = y
-	rect(this.x,this.y,hp,20)
-};
+    
 
 
-//And here we will put the characters and prototypes
-var character = function(config) {
-	this.color = config.color || 'blue';
-	this.x = config.x;
-	this.y = config.y;
-	this.width = config.width;
-	this.height = config.height;
-	this.up = config.up;
-	this.down = config.down;
-	this.img = config.img;//put img of character that user selects
-};
+  };
 
-character.prototype.draw = function() {
-  fill(this.color);
-	// console.log(this.x,this.y,this.width,this.height);
- //   image(this.img, this.x, this.y, 40, 40);
-	rect(this.x,this.y,this.width,this.height);
-};
+  character.prototype.EnergyBeam = function() {
+ellipse(this.AX,this.AY,20,20);
+		AX ++;
+		
+	};
 
-character.prototype.hop = function() {
-//    this.img = getImage("creatures/Hopper-Jumping");
-	
-	  if( this.y >= this.height ) {
-      this.y -= 7;
-		}
-   // console.log("hop " + this.y);
-};
+  var Lexus = new character({
+      color: 'red',
+      x: 100,
+      y: 190,
+      width: 50,
+      height: 150,
+      //put img here when done
+      hp: 150,
+			hy:100,
+			hx:250,
+			AY: 200,
+			AX:100
+  })
 
-character.prototype.fall = function() {
- //   this.img = getImage("creatures/Hopper-Happy");
-  if( this.y <= ( 500 - this.height ) ) {
-	  this.y += 5;
-	}
-   // console.log("fall " + this.y);
-
-};
-
-character.prototype.hitbox = function() {
-//Here we will put an if statement saying that if the attack
-//hits the ccharacter, make the health bars go down by a variable that we will set as the damage of the attack
-if (AttackX <= Lexus.x && AttackX >= (Lexus.x - 50) && AttackY >= Lexus.y && AttackY <= (Lexus.y - 100) ){
-AttackD -= hp; 
-}
-	
-	if (AttackX <= Bandit.x && AttackX >= (Bandit.x - 50) && AttackY >= Bandit.y && AttackY <= (Bandit.y - 100) ){
-AttackD -= hp; 
-}
-};
-
-character.prototype.EnergyBeam = function(){
-if (keyIsPressed && keyCode === 101)
-	AttackY = 190;
-	AttackX = 100;
-	AttackD = 50
-	fill();
-	ellipse(AttackX,AttackY,20,20);
-	AttackX ++;
-	console.log("ENERGY BEAM!!!");
-};
-
-var Lexus = new character ({
-	color: 'red',
-	x:100,
-		y:190,
-		width:50,
-		height:150,
-		up:50,
-		down:50
-	})
-
-	var Bandit = new character ({
-		x:300,
-		y:190,
-		width:50,
-		height:150,
-		up:50,
-		down:50
-	
-	
-	})
-	
+  var Bandit = new character({
+      x: 300,
+      y: 190,
+      width: 50,
+      height: 150,
+			//PUT IMG HERE WHEN DONE
+      hp: 150,
+			hy:100,
+			hx:100
+		
+  })
