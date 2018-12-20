@@ -265,7 +265,7 @@ var drawScene2 = function(event) {
 function draw() {
 
     if (currentScene === 1) {
-        drawScene2();
+        drawScene1();
 
     }
 
