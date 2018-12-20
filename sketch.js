@@ -119,7 +119,7 @@ var drawScene2 = function(event) {
 
 
         x: 180,
-        y: 150,
+        y: 250,
         width: 50,
         height: 20,
         color: color(165, 165, 155),
@@ -135,7 +135,7 @@ var drawScene2 = function(event) {
 
 
         x: 360,
-        y: 150,
+        y: 250,
         width: 50,
         height: 20,
         color: color(219, 226, 13),
@@ -195,6 +195,8 @@ var drawScene2 = function(event) {
         }
     })
 
+		
+		
     var Next = new optionButton({
         x: 430,
         y: 460,
@@ -223,14 +225,19 @@ var drawScene2 = function(event) {
         background(0, 0, 0);
         textSize(18);
         fill(250, 0, 0);
-        text("Game Options", 190, 50);
-        text("Arena", 50, 100);
-        text("Difficulty", 50, 280);
-        text("Or", 260, 150);
+        text("Game Options", 250, 50);
+				text("Character" ,50,90)
+        text("Arena", 50, 200);
+        text("Difficulty", 50, 300);
+        text("Or", 260, 250);
         text("Or", 165, 360);
         text("Or", 300, 360);
-        image(img1, 340, 200, 50, 50);
-        image(img2, 160, 200, 50, 50);
+				textSize(15);
+				text("Player 1",170,90);
+				text("Player 2",330,90);
+				stroke(255);
+				line(250,190,250,100);
+				noStroke();
         Difficultyh.draw();
         Difficultym.draw();
         Difficultye.draw();
@@ -258,7 +265,7 @@ var drawScene2 = function(event) {
 function draw() {
 
     if (currentScene === 1) {
-        drawScene1();
+        drawScene2();
 
     }
 
@@ -289,14 +296,15 @@ function draw() {
         }
   
 				if (keyIsPressed && keyCode === 101){
-				Bandit.EnergyBeam();
+				Lexus.EnergyBeam2();
+				
 				}
 			
-		if (keyIsPressed && keyCode === 80){
-			Lexus.EnergyBeam();
+				if (keyIsPressed && keyCode === 112){
+				Bandit.EnergyBeam();
 			
-		}
-		
+			
+				}
 		}
 	
 	
