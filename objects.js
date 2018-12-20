@@ -78,6 +78,16 @@
       rect(this.x, this.y, this.width, this.height);
 			fill(56, 188, 72); 
 				rect(this.hx, this.hy, this.hp, 20);
+				 //hitbox below  
+				 if (Bandit.AX >= Lexus.x && Bandit.AX <= (Lexus.x + 50) && Bandit.AY >= Lexus.y && Bandit.AY <= (Lexus.y + 100)) {
+         this.hp -= this.AD;
+				console.log("OWIE!!!");
+      }
+			 if (Lexus.AX <= Bandit.x && Lexus.AX >= (Bandit.x - 50) && Lexus.AY <= Bandit.y && Lexus.AY >= (Lexus.y - 100)) {
+         this.hp -= this.AD;
+				console.log("OWIE!!!");
+      }
+		
   }; 
 
 
@@ -98,47 +108,48 @@
 
   };
 
-  character.prototype.hitbox = function() {
-      if (this.AX <= this.x && this.AX >= (this.x - 50) && this.AY >= this.y && this.AY <= (this.y - 100)) {
-         this.hp -= this.AD;
-
-      }
-		
-	
-
-    
-
-
-  };
-
+ 
   character.prototype.EnergyBeam = function() {
-ellipse(this.AX,this.AY,20,20);
-		AX ++;
+		fill(10, 201, 195);
+		ellipse(Bandit.AX,Bandit.AY,20,20);
+		Bandit.AX -= 10;
+		console.log("ENERYBEAM!")
+	};
+
+  character.prototype.EnergyBeam2 = function() {
+		fill(10, 201, 195);
+		ellipse(Lexus.AX,Lexus.AY,20,20);
+		Lexus.AX += 10;
 		
+		console.log("ENERYBEAM2!")
 	};
 
   var Lexus = new character({
       color: 'red',
-      x: 100,
+      x: 50,
       y: 190,
       width: 50,
       height: 150,
       //put img here when done
       hp: 150,
-			hy:100,
-			hx:250,
-			AY: 200,
-			AX:100
+			hy:30,
+			hx:10,
+			AY:400,
+			AX:120,
+			AD:50
   })
 
   var Bandit = new character({
-      x: 300,
+      x: 400,
       y: 190,
       width: 50,
       height: 150,
 			//PUT IMG HERE WHEN DONE
       hp: 150,
-			hy:100,
-			hx:100
+			hy:30,
+			hx:340,
+			AY: 400,
+			AX:385,
+			AD:50
 		
   })
