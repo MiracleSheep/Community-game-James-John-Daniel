@@ -119,6 +119,7 @@ hp - AttackD;
 };
 
 var Lexus = new character ({
+	img (img,this.x, this,y);
 	color: 'red',
 	x:100,
 		y:190,
