@@ -24,7 +24,6 @@ function windowResized() {
 
 
 function setup() {
-
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
@@ -32,7 +31,7 @@ function setup() {
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
-
+}
 
 var beam = function() {
     rect(470, mry, 30, 100);
@@ -266,7 +265,7 @@ var drawScene2 = function(event) {
 function draw() {
 
     if (currentScene === 1) {
-        drawScene1();
+        drawScene3();
 
     }
 
@@ -283,25 +282,25 @@ function draw() {
         }
 
         // Up: w
-        if (keyIsPressed && keyCode === 119) {
+        if (keyCode === 119) {
             Lexus.hop();
         } else {
             Lexus.fall();
         }
 
         // Up: o
-        if (keyIsPressed && keyCode === 111) {
+        if (keyCode === 111) {
             Bandit.hop();
         } else {
             Bandit.fall();
         }
   
-				if (keyIsPressed && keyCode === 101){
+				if (keyCode === 101){
 				Lexus.EnergyBeam2();
 				
 				}
 			
-				if (keyIsPressed && keyCode === 112){
+				if (keyCode === 112){
 				Bandit.EnergyBeam();
 			
 			
