@@ -1,3 +1,4 @@
+
   //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
   var Background = 0;
   var PlayerNum = 0;
@@ -153,3 +154,4 @@
 			AD:50
 		
   })
+
