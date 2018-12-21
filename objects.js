@@ -1,4 +1,3 @@
-
   //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
   var Background = 0;
   var PlayerNum = 0;
@@ -79,13 +78,19 @@
       rect(this.x, this.y, this.width, this.height);
 			fill(56, 188, 72); 
 				rect(this.hx, this.hy, this.hp, 20);
+				 if(Lexus.hp === 0){
+				 Lexus.hp = 150;
+				 }
+				  if(Bandit.hp === 0){
+				 Bandit.hp = 150;
+				 }
 				 //hitbox below  
 				 if (Bandit.AX >= Lexus.x && Bandit.AX <= (Lexus.x + 50) && Bandit.AY >= Lexus.y && Bandit.AY <= (Lexus.y + 100)) {
-         this.hp -= this.AD;
+         Lexus.hp -= this.AD;
 				console.log("OWIE!!!");
       }
-			 if (Lexus.AX <= Bandit.x && Lexus.AX >= (Bandit.x - 50) && Lexus.AY <= Bandit.y && Lexus.AY >= (Lexus.y - 100)) {
-         this.hp -= this.AD;
+			 if (Lexus.AX >= Bandit.x && Lexus.AX <= (Bandit.x + 50) && Lexus.AY >= Bandit.y && Lexus.AY <= (Lexus.y + 100)) {
+         Bandit.hp -= this.AD;
 				console.log("OWIE!!!");
       }
 		
@@ -115,6 +120,9 @@
 		ellipse(Bandit.AX,Bandit.AY,20,20);
 		Bandit.AX -= 10;
 		console.log("ENERYBEAM!")
+		if(Bandit.AX === 0){
+		Bandit.AX = 385;
+		}
 	};
 
   character.prototype.EnergyBeam2 = function() {
@@ -154,4 +162,3 @@
 			AD:50
 		
   })
-
