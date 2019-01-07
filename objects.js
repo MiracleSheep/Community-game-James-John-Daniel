@@ -139,7 +139,7 @@
       y: 190,
       width: 50,
       height: 150,
-      //put img here when done
+      img4,
       hp: 150,
 			hy:30,
 			hx:10,
@@ -153,7 +153,7 @@
       y: 190,
       width: 50,
       height: 150,
-			//PUT IMG HERE WHEN DONE
+			img5,
       hp: 150,
 			hy:30,
 			hx:340,
