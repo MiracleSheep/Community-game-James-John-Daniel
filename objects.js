@@ -81,11 +81,11 @@
 				rect(this.hx, this.hy, this.hp, 20);
 				 //hitbox below  
 				 if (Bandit.AX >= Lexus.x && Bandit.AX <= (Lexus.x + 50) && Bandit.AY >= Lexus.y && Bandit.AY <= (Lexus.y + 100)) {
-         this.hp -= this.AD;
-				console.log("OWIE!!!");
+         Lexus.hp -= Bandit.AD;
+				console.log("OWIE!!!2");
       }
-			 if (Lexus.AX <= Bandit.x && Lexus.AX >= (Bandit.x - 50) && Lexus.AY <= Bandit.y && Lexus.AY >= (Lexus.y - 100)) {
-         this.hp -= this.AD;
+			 if (Lexus.AX >= Bandit.x && Lexus.AX <= (Bandit.x + 50) && Lexus.AY >= Bandit.y && Lexus.AY <= (Bandit.y + 100)) {
+         Bandit.hp -= Lexus.AD;
 				console.log("OWIE!!!");
       }
 		
@@ -111,7 +111,7 @@
 
  
   character.prototype.EnergyBeam = function() {
-		fill(10, 201, 195);
+		fill(252, 7, 48);
 		ellipse(Bandit.AX,Bandit.AY,20,20);
 		Bandit.AX -= 10;
 		console.log("ENERYBEAM!")
@@ -137,7 +137,7 @@
 			hx:10,
 			AY:400,
 			AX:120,
-			AD:50
+			AD:5
   })
 
   var Bandit = new character({
@@ -151,7 +151,7 @@
 			hx:340,
 			AY: 400,
 			AX:385,
-			AD:50
+			AD:5
 		
   })
 
