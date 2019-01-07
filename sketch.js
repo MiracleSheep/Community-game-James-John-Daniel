@@ -4,8 +4,6 @@ var img;
 var img1;
 var img2;
 var img3;
-var img4;
-var img5;
 var cnv;
 var mrx = 0;
 var mry = 0;
@@ -26,6 +24,7 @@ function windowResized() {
 
 
 function setup() {
+
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
@@ -33,10 +32,8 @@ function setup() {
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
-	//img4 = loadImage("pictures/banditcharacter.PNG");
-	//img5 = loadImage("pictures/monke2.PNG");
-}
 
+}
 var beam = function() {
     rect(470, mry, 30, 100);
     fill(35, 211, 211);
@@ -101,7 +98,7 @@ var drawScene3 = function() {
 
     Lexus.draw();
     Bandit.draw();
-		
+
 };
 
 var drawScene4 = function() {
@@ -119,7 +116,7 @@ var drawScene2 = function(event) {
     currentScene = 2;
 
 
-    var CITY = new optionButton ({
+    var CITY = new optionButton({
 
 
         x: 180,
@@ -173,13 +170,14 @@ var drawScene2 = function(event) {
         x: 250,
         y: 360,
         width: 70,
-    		height: 50,
+        height: 50,
         color: color(211, 229, 13),
         label: "Overkill",
         onClick: function() {
             Difficulty = 2;
             console.log("OVERKILL has been clicked" + Difficulty);
         }
+
 
     });
 
@@ -199,8 +197,8 @@ var drawScene2 = function(event) {
         }
     })
 
-		
-		
+
+
     var Next = new optionButton({
         x: 430,
         y: 460,
@@ -230,18 +228,18 @@ var drawScene2 = function(event) {
         textSize(18);
         fill(250, 0, 0);
         text("Game Options", 250, 50);
-				text("Character" ,50,90)
+        text("Character", 50, 90)
         text("Arena", 50, 200);
         text("Difficulty", 50, 300);
         text("Or", 260, 250);
         text("Or", 165, 360);
         text("Or", 300, 360);
-				textSize(15);
-				text("Player 1",170,90);
-				text("Player 2",330,90);
-				stroke(255);
-				line(250,190,250,100);
-				noStroke();
+        textSize(15);
+        text("Player 1", 170, 90);
+        text("Player 2", 330, 90);
+        stroke(255);
+        line(250, 190, 250, 100);
+        noStroke();
         Difficultyh.draw();
         Difficultym.draw();
         Difficultye.draw();
@@ -269,7 +267,7 @@ var drawScene2 = function(event) {
 function draw() {
 
     if (currentScene === 1) {
-        drawScene3();
+        drawScene1();
 
     }
 
@@ -286,35 +284,34 @@ function draw() {
         }
 
         // Up: w
-        if (keyCode === 119) {
+        if (keyIsPressed && keyCode === 119) {
             Lexus.hop();
         } else {
             Lexus.fall();
         }
 
         // Up: o
-        if (keyCode === 111) {
+        if (keyIsPressed && keyCode === 111) {
             Bandit.hop();
         } else {
             Bandit.fall();
         }
-  
-				if (keyCode === 101){
-				Lexus.EnergyBeam2();
-				
-				}
-			
-				if (keyCode === 112){
-				Bandit.EnergyBeam();
-			
-			
-				}
-		}
-	
-	
-				
-	
-	
+
+        if (keyIsPressed && keyCode === 101) {
+
+            Lexus.EnergyBeam2();
+
+        }
+
+        if (keyIsPressed && keyCode === 112) {
+
+            Bandit.EnergyBeam();
+
+
+        }
+    }
+
+
 
 
     if (keyIsPressed && keyCode === 13) {
@@ -322,7 +319,7 @@ function draw() {
     }
 
 
-	
+
 }
 
 mouseClicked = function() {
