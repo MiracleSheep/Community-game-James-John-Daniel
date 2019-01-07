@@ -4,6 +4,8 @@ var img;
 var img1;
 var img2;
 var img3;
+var img4;
+var img5;
 var cnv;
 var mrx = 0;
 var mry = 0;
@@ -31,6 +33,8 @@ function setup() {
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
+	img4 = loadImage("pictures/banditcharacter.PNG");
+	img5 = loadImage("pictures/monke2.PNG");
 }
 
 var beam = function() {
