@@ -33,7 +33,7 @@ function setup() {
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
 
-
+}
 var beam = function() {
     rect(470, mry, 30, 100);
     fill(35, 211, 211);
@@ -178,6 +178,7 @@ var drawScene2 = function(event) {
             console.log("OVERKILL has been clicked" + Difficulty);
         }
 
+																
     });
 
 
@@ -297,11 +298,13 @@ function draw() {
         }
   
 				if (keyIsPressed && keyCode === 101){
-				Lexus.EnergyBeam2();
+			
+					Lexus.EnergyBeam2();
 				
 				}
 			
 				if (keyIsPressed && keyCode === 112){
+					
 				Bandit.EnergyBeam();
 			
 			
