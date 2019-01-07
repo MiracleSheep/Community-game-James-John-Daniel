@@ -33,8 +33,8 @@ function setup() {
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
-	img4 = loadImage("pictures/banditcharacter.PNG");
-	img5 = loadImage("pictures/monke2.PNG");
+	//img4 = loadImage("pictures/banditcharacter.PNG");
+	//img5 = loadImage("pictures/monke2.PNG");
 }
 
 var beam = function() {
