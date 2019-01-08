@@ -1,52 +1,10 @@
-var currentScene = 1;
 
-var img;
-var img1;
-var img2;
-var img3;
-var imgp2w;
-var imgp1w;
-var imgc1
-var imgc2;
-var cnv;
-var mrx = 0;
-var mry = 0;
-var mrx2 = 0;
-var mry2 = 0;
-
-function centerCanvas() {
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 0;
-    cnv.position(x, y);
-}
-
-
-
-function windowResized() {
-    centerCanvas();
-}
-
-
-function setup() {
-
-    cnv = createCanvas(500, 500);
-    centerCanvas();
-    background(0);
-    img = loadImage("pictures/LogoMakr_0cfjro.png");
-    img1 = loadImage("pictures/grassland01a_soruve.png");
-    img2 = loadImage("pictures/japan_street01.png");
-    img3 = loadImage("pictures/download.png");
-		imgp1w = loadImage("pictures/ShrekP1.jpg");
-		imgp2w = loadImage("pictures/ShrekP2.jpg");
-		imgc1 = loadImage("pictures/banditcharacter.PNG");
-		imgc2 = loadImage("pictures/monke2.PNG");
-}
 var beam = function() {
     image(imgc2,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
-    mrx -= random(15);
+    mrx -= 10;
 
     if (mrx < -100) {
 
@@ -59,7 +17,7 @@ var beam = function() {
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
-    mrx2 += random(15);
+    mrx2 += 10;
 
     if (mrx2 > 500) {
 
@@ -102,6 +60,8 @@ var drawScene3 = function() {
     if (Background === 2) {
         image(img1, 0, 0, 800, 500);
     }
+	
+	
 
     Lexus.draw();
     Bandit.draw();
@@ -123,7 +83,7 @@ var drawScene2 = function(event) {
     currentScene = 2;
 
 
-    var CITY = new optionButton({
+    var CITY = new optionButton ({
 
 
         x: 180,
@@ -205,7 +165,73 @@ var drawScene2 = function(event) {
     })
 
 
+		
+    var purpleguy = new optionButton({
 
+
+        x: 165,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C2",
+        onClick: function() {
+			C1 = 2;
+			console.log(C1);
+			
+		}
+    })
+		
+		
+    var greenguy = new optionButton({
+
+
+        x: 165,
+        y: 130,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C1",
+        onClick: function() {
+			C1 = 1;
+			console.log(C1);
+		}
+    })
+		
+		
+			
+    var purpleguy2 = new optionButton({
+
+
+        x: 330,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C2",
+        onClick: function() {
+			C2 = 2;
+			console.log(C2);
+		}
+    })
+		
+		
+    var greenguy2 = new optionButton({
+
+
+        x: 330,
+        y: 130,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C1",
+        onClick: function() {
+			C2 = 1;
+			console.log(C2);
+		}
+    })
+		
+		
     var Next = new optionButton({
         x: 430,
         y: 460,
@@ -230,6 +256,11 @@ var drawScene2 = function(event) {
         Difficultym.handleMouseClick();
         Difficultye.handleMouseClick();
         Next.handleMouseClick();
+				greenguy.handleMouseClick();
+				greenguy2.handleMouseClick();
+				purpleguy.handleMouseClick();
+				purpleguy2.handleMouseClick();
+			
     } else {
         background(0, 0, 0);
         textSize(18);
@@ -253,6 +284,10 @@ var drawScene2 = function(event) {
         CITY.draw();
         FIELDS.draw();
         Next.draw();
+				purpleguy.draw();
+				purpleguy2.draw();
+				greenguy.draw();
+				greenguy2.draw();
     }
 
     var mouseClicked = function() {
@@ -263,7 +298,11 @@ var drawScene2 = function(event) {
         Difficultym.handleMouseClick();
         P1.handleMouseClick();
         P2.handleMouseClick();
-    }
+			purpleguy.handleMouseClick();
+				purpleguy2.handleMouseClick();
+				greenguy.handleMouseClick();
+				greenguy2.handleMouseClick();
+		}
 
 
 };
@@ -276,7 +315,7 @@ var beam2=0;
 function draw() {
 
     if (currentScene === 1) {
-        drawScene1();
+        drawScene2();
 
     }
 
