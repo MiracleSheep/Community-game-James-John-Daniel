@@ -9,6 +9,7 @@ var mrx = 0;
 var mry = 0;
 var mrx2 = 0;
 var mry2 = 0;
+var e = 0;
 
 function centerCanvas() {
     var x = (windowWidth - width) / 2;
@@ -261,7 +262,9 @@ var drawScene2 = function(event) {
 
 };
 
+var beam1=0;
 
+var beam2=0;
 
 
 function draw() {
@@ -298,17 +301,18 @@ function draw() {
         }
 
         if (keyIsPressed && keyCode === 101) {
-
-            Lexus.EnergyBeam2();
-
+            Lexus.startBeam();
         }
 
+				Lexus.continueBeam();
+
+			
         if (keyIsPressed && keyCode === 112) {
-
-            Bandit.EnergyBeam();
-
-
+            Bandit.startBeam();
         }
+        
+				Bandit.continueBeam();
+
     }
 
 
