@@ -1,7 +1,54 @@
+
+var currentScene = 1;
+
+var img;
+var img1;
+var img2;
+var img3;
+var imgp2w;
+var imgp1w;
+var imgc1
+var imgc2;
+var cnv;
+var mrx = 0;
+var mry = 0;
+var mrx2 = 0;
+var mry2 = 0;
+
+function centerCanvas() {
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 0;
+    cnv.position(x, y);
+}
+
+
+
+function windowResized() {
+    centerCanvas();
+}
+
+
+function setup() {
+
+    cnv = createCanvas(500, 500);
+    centerCanvas();
+    background(0);
+    img = loadImage("pictures/LogoMakr_0cfjro.png");
+    img1 = loadImage("pictures/grassland01a_soruve.png");
+    img2 = loadImage("pictures/japan_street01.png");
+    img3 = loadImage("pictures/download.png");
+		imgp1w = loadImage("pictures/ShrekP1.jpg");
+		imgp2w = loadImage("pictures/ShrekP2.jpg");
+		imgc1 = loadImage("pictures/banditcharacter.PNG");
+		imgc2 = loadImage("pictures/monke2.PNG");
+}
+
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 var Background = 0;
 var PlayerNum = 0;
 var Difficulty = 0;
+var C1 = 0;
+var C2 = 0;
 
 /*
 MAKE KEY PRESSED AT SAMETIME STUFF HERE. URL TO WEB HERE: https://stackoverflow.com/questions/5203407/how-to-detect-if-multiple-keys-are-pressed-at-once-using-javascript
@@ -123,7 +170,9 @@ var character = function(config) {
 };
 
 character.prototype.draw = function() {
-    fill(this.color);
+ 
+	
+	fill(this.color);
     rect(this.x, this.y, this.width, this.height);
     fill(56, 188, 72);
     rect(this.hx, this.hy, this.hp, 20);
@@ -192,7 +241,7 @@ var Lexus = new character({name:'Lexus',
     y: 190,
     width: 50,
     height: 150,
-    //put img here when done
+		img:imgc2,								 
     hp: 150,
     hy: 30,
     hx: 10,
@@ -208,7 +257,7 @@ var Bandit = new character({name:'Bandit',
     y: 190,
     width: 50,
     height: 150,
-    //PUT IMG HERE WHEN DONE
+		img: imgc1,
     hp: 150,
     hy: 30,
     hx: 340,
