@@ -56,9 +56,57 @@ optionButton.prototype.handleMouseClick = function() {
 };
 
 
+var EnergyBeam = function(config) {
+    this.name = config.name;
+	  this.R = config.R;
+		this.G = config.G;
+		this.B = config.B;
+    this.X = config.X;
+	  this.startX = config.X;
+	  this.Y = config.Y;
+	  this.xLimit = config.xLimit;
+	  this.direction = config.direction;	
+	  //console.log("New EnergyBeam " + this.name);
+	  this.started = 0;
+	  this.opponent = config.opponent;
+};
 
+EnergyBeam.prototype.startBeam = function() {
+	this.started = 1;
+	// console.log("startBeam " + this.name);
+}
+
+EnergyBeam.prototype.draw = function() {
+	  if( this.started > 0 ) {
+			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
+			fill(this.R,this.G,this.B);
+			ellipse(this.X, this.Y, 20, 20);
+			this.X += this.direction;
+		}
+    // How to end it.
+	  if( this.direction > 0 && this.X > this.xLimit ) {
+ 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+			//this.started=0;
+      //this.X=this.startX;
+			this.reset();
+		}
+    // How to end it.
+	  if( this.direction < 0 && this.X < this.xLimit ) {
+ 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+			// this.started=0;
+      // this.X=this.startX;
+			this.reset();
+		}
+
+}
+
+EnergyBeam.prototype.reset = function() {
+			this.started=0;
+      this.X=this.startX;
+}
 //And here we will put the characters and prototypes
 var character = function(config) {
+	  this.name = config.name;
     this.color = config.color || 'blue';
     this.x = config.x; //x pos of character
     this.y = config.y; // y pos of character
@@ -70,7 +118,8 @@ var character = function(config) {
     this.hx = config.hx;
     this.AD = config.AD;
     this.AX = config.AX;
-    this.AY = config.AY;
+    this.AY = config.AY;  
+    this.energyBeam = config.energyBeam;
 };
 
 character.prototype.draw = function() {
@@ -79,15 +128,13 @@ character.prototype.draw = function() {
     fill(56, 188, 72);
     rect(this.hx, this.hy, this.hp, 20);
     //hitbox below  
-    if (Bandit.AX >= Lexus.x && Bandit.AX <= (Lexus.x + 50) && Bandit.AY >= Lexus.y && Bandit.AY <= (Lexus.y + 100)) {
-        Lexus.hp -= Bandit.AD;
-        console.log("OWIE!!!2");
-    }
-    if (Lexus.AX >= Bandit.x && Lexus.AX <= (Bandit.x + 50) && Lexus.AY >= Bandit.y && Lexus.AY <= (Bandit.y + 100)) {
-        Bandit.hp -= Lexus.AD;
-        console.log("OWIE!!!");
-    }
+  
 
+		if (Lexus.hp <= 0 || Bandit.hp  <= 0  ) {
+			currentScene = 5;	
+			drawScene5();
+		}	
+	
 };
 
 
@@ -99,6 +146,7 @@ character.prototype.hop = function() {
 
 };
 
+
 character.prototype.fall = function() {
 
     if (this.y <= (500 - this.height)) {
@@ -108,23 +156,37 @@ character.prototype.fall = function() {
 
 };
 
-
-character.prototype.EnergyBeam = function() {
-    fill(252, 7, 48);
-    ellipse(Bandit.AX, Bandit.AY, 20, 20);
-    Bandit.AX -= 10;
-    console.log("ENERYBEAM!")
+character.prototype.setOpponent = function(theOpponent) {
+  this.opponent = theOpponent;
 };
 
-character.prototype.EnergyBeam2 = function() {
-    fill(10, 201, 195);
-    ellipse(Lexus.AX, Lexus.AY, 20, 20);
-    Lexus.AX += 10;
 
-    console.log("ENERYBEAM2!")
+character.prototype.startBeam = function() {
+	this.energyBeam.startBeam();
 };
 
-var Lexus = new character({
+character.prototype.continueBeam = function() {
+	// console.log("continueBeam " + this.energyBeam);
+	// When should this continue/stop
+	this.energyBeam.draw();
+
+	if( this.energyBeam.started > 0 ) {
+    // console.log(this.energyBeam + " X,Y " + this.energyBeam.X + "," + this.energyBeam.Y  + " Trying to Score on [ x,y ]  [" + this.opponent.x, "," + this.opponent.y + "]");
+	  if( this.energyBeam.X >=  this.opponent.x && this.energyBeam.X <= (this.opponent.x + 50) ) 
+			if (  this.energyBeam.Y >= this.opponent.y &&  this.energyBeam.Y <= (this.opponent.y + 100) ) {
+            this.opponent.hp -= this.AD;
+						console.log(this.energyBeam.name + " Score on " + this.opponent.name + " hp: " + this.opponent.hp)
+				    // Scoring is done, end the beam
+				    this.energyBeam.reset();
+			}
+	}
+	
+};
+
+
+//And here we will put the characters and prototypes
+
+var Lexus = new character({name:'Lexus',
     color: 'red',
     x: 50,
     y: 190,
@@ -136,10 +198,12 @@ var Lexus = new character({
     hx: 10,
     AY: 400,
     AX: 120,
-    AD: 5
+    AD: 5,
+    energyBeam: new EnergyBeam({name: 'lexusBeam',
+    R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
 })
 
-var Bandit = new character({
+var Bandit = new character({name:'Bandit',
     x: 400,
     y: 190,
     width: 50,
@@ -150,7 +214,13 @@ var Bandit = new character({
     hx: 340,
     AY: 400,
     AX: 385,
-    AD: 5
+    AD: 5,
+	  energyBeam: new EnergyBeam({name: 'banditBeam',
+    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
 
 })
+
+
+Lexus.setOpponent(Bandit);
+Bandit.setOpponent(Lexus);
 
