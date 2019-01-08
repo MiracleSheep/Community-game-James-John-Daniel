@@ -4,12 +4,15 @@ var img;
 var img1;
 var img2;
 var img3;
+var imgp2w;
+var imgp1w;
+var imgc1
+var imgc2;
 var cnv;
 var mrx = 0;
 var mry = 0;
 var mrx2 = 0;
 var mry2 = 0;
-var e = 0;
 
 function centerCanvas() {
     var x = (windowWidth - width) / 2;
@@ -33,10 +36,13 @@ function setup() {
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/download.png");
-
+		imgp1w = loadImage("pictures/ShrekP1.jpg");
+		imgp2w = loadImage("pictures/ShrekP2.jpg");
+		imgc1 = loadImage("pictures/banditcharacter.PNG");
+		imgc2 = loadImage("pictures/monke2.PNG");
 }
 var beam = function() {
-    rect(470, mry, 30, 100);
+    image(imgc2,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -49,7 +55,7 @@ var beam = function() {
 
     }
     fill(0);
-    rect(0, mry2, 30, 100);
+    image(imgc1,0, mry2, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
