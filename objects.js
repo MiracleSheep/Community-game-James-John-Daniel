@@ -39,7 +39,7 @@ function setup() {
     img3 = loadImage("pictures/download.png");
 		imgp1w = loadImage("pictures/ShrekP1.jpg");
 		imgp2w = loadImage("pictures/ShrekP2.jpg");
-		imgc1 = loadImage("pictures/Bandit1.png");
+		imgc1 = loadImage("pictures/Player1.png");
 		imgc2 = loadImage("pictures/Player2.png");
 }
 
