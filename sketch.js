@@ -338,8 +338,8 @@ function draw() {
             Lexus.fall();
         }
 
-        // Up: o
-        if (keyIsPressed && keyCode === 111) {
+        // Up: ARROW_KEY
+        if (keyIsPressed && keyCode === 38) {
             Bandit.hop();
         } else {
             Bandit.fall();
