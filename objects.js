@@ -39,8 +39,8 @@ function setup() {
     img3 = loadImage("pictures/download.png");
 		imgp1w = loadImage("pictures/ShrekP1.jpg");
 		imgp2w = loadImage("pictures/ShrekP2.jpg");
-		imgc1 = loadImage("pictures/banditcharacter.PNG");
-		imgc2 = loadImage("pictures/monke2.PNG");
+		imgc1 = loadImage("pictures/Bandit1.png");
+		imgc2 = loadImage("pictures/Player2.png");
 }
 
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
