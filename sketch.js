@@ -52,7 +52,7 @@ var drawScene1 = function() {
 
 var drawScene3 = function() {
     currentScene = 3;
-    background(255);
+    background(0,0,0);
 
     if (Background === 1) {
         image(img2, 0, 0, 800, 500);
