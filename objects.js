@@ -156,6 +156,8 @@ EnergyBeam.prototype.reset = function() {
       this.X=this.startX;
 }
 
+
+
 //And here we will put the characters and prototypes
 var character = function(config) {
 	  this.name = config.name;
@@ -199,6 +201,21 @@ character.prototype.draw = function() {
 	
 };
 
+character.prototype.forward = function(){
+
+    if (this.x >= this.w) {
+        this.x -= 7;
+    }
+  
+}
+
+character.prototype.Backward = function(){
+
+  
+    if (this.x >= this.w) {
+        this.x -= 7;
+    }
+}
 
 character.prototype.hop = function() {
 
