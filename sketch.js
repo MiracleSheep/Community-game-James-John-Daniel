@@ -355,6 +355,21 @@ function draw() {
             Bandit.fall();
         }
 
+      	   if (keyIsPressed && keyCode === 59){
+            Bandit.forward();
+           }
+         if (keyIsPressed && keyCode === 107){
+            Bandit.Backward();
+        }
+
+      	if (keyIsPressed && keyCode === 115){
+            Lexus.Backward();
+        }
+      if (keyIsPressed && keyCode === 100){
+            Lexus.forward();
+        }
+
+      
         if (keyIsPressed && keyCode === 101) {
             Lexus.startBeam();
         }
@@ -387,5 +402,4 @@ mouseClicked = function() {
         drawScene2("click");
     }
 };
-
 
