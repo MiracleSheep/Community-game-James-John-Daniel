@@ -16,7 +16,8 @@ var mrx2 = 0;
 var mry2 = 0;
 var Background = 0;
 var PlayerNum = 0;
-var Difficulty = 0;
+var AD = 0;
+var D = 0;
 
 
 function centerCanvas() {
@@ -166,7 +167,6 @@ var character = function(config) {
     this.hp = config.hp;
     this.hy = config.hy;
     this.hx = config.hx;
-    this.AD = config.AD;
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
@@ -241,7 +241,7 @@ character.prototype.continueBeam = function() {
     // console.log(this.energyBeam + " X,Y " + this.energyBeam.X + "," + this.energyBeam.Y  + " Trying to Score on [ x,y ]  [" + this.opponent.x, "," + this.opponent.y + "]");
 	  if( this.energyBeam.X >=  this.opponent.x && this.energyBeam.X <= (this.opponent.x + 50) ) 
 			if (  this.energyBeam.Y >= this.opponent.y &&  this.energyBeam.Y <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= this.AD;
+            this.opponent.hp -= AD;
 						console.log(this.energyBeam.name + " Score on " + this.opponent.name + " hp: " + this.opponent.hp)
 				    // Scoring is done, end the beam
 				    this.energyBeam.reset();
@@ -265,7 +265,6 @@ var Lexus = new character({name:'Lexus',
     hx: 10,
     AY: 400,
     AX: 120,
-    AD: 20,
     energyBeam: new EnergyBeam({name: 'lexusBeam',
     R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
 
@@ -282,9 +281,8 @@ var Bandit = new character({name:'Bandit',
     hx: 340,
     AY: 400,
     AX: 385,
-    AD: 20,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
-    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
+    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: 5 })	  
 
 })
 
