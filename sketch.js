@@ -355,7 +355,7 @@ function draw() {
             Bandit.fall();
         }
 
-      	   if (keyIsPressed && keyCode === 59){
+      	   if (keyIsPressed && keyCode === 108){
             Bandit.forward();
            }
          if (keyIsPressed && keyCode === 107){
