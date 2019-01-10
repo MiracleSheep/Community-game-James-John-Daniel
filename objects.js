@@ -299,7 +299,7 @@ var Bandit = new character({name:'Bandit',
     AY: 400,
     AX: 385,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
-    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: 5 })	  
+    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
 
 })
 
