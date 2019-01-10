@@ -52,7 +52,7 @@ var drawScene1 = function() {
 
 var drawScene3 = function() {
     currentScene = 3;
-    background(0,0,0);
+    background(255);
 
     if (Background === 1) {
         image(img2, 0, 0, 800, 500);
@@ -76,6 +76,15 @@ var drawScene4 = function() {
 var drawScene5 = function() {
     currentScene = 5;
     background(150, 150, 175);
+  image(imgp2w ,0, 0, 500, 500);
+  	
+};
+
+var drawScene6 = function() {
+    currentScene = 6;
+    background(150, 150, 175);
+  image(imgp1w, 0, 0, 500, 500);
+  	
 };
 
 var drawScene2 = function(event) {
@@ -162,7 +171,7 @@ var drawScene2 = function(event) {
             Difficulty = 3;
             console.log("DEATH has been clicked" + Difficulty);
         }
-    })
+    })            
 
 
 		
@@ -176,8 +185,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-			C1 = 2;
-			console.log(C1);
+			  Lexus.setImg(imgc2);
 			
 		}
     })
@@ -193,8 +201,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-			C1 = 1;
-			console.log(C1);
+				Lexus.setImg(imgc1);
 		}
     })
 		
@@ -210,8 +217,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-			C2 = 2;
-			console.log(C2);
+				Bandit.setImg(imgc2);
 		}
     })
 		
@@ -226,8 +232,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-			C2 = 1;
-			console.log(C2);
+				Bandit.setImg(imgc1);
 		}
     })
 		
@@ -315,7 +320,7 @@ var beam2=0;
 function draw() {
 
     if (currentScene === 1) {
-        drawScene2();
+        drawScene3();
 
     }
 
@@ -339,7 +344,7 @@ function draw() {
         }
 
         // Up: ARROW_KEY
-        if (keyIsPressed && keyCode === 38) {
+        if (keyIsPressed && keyCode === 111){
             Bandit.hop();
         } else {
             Bandit.fall();
@@ -377,3 +382,5 @@ mouseClicked = function() {
         drawScene2("click");
     }
 };
+
+
