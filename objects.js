@@ -7,13 +7,17 @@ var img2;
 var img3;
 var imgp2w;
 var imgp1w;
-var imgc1
+var imgc1;
 var imgc2;
 var cnv;
 var mrx = 0;
 var mry = 0;
 var mrx2 = 0;
 var mry2 = 0;
+var Background = 0;
+var PlayerNum = 0;
+var Difficulty = 0;
+
 
 function centerCanvas() {
     var x = (windowWidth - width) / 2;
@@ -41,14 +45,13 @@ function setup() {
 		imgp2w = loadImage("pictures/ShrekP2.jpg");
 		imgc1 = loadImage("pictures/Player1.png");
 		imgc2 = loadImage("pictures/Player2.png");
+	  // Setting intial images for Characters
+	  Lexus.setImg(imgc1);
+	  Bandit.setImg(imgc2);
 }
 
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
-var Background = 0;
-var PlayerNum = 0;
-var Difficulty = 0;
-var C1 = 0;
-var C2 = 0;
+
 
 /*
 MAKE KEY PRESSED AT SAMETIME STUFF HERE. URL TO WEB HERE: https://stackoverflow.com/questions/5203407/how-to-detect-if-multiple-keys-are-pressed-at-once-using-javascript
@@ -151,15 +154,15 @@ EnergyBeam.prototype.reset = function() {
 			this.started=0;
       this.X=this.startX;
 }
+
 //And here we will put the characters and prototypes
 var character = function(config) {
 	  this.name = config.name;
     this.color = config.color || 'blue';
     this.x = config.x; //x pos of character
     this.y = config.y; // y pos of character
-    this.width = config.width; // width of character
-    this.height = config.height; //height of character
-    this.img = config.img; //put img of character that user selects
+    this.w = config.w; // width of character
+    this.h = config.h; //height of character
     this.hp = config.hp;
     this.hy = config.hy;
     this.hx = config.hx;
@@ -172,16 +175,26 @@ var character = function(config) {
 character.prototype.draw = function() {
  
 	
-	fill(this.color);
-    rect(this.x, this.y, this.width, this.height);
+	  fill(this.color);
+    image(this.img, this.x, this.y, this.w, this.h);
+    //image(imgc1, this.x, this.y, this.w, this.h);
+	
+	
     fill(56, 188, 72);
     rect(this.hx, this.hy, this.hp, 20);
     //hitbox below  
-  
 
-		if (Lexus.hp <= 0 || Bandit.hp  <= 0  ) {
+		console.log("w: " + this.w + " image: " + this.img + " x " + this.x + " y" + this.y);
+
+
+		if (Lexus.hp <= 0) {
 			currentScene = 5;	
 			drawScene5();
+		}	
+  
+  if (Bandit.hp  <= 0  ) {
+			currentScene = 6;	
+			drawScene6();
 		}	
 	
 };
@@ -189,7 +202,7 @@ character.prototype.draw = function() {
 
 character.prototype.hop = function() {
 
-    if (this.y >= this.height) {
+    if (this.y >= this.h) {
         this.y -= 7;
     }
 
@@ -198,7 +211,7 @@ character.prototype.hop = function() {
 
 character.prototype.fall = function() {
 
-    if (this.y <= (500 - this.height)) {
+    if (this.y <= (500 - this.h)) {
         this.y += 5;
     }
 
@@ -207,6 +220,11 @@ character.prototype.fall = function() {
 
 character.prototype.setOpponent = function(theOpponent) {
   this.opponent = theOpponent;
+};
+
+character.prototype.setImg = function(anImage) {
+	console.log(this.name + " using image " + anImage);
+  this.img = anImage;
 };
 
 
@@ -239,31 +257,32 @@ var Lexus = new character({name:'Lexus',
     color: 'red',
     x: 50,
     y: 190,
-    width: 50,
-    height: 150,
-		img:imgc2,								 
+    w: 50,
+    h: 150,
+		img: imgc1,								 
     hp: 150,
     hy: 30,
     hx: 10,
     AY: 400,
     AX: 120,
-    AD: 5,
+    AD: 20,
     energyBeam: new EnergyBeam({name: 'lexusBeam',
     R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
+
 })
 
 var Bandit = new character({name:'Bandit',
     x: 400,
     y: 190,
-    width: 50,
-    height: 150,
-		img: imgc1,
+    w: 50,
+    h: 150,
+		img: imgc2,
     hp: 150,
     hy: 30,
     hx: 340,
     AY: 400,
     AX: 385,
-    AD: 5,
+    AD: 20,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
     R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
 
