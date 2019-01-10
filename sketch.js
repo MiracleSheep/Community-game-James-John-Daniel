@@ -136,6 +136,8 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 1;
             console.log("NORMAL has been clicked" + Difficulty);
+			AD = 20;
+			D = 5;
         }
 
     });
@@ -150,8 +152,8 @@ var drawScene2 = function(event) {
         color: color(211, 229, 13),
         label: "Overkill",
         onClick: function() {
-            Difficulty = 2;
-            console.log("OVERKILL has been clicked" + Difficulty);
+          AD = 50;
+			D = 15;
         }
 
 
@@ -169,7 +171,10 @@ var drawScene2 = function(event) {
         label: "Death Sentence",
         onClick: function() {
             Difficulty = 3;
-            console.log("DEATH has been clicked" + Difficulty);
+      	AD = 150;    
+			D = 25;
+			console.log(D);
+			
         }
     })            
 
