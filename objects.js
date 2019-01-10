@@ -204,7 +204,7 @@ character.prototype.draw = function() {
 character.prototype.forward = function(){
 
     if (this.x >= this.w) {
-        this.x -= 7;
+        this.x += 7;
     }
   
 }
