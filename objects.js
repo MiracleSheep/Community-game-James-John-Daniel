@@ -112,9 +112,9 @@ var EnergyBeam = function(config) {
 	  this.R = config.R;
 		this.G = config.G;
 		this.B = config.B;
-    this.X = config.X;
+    this.X = character.x += 60;
 	  this.startX = config.X;
-	  this.Y = config.Y;
+	  this.Y = character.y -= 20;
 	  this.xLimit = config.xLimit;
 	  this.direction = config.direction;	
 	  //console.log("New EnergyBeam " + this.name);
