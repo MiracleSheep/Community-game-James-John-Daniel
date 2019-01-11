@@ -124,7 +124,7 @@ var EnergyBeam = function(config) {
 };
 
 EnergyBeam.prototype.startBeam = function(player) {
-	this.X = player.x;
+	this.X = player.x + 30;
 	this.Y = player.y + 30;
 	this.started = 1;
 	// console.log("startBeam " + this.name);
