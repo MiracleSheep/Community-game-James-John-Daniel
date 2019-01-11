@@ -42,8 +42,9 @@ var beam = function() {
 
 var drawScene1 = function() {
     currentScene = 1;
-    background(255);
+    background(0);
     image(img, 100, 150, 300, 120);
+image(sword, 200, 150, 300, 120);
     fill(0);
     text("Press Enter to Start!", 200, 300);
     text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
