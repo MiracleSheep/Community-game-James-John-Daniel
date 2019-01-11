@@ -38,15 +38,15 @@ function setup() {
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
-   	img = loadImage("pictures/LogoMakr_0cfjro.png");
-    	img1 = loadImage("pictures/grassland01a_soruve.png");
-    	img2 = loadImage("pictures/japan_street01.png");
-    	img3 = loadImage("pictures/download.png");
-	imgp1w = loadImage("pictures/ShrekP1.jpg");
-	imgp2w = loadImage("pictures/ShrekP2.jpg");
-	imgc1 = loadImage("pictures/Player1.png");
-	imgc2 = loadImage("pictures/Player2.png");
-	sword = loadImage("pictures/AC4_Altair's_Swords.png");
+    img = loadImage("pictures/LogoMakr_0cfjro.png");
+    img1 = loadImage("pictures/grassland01a_soruve.png");
+    img2 = loadImage("pictures/japan_street01.png");
+    img3 = loadImage("pictures/download.png");
+		imgp1w = loadImage("pictures/ShrekP1.jpg");
+		imgp2w = loadImage("pictures/ShrekP2.jpg");
+		imgc1 = loadImage("pictures/Player1.png");
+		imgc2 = loadImage("pictures/Player2.png");
+		sword = loadImage("pictures/AC4_Altair's_Swords.png");
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc1);
 	  Bandit.setImg(imgc2);
@@ -276,6 +276,22 @@ character.prototype.continueBeam = function() {
 	
 };
 
+
+character.prototype.drawSword = function(player){
+	this.SX = this.x + 25;
+	this.SY = this.y + 30;
+	image(sword,this.SX,this.SY,50,20);
+	
+ if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) {
+			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
+            this.opponent.hp -= AD;
+						console.log("OWIEE")
+
+		
+			
+			}
+	}
+};
 
 //And here we will put the characters and prototypes
 
