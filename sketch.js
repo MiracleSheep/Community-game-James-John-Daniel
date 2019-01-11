@@ -42,9 +42,8 @@ var beam = function() {
 
 var drawScene1 = function() {
     currentScene = 1;
-    background(0);
+    background(255);
     image(img, 100, 150, 300, 120);
-image(sword, 200, 150, 300, 120);
     fill(0);
     text("Press Enter to Start!", 200, 300);
     text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
@@ -343,42 +342,53 @@ function draw() {
         }
 
         // Up: w
-        if (keyIsPressed && keyCode === 119) {
+        if (keyIsPressed && keyCode === 116) {
             Lexus.hop();
         } else {
             Lexus.fall();
         }
 
         // Up: ARROW_KEY
-        if (keyIsPressed && keyCode === 111){
+        if (keyIsPressed && keyCode === 108){
             Bandit.hop();
         } else {
             Bandit.fall();
         }
 
-      	   if (keyIsPressed && keyCode === 108){
+      	   if (keyIsPressed && keyCode === 107){
             Bandit.forward();
            }
-         if (keyIsPressed && keyCode === 107){
+         if (keyIsPressed && keyCode === 106){
             Bandit.Backward();
         }
 
-      	if (keyIsPressed && keyCode === 115){
+      	if (keyIsPressed && keyCode === 101){
             Lexus.Backward();
         }
-      if (keyIsPressed && keyCode === 100){
+      if (keyIsPressed && keyCode === 114){
             Lexus.forward();
         }
 
       
-        if (keyIsPressed && keyCode === 101) {
+        if (keyIsPressed && keyCode === 113) {
             Lexus.startBeam();
         }
 
+				  
+			
 				Lexus.continueBeam();
+			
+			
+			 if (keyIsPressed && keyCode === 119) {
+            Lexus.drawSword();
+        }
+			
+				 if (keyIsPressed && keyCode === 104) {
+            Bandit.drawSword();
+        }
 
 			
-        if (keyIsPressed && keyCode === 112) {
+        if (keyIsPressed && keyCode === 103) {
             Bandit.startBeam();
         }
         
