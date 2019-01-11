@@ -1,6 +1,5 @@
 
 var currentScene = 1;
-
 var img;
 var img1;
 var img2;
@@ -112,9 +111,11 @@ var EnergyBeam = function(config) {
 	  this.R = config.R;
 		this.G = config.G;
 		this.B = config.B;
-    this.X = character.x += 60;
+    this.X = config.X
+		this.Y = config.Y;
+
 	  this.startX = config.X;
-	  this.Y = character.y -= 20;
+	  this.startY = config.Y;
 	  this.xLimit = config.xLimit;
 	  this.direction = config.direction;	
 	  //console.log("New EnergyBeam " + this.name);
@@ -122,7 +123,9 @@ var EnergyBeam = function(config) {
 	  this.opponent = config.opponent;
 };
 
-EnergyBeam.prototype.startBeam = function() {
+EnergyBeam.prototype.startBeam = function(player) {
+	this.X = player.x;
+	this.Y = player.y;
 	this.started = 1;
 	// console.log("startBeam " + this.name);
 }
@@ -154,6 +157,7 @@ EnergyBeam.prototype.draw = function() {
 EnergyBeam.prototype.reset = function() {
 			this.started=0;
       this.X=this.startX;
+      this.Y=this.startY;
 }
 
 
@@ -178,7 +182,10 @@ character.prototype.draw = function() {
  
 	
 	  fill(this.color);
-    image(this.img, this.x, this.y, this.w, this.h);
+	  if ( typeof this.img === undefined ) 
+			rect(this.x, this.y, this.w, this.h);
+		else
+      image(this.img, this.x, this.y, this.w, this.h);
     //image(imgc1, this.x, this.y, this.w, this.h);
 	
 	
@@ -246,7 +253,7 @@ character.prototype.setImg = function(anImage) {
 
 
 character.prototype.startBeam = function() {
-	this.energyBeam.startBeam();
+	this.energyBeam.startBeam(this);
 };
 
 character.prototype.continueBeam = function() {
