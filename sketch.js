@@ -138,6 +138,7 @@ var drawScene2 = function(event) {
             console.log("NORMAL has been clicked" + Difficulty);
 			AD = 20;
 			D = 5;
+		SD = 10;
         }
 
     });
@@ -154,6 +155,7 @@ var drawScene2 = function(event) {
         onClick: function() {
           AD = 50;
 			D = 15;
+		SD = 20;
         }
 
 
@@ -172,6 +174,7 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 3;
       	AD = 150;    
+		SD = 150;
 			D = 25;
 			console.log(D);
 			
