@@ -282,9 +282,9 @@ var drawScene2 = function(event) {
         textSize(18);
         fill(250, 0, 0);
         text("Game Options", 250, 50);
-        text("Character", 50, 90)
-        text("Arena", 50, 200);
-        text("Difficulty", 50, 300);
+        text("Select Character", 50, 90)
+        text("Select Arena", 50, 200);
+        text("Select Difficulty", 50, 300);
         textSize(15);
         text("Player 1", 170, 90);
         text("Player 2", 330, 90);
