@@ -139,7 +139,7 @@ var drawScene2 = function(event) {
 			AD = 20;
 			playeronespeed = 5;
 		playertwospeed = 5;
-		SD = 10;
+		SD = 5;
         }
 
     });
@@ -157,7 +157,7 @@ var drawScene2 = function(event) {
           AD = 50;
 			playeronespeed = 15;
 		playertwospeed = 15;
-		SD = 20;
+		SD = 10;
         }
 
 
