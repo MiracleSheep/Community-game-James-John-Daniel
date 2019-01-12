@@ -127,7 +127,7 @@ var drawScene2 = function(event) {
     var Difficultye = new optionButton({
 
 
-        x: 100,
+        x: 120,
         y: 360,
         width: 70,
         height: 50,
@@ -282,9 +282,9 @@ var drawScene2 = function(event) {
         textSize(18);
         fill(250, 0, 0);
         text("Game Options", 250, 50);
-        text("Select Character", 50, 90)
-        text("Select Arena", 50, 200);
-        text("Select Difficulty", 50, 300);
+        text("Select Character", 60, 90)
+        text("Select Arena", 70, 200);
+        text("Select Difficulty", 70, 300);
         textSize(15);
         text("Player 1", 170, 90);
         text("Player 2", 330, 90);
