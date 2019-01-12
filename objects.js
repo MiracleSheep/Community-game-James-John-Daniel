@@ -17,6 +17,7 @@ var mry2 = 0;
 var Background = 0;
 var PlayerNum = 0;
 var AD = 0;
+var SD = 0;
 var D = 0;
 
 
