@@ -137,8 +137,8 @@ var drawScene2 = function(event) {
             Difficulty = 1;
             console.log("NORMAL has been clicked" + Difficulty);
 			AD = 20;
-			playeronespeed = 5;
-		playertwospeed = 5;
+			playeronespeed = 3;
+		playertwospeed = 3;
 		SD = 5;
         }
 
@@ -155,8 +155,8 @@ var drawScene2 = function(event) {
         label: "Overkill",
         onClick: function() {
           AD = 50;
-			playeronespeed = 15;
-		playertwospeed = 15;
+			playeronespeed = 10;
+		playertwospeed = 10;
 		SD = 10;
         }
 
@@ -177,8 +177,8 @@ var drawScene2 = function(event) {
             Difficulty = 3;
       	AD = 150;    
 		SD = 150;
-			playeronespeed = 25;
-		playertwospeed = 25;
+			playeronespeed = 15;
+		playertwospeed = 15;
 			console.log(D);
 			
         }
