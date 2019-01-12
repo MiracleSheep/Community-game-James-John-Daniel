@@ -138,7 +138,7 @@ var drawScene2 = function(event) {
             console.log("NORMAL has been clicked" + Difficulty);
 			AD = 20;
 			playeronespeed = 3;
-		playertwospeed = 3;
+		playertwospeed = -3;
 		SD = 5;
         }
 
@@ -156,7 +156,7 @@ var drawScene2 = function(event) {
         onClick: function() {
           AD = 50;
 			playeronespeed = 10;
-		playertwospeed = 10;
+		playertwospeed = -10;
 		SD = 10;
         }
 
@@ -178,8 +178,8 @@ var drawScene2 = function(event) {
       	AD = 150;    
 		SD = 150;
 			playeronespeed = 15;
-		playertwospeed = 15;
-			console.log(D);
+		playertwospeed = -15;
+		
 			
         }
     })            
