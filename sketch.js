@@ -285,9 +285,6 @@ var drawScene2 = function(event) {
         text("Character", 50, 90)
         text("Arena", 50, 200);
         text("Difficulty", 50, 300);
-        text("Or", 260, 250);
-        text("Or", 165, 360);
-        text("Or", 300, 360);
         textSize(15);
         text("Player 1", 170, 90);
         text("Player 2", 330, 90);
