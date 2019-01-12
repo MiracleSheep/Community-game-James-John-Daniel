@@ -285,7 +285,7 @@ character.prototype.drawSword = function(player){
 	
  if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= AD;
+            this.opponent.hp -= SD;
 						console.log("OWIEE")
 
 		
