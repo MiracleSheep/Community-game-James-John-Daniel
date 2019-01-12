@@ -304,7 +304,7 @@ character.prototype.continueBeam = function() {
 character.prototype.drawSword = function(player){
 	this.SX = this.x + 25;
 	this.SY = this.y + 30;
-	image(sword,this.SX,this.SY,50,20);
+	image(sword,this.SX,this.SY,100,50);
 	
  if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
