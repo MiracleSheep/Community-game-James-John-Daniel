@@ -325,8 +325,8 @@ var Bandit = new character({name:'Bandit',
     hp: 150,
     hy: 30,
     hx: 400,
-    SW: 400,
-    SH: 385,
+    SW: -100,
+    SH: -50,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
     R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
 
