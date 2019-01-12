@@ -18,7 +18,8 @@ var Background = 0;
 var PlayerNum = 0;
 var AD = 0;
 var SD = 0;
-var D = 0;
+var playeronespeed = 0;
+var playertwospeed = 0;
 
 
 function centerCanvas() {
