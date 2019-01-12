@@ -139,23 +139,45 @@ EnergyBeam.prototype.draw = function() {
 			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
 			fill(this.R,this.G,this.B);
 			ellipse(this.X, this.Y, 20, 20);
-			this.X += this.direction;
+			this.X += playeronespeed;
 		}
     // How to end it.
-	  if( this.direction > 0 && this.X > this.xLimit ) {
+	  if( playeronespeed > 0 && this.X > this.xLimit ) {
  			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
 			//this.started=0;
       //this.X=this.startX;
 			this.reset();
 		}
     // How to end it.
-	  if( this.direction < 0 && this.X < this.xLimit ) {
+	  if( playeronespeed < 0 && this.X < this.xLimit ) {
  			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
 			// this.started=0;
       // this.X=this.startX;
 			this.reset();
 		}
 
+	//player two
+	
+			  if( this.started > 0 ) {
+			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
+			fill(this.R,this.G,this.B);
+			ellipse(this.X, this.Y, 20, 20);
+			this.X += playertwospeed;
+		}
+    // How to end it.
+	  if( playertwospeed> 0 && this.X > this.xLimit ) {
+ 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+			//this.started=0;
+      //this.X=this.startX;
+			this.reset();
+		}
+    // How to end it.
+	  if( playertwospeed < 0 && this.X < this.xLimit ) {
+ 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+			// this.started=0;
+      // this.X=this.startX;
+			this.reset();
+		}
 }
 
 EnergyBeam.prototype.reset = function() {
