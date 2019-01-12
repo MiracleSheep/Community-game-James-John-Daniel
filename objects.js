@@ -18,8 +18,6 @@ var Background = 0;
 var PlayerNum = 0;
 var AD = 0;
 var SD = 0;
-var playeronespeed = 0;
-var playertwospeed = 0;
 
 
 function centerCanvas() {
@@ -139,45 +137,24 @@ EnergyBeam.prototype.draw = function() {
 			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
 			fill(this.R,this.G,this.B);
 			ellipse(this.X, this.Y, 20, 20);
-			this.X += playeronespeed;
+			this.X += this.direction;
 		}
     // How to end it.
-	  if( playeronespeed > 0 && this.X > this.xLimit ) {
+	  if( this.direction > 0 && this.X > this.xLimit ) {
  			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
 			//this.started=0;
       //this.X=this.startX;
 			this.reset();
 		}
     // How to end it.
-	  if( playeronespeed < 0 && this.X < this.xLimit ) {
+	  if( this.direction < 0 && this.X < this.xLimit ) {
  			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
 			// this.started=0;
       // this.X=this.startX;
 			this.reset();
 		}
 
-	//player two
 	
-			  if( this.started > 0 ) {
-			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
-			fill(this.R,this.G,this.B);
-			ellipse(this.X, this.Y, 20, 20);
-			this.X += playertwospeed;
-		}
-    // How to end it.
-	  if( playertwospeed> 0 && this.X > this.xLimit ) {
- 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
-			//this.started=0;
-      //this.X=this.startX;
-			this.reset();
-		}
-    // How to end it.
-	  if( playertwospeed < 0 && this.X < this.xLimit ) {
- 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
-			// this.started=0;
-      // this.X=this.startX;
-			this.reset();
-		}
 }
 
 EnergyBeam.prototype.reset = function() {
@@ -202,6 +179,8 @@ var character = function(config) {
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
+this.SW = config.SW;
+this.SH = config.SH;
 };
 
 character.prototype.draw = function() {
@@ -304,7 +283,7 @@ character.prototype.continueBeam = function() {
 character.prototype.drawSword = function(player){
 	this.SX = this.x + 25;
 	this.SY = this.y + 30;
-	image(sword,this.SX,this.SY,100,50);
+	image(sword,this.SX,this.SY,SW,SH);
 	
  if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
@@ -329,8 +308,9 @@ var Lexus = new character({name:'Lexus',
     hp: 150,
     hy: 30,
     hx: 100,
-    AY: 400,
-    AX: 120,
+    SW: 100,
+    SH: 50,
+		
     energyBeam: new EnergyBeam({name: 'lexusBeam',
     R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
 
@@ -345,8 +325,8 @@ var Bandit = new character({name:'Bandit',
     hp: 150,
     hy: 30,
     hx: 400,
-    AY: 400,
-    AX: 385,
+    SW: 400,
+    SH: 385,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
     R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
 
