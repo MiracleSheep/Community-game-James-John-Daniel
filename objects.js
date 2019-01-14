@@ -286,6 +286,7 @@ character.prototype.drawSword = function(player){
 	image(sword,this.SX,this.SY,this.SW,this.SH);
 if (this.SX >= this.opponent.x && this.SX <= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (this.opponent.y += 150) || this.SX <= this.opponent.x && this.SX >= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (tthis.opponent.y += 150)){
 this.opponent.hp -= SD;
+	console.log("Owie that really hurted")
 	
 
 }
