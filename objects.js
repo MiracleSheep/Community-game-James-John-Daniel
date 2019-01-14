@@ -284,16 +284,8 @@ character.prototype.drawSword = function(player){
 	this.SX = this.x + 25;
 	this.SY = this.y + 30;
 	image(sword,this.SX,this.SY,this.SW,this.SH);
-	
- if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) {
-			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= SD;
-						console.log("OWIEE")
-
-		
-			
-			}
-	}
+if (this.SX >= this.x && this.SX <= (this.x += 50) && this.SY >= this.y && this.SY <= (this.y += 150) || this.SX <= this.x && this.SX >= (this.x += 50) && this.SY >= this.y && this.SY <= (this.y += 150) )	
+ 
 };
 
 //And here we will put the characters and prototypes
