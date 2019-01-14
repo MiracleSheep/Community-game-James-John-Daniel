@@ -284,7 +284,7 @@ character.prototype.drawSword = function(player){
 	this.SW = 100;
 	this.SH = 50;
 	if(this.opponent.x <= this.x){
-	this.SX = this.x -= -100;
+	this.SX = this.x - -100;
 	
 	
 	}
