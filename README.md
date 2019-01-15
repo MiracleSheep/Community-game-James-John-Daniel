@@ -41,7 +41,7 @@ Which is why we're making a fighting game!<br>
 - (Using sword) buttons: “W” for left character and “H” for the right character.
 
 # Game Screenshots
-screenshots
+
 ![start screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/start%20screan%20picture.PNG)
 
 ![option screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/option%20screen%20pic.JPG)
