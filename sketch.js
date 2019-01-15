@@ -1,45 +1,9 @@
-var currentScene = 1;
-
-var img;
-var img1;
-var img2;
-var img3;
-var cnv;
-var mrx = 0;
-var mry = 0;
-var mrx2 = 0;
-var mry2 = 0;
-
-function centerCanvas() {
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 0;
-    cnv.position(x, y);
-}
-
-
-
-function windowResized() {
-    centerCanvas();
-}
-
-
-function setup() {
-
-    cnv = createCanvas(500, 500);
-    centerCanvas();
-    background(0);
-    img = loadImage("pictures/LogoMakr_0cfjro.png");
-    img1 = loadImage("pictures/grassland01a_soruve.png");
-    img2 = loadImage("pictures/japan_street01.png");
-    img3 = loadImage("pictures/download.png");
-
-}
 var beam = function() {
-    rect(470, mry, 30, 100);
+    image(imgc2,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
-    mrx -= random(15);
+    mrx -= 10;
 
     if (mrx < -100) {
 
@@ -48,11 +12,11 @@ var beam = function() {
 
     }
     fill(0);
-    rect(0, mry2, 30, 100);
+    image(imgc1,0, mry2, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
-    mrx2 += random(15);
+    mrx2 += 10;
 
     if (mrx2 > 500) {
 
@@ -95,10 +59,12 @@ var drawScene3 = function() {
     if (Background === 2) {
         image(img1, 0, 0, 800, 500);
     }
+	
+	
 
     Lexus.draw();
     Bandit.draw();
-		
+
 };
 
 var drawScene4 = function() {
@@ -109,6 +75,15 @@ var drawScene4 = function() {
 var drawScene5 = function() {
     currentScene = 5;
     background(150, 150, 175);
+  image(imgp2w ,0, 0, 500, 500);
+  	
+};
+
+var drawScene6 = function() {
+    currentScene = 6;
+    background(150, 150, 175);
+  image(imgp1w, 0, 0, 500, 500);
+  	
 };
 
 var drawScene2 = function(event) {
@@ -151,7 +126,7 @@ var drawScene2 = function(event) {
     var Difficultye = new optionButton({
 
 
-        x: 100,
+        x: 120,
         y: 360,
         width: 70,
         height: 50,
@@ -160,6 +135,10 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 1;
             console.log("NORMAL has been clicked" + Difficulty);
+			AD = 20;
+			playeronespeed = 3;
+		playertwospeed = -3;
+		SD = 5;
         }
 
     });
@@ -170,15 +149,17 @@ var drawScene2 = function(event) {
         x: 250,
         y: 360,
         width: 70,
-    		height: 50,
+        height: 50,
         color: color(211, 229, 13),
         label: "Overkill",
         onClick: function() {
-            Difficulty = 2;
-            console.log("OVERKILL has been clicked" + Difficulty);
+          AD = 50;
+			playeronespeed = 10;
+		playertwospeed = -10;
+		SD = 10;
         }
 
-																
+
     });
 
 
@@ -193,10 +174,77 @@ var drawScene2 = function(event) {
         label: "Death Sentence",
         onClick: function() {
             Difficulty = 3;
-            console.log("DEATH has been clicked" + Difficulty);
+      	AD = 150;    
+		SD = 150;
+			playeronespeed = 15;
+		playertwospeed = -15;
+		
+			
         }
-    })
+    })            
 
+
+		
+    var purpleguy = new optionButton({
+
+
+        x: 165,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C2",
+        onClick: function() {
+			  Lexus.setImg(imgc2);
+			
+		}
+    })
+		
+		
+    var greenguy = new optionButton({
+
+
+        x: 165,
+        y: 130,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C1",
+        onClick: function() {
+				Lexus.setImg(imgc1);
+		}
+    })
+		
+		
+			
+    var purpleguy2 = new optionButton({
+
+
+        x: 330,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C2",
+        onClick: function() {
+				Bandit.setImg(imgc2);
+		}
+    })
+		
+		
+    var greenguy2 = new optionButton({
+
+
+        x: 330,
+        y: 130,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C1",
+        onClick: function() {
+				Bandit.setImg(imgc1);
+		}
+    })
 		
 		
     var Next = new optionButton({
@@ -223,29 +271,35 @@ var drawScene2 = function(event) {
         Difficultym.handleMouseClick();
         Difficultye.handleMouseClick();
         Next.handleMouseClick();
+				greenguy.handleMouseClick();
+				greenguy2.handleMouseClick();
+				purpleguy.handleMouseClick();
+				purpleguy2.handleMouseClick();
+			
     } else {
         background(0, 0, 0);
         textSize(18);
         fill(250, 0, 0);
         text("Game Options", 250, 50);
-				text("Character" ,50,90)
-        text("Arena", 50, 200);
-        text("Difficulty", 50, 300);
-        text("Or", 260, 250);
-        text("Or", 165, 360);
-        text("Or", 300, 360);
-				textSize(15);
-				text("Player 1",170,90);
-				text("Player 2",330,90);
-				stroke(255);
-				line(250,190,250,100);
-				noStroke();
+        text("Select Character", 60, 90)
+        text("Select Arena", 70, 200);
+        text("Select Difficulty", 70, 300);
+        textSize(15);
+        text("Player 1", 170, 90);
+        text("Player 2", 330, 90);
+        stroke(255);
+        line(250, 190, 250, 100);
+        noStroke();
         Difficultyh.draw();
         Difficultym.draw();
         Difficultye.draw();
         CITY.draw();
         FIELDS.draw();
         Next.draw();
+				purpleguy.draw();
+				purpleguy2.draw();
+				greenguy.draw();
+				greenguy2.draw();
     }
 
     var mouseClicked = function() {
@@ -256,12 +310,18 @@ var drawScene2 = function(event) {
         Difficultym.handleMouseClick();
         P1.handleMouseClick();
         P2.handleMouseClick();
-    }
+			purpleguy.handleMouseClick();
+				purpleguy2.handleMouseClick();
+				greenguy.handleMouseClick();
+				greenguy2.handleMouseClick();
+		}
 
 
 };
 
+var beam1=0;
 
+var beam2=0;
 
 
 function draw() {
@@ -284,37 +344,61 @@ function draw() {
         }
 
         // Up: w
-        if (keyIsPressed && keyCode === 119) {
+        if (keyIsPressed && keyCode === 116) {
             Lexus.hop();
         } else {
             Lexus.fall();
         }
 
-        // Up: o
-        if (keyIsPressed && keyCode === 111) {
+        // Up: ARROW_KEY
+        if (keyIsPressed && keyCode === 108){
             Bandit.hop();
         } else {
             Bandit.fall();
         }
-  
-				if (keyIsPressed && keyCode === 101){
+
+      	   if (keyIsPressed && keyCode === 107){
+            Bandit.forward();
+           }
+         if (keyIsPressed && keyCode === 106){
+            Bandit.Backward();
+        }
+
+      	if (keyIsPressed && keyCode === 101){
+            Lexus.Backward();
+        }
+      if (keyIsPressed && keyCode === 114){
+            Lexus.forward();
+        }
+
+      
+        if (keyIsPressed && keyCode === 113) {
+            Lexus.startBeam();
+        }
+
+				  
 			
-					Lexus.EnergyBeam2();
-				
-				}
-			
-				if (keyIsPressed && keyCode === 112){
-					
-				Bandit.EnergyBeam();
+				Lexus.continueBeam();
 			
 			
-				}
-		}
-	
-	
-				
-	
-	
+			 if (keyIsPressed && keyCode === 119) {
+            Lexus.drawSword();
+        }
+			
+				 if (keyIsPressed && keyCode === 104) {
+            Bandit.drawSword();
+        }
+
+			
+        if (keyIsPressed && keyCode === 103) {
+            Bandit.startBeam();
+        }
+        
+				Bandit.continueBeam();
+
+    }
+
+
 
 
     if (keyIsPressed && keyCode === 13) {
@@ -322,7 +406,7 @@ function draw() {
     }
 
 
-	
+
 }
 
 mouseClicked = function() {
