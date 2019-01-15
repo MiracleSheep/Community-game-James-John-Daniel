@@ -1,3 +1,4 @@
+
 var beam = function() {
     image(imgc2,470, mry, 30, 100);
     fill(35, 211, 211);
@@ -175,9 +176,9 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 3;
       	AD = 150;    
-		SD = 150;
-			playeronespeed = 15;
-		playertwospeed = -15;
+	SD = 150;
+	playeronespeed = 15;
+	playertwospeed = -15;
 		
 			
         }
@@ -195,7 +196,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-			  Lexus.setImg(imgc2);
+	Lexus.setImg(imgc2);
 			
 		}
     })
@@ -211,7 +212,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-				Lexus.setImg(imgc1);
+	Lexus.setImg(imgc1);
 		}
     })
 		
@@ -227,7 +228,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-				Bandit.setImg(imgc2);
+	Bandit.setImg(imgc2);
 		}
     })
 		
@@ -242,7 +243,7 @@ var drawScene2 = function(event) {
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-				Bandit.setImg(imgc1);
+	Bandit.setImg(imgc1);
 		}
     })
 		
@@ -415,3 +416,4 @@ mouseClicked = function() {
         drawScene2("click");
     }
 };
+
