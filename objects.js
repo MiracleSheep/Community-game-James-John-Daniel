@@ -8,6 +8,8 @@ var imgp2w;
 var imgp1w;
 var imgc1;
 var imgc2;
+var imgc3;
+var imgc4;
 var sword;
 var cnv;
 var mrx = 0;
@@ -46,6 +48,8 @@ function setup() {
 		imgp2w = loadImage("pictures/ShrekP2.jpg");
 		imgc1 = loadImage("pictures/Player1.png");
 		imgc2 = loadImage("pictures/Player2.png");
+		imgc3 = loadImage("pictures/LEXUS.png");
+		imgc4 = loadImage("pictures/Untitled-2.png")
 		sword = loadImage("pictures/AC4_Altair's_Swords.png");
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc1);
