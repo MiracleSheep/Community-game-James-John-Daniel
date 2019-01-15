@@ -1,5 +1,5 @@
 
-var currentScene = 2;
+var currentScene = 1;
 var img;
 var imgbackg;
 var img1;
