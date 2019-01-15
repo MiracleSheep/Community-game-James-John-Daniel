@@ -7,40 +7,46 @@ Which is why we're making a fighting game!<br>
 
 # Log December 11
 1. Project Progress
-- We have a option scene.
+- We have an option scene.
 - We have the start screen.
 - We have different maps for the game.
 - We have different diffculties.
+- We have different fighting buttons.
+- We have characters.
 
 
 2. Still Needs To Be Done
-- We still need to make the characters.
-- We still need to make, when a button is pressed it needs go to a specific scene for example, when you choose a specific map it goes to that map scene.
-- We need to make the option scene a bit more "cool" so, we need to put like images.
-- We need to make the fighting buttons.
+- Blocking button.
+- Large attack.
+ 
 
 3. What We Are "Thinking" About Doing
-- We are trying to figure out how to make the buttons go to the scene that they are supposed to go to.
-- We are trying to put some "cool" images to the option scene.
-- We may change the start screen
+- We may change the start screen.
+
 
 
 # Wiki 
-- The game is kinda like "Super smash bros" and "streat fighter".
+- The game is kinda like "Super smash bros" and "street fighter".
 - Its a 3rd person game.
 - Theres 2 characters, a "ninja guy" and "lexus?".
 - The characters fight until one of them has no health left on the bar.
 
-- The characters have different moves to fight and they also have dodge moves to dodge the other persons attacks.
 
 # How to play
-- At the start you will see a start screen that says press "ENTER" to start, when you press "Enter" it will change a scene to the option scene after that you it will ask you to pick the map, how many players are you playing with and the difficulty after you choose the stuff that you wanted, it's the best part you fianlly get to play the game!
-- To move player one you must use "a,w,s,d" and to move the second player (we still not sure).
-- The fighting buttons are still in progress.
+- At the start you will see a start screen that says press "ENTER" to start, when you press "Enter" it will change a scene to the option scene after that it will ask you to pick the map, character and difficulty after you choose the  map, character and difficulty, you will need to press “NEXT” to start playing the game.
+# Buttons
+- (Laser beam) buttons: for the left character it’s “Q” and for the right character it’s “G”.
+- (Moving up) buttons: for the left character it’s “t” and for the right character it’s “L”.
+- (Moving left and right) buttons: “e and r” for left and for the right character it’s “j and k”.
+- (Using sword) buttons: “W” for left character and “H” for the right character.
 
 # Game Screenshots
-screenshots
+
 ![start screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/start%20screan%20picture.PNG)
 
+![option screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/option%20screen%20pic.JPG)
 
-- Some note: Update readme
+![character 1](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/banditcharacter.PNG)
+
+![character 2](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/monke2.PNG)
+
