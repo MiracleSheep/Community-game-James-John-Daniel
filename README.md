@@ -44,6 +44,7 @@ Which is why we're making a fighting game!<br>
 screenshots
 ![start screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/start%20screan%20picture.PNG)
 
+![option screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/option%20screen%20pic.JPG)
 
 ![character 1](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/banditcharacter.PNG)
 
