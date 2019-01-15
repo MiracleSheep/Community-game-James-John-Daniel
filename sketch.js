@@ -43,7 +43,6 @@ var beam = function() {
 var drawScene1 = function() {
     currentScene = 1;
     background(255);
-  	image(imgbackg,0,0,500,500);
     image(img, 100, 150, 300, 120);
     fill(255);
     text("Press Enter to Start!", 200, 300);
