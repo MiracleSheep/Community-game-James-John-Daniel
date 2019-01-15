@@ -42,7 +42,7 @@ Which is why we're making a fighting game!<br>
 
 # Game Screenshots
 
-![start screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/start%20screan%20picture.PNG)
+![start screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/start%20screen%2069.JPG)
 
 ![option screen](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/option%20screen%20pic.JPG)
 
