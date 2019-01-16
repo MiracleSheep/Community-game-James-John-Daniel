@@ -1,7 +1,7 @@
 
 var currentScene = 1;
 var img;
-var imgbackg;
+var defaultbackground;
 var img1;
 var img2;
 var img3;
@@ -42,7 +42,7 @@ function setup() {
     centerCanvas();
     background(0);
     img = loadImage("pictures/LogoMakr_0cfjro.png");
-  	imgbackg = loadImage("pictures/download.jpg");
+  defaultbackground = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/RealPow.png");
@@ -185,15 +185,14 @@ var character = function(config) {
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
+	this.SX = this.x + 25;
+	this.SY = this.y + 30;
 };
 
 character.prototype.draw = function() {
  
 	
 	  fill(this.color);
-	  if ( typeof this.img === undefined ) 
-			rect(this.x, this.y, this.w, this.h);
-		else
       image(this.img, this.x, this.y, this.w, this.h);
     //image(imgc1, this.x, this.y, this.w, this.h);
 	
@@ -285,8 +284,6 @@ character.prototype.continueBeam = function() {
 
 
 character.prototype.drawSword = function(player){
-	this.SX = this.x + 25;
-	this.SY = this.y + 30;
 	this.SW = 100;
 	this.SH = 50;
 	if(this.opponent.x <= this.x){
