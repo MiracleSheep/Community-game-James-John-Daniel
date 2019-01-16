@@ -1,6 +1,7 @@
 
 var currentScene = 1;
 var img;
+var imgbackg;
 var img1;
 var img2;
 var img3;
@@ -41,6 +42,7 @@ function setup() {
     centerCanvas();
     background(0);
     img = loadImage("pictures/LogoMakr_0cfjro.png");
+  	imgbackg = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
     img3 = loadImage("pictures/RealPow.png");
@@ -52,8 +54,8 @@ function setup() {
 		imgc4 = loadImage("pictures/Untitled-2.png")
 		sword = loadImage("pictures/AC4_Altair's_Swords.png");
 	  // Setting intial images for Characters
-	  Lexus.setImg(imgc1);
-	  Bandit.setImg(imgc2);
+	  Lexus.setImg(imgc3);
+	  Bandit.setImg(imgc1);
 }
 
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
@@ -283,10 +285,15 @@ character.prototype.continueBeam = function() {
 
 
 character.prototype.drawSword = function(player){
-	this.SX = this.x += 25;
-	this.SY = this.y += 30;
+	this.SX = this.x + 25;
+	this.SY = this.y + 30;
 	this.SW = 100;
 	this.SH = 50;
+	if(this.opponent.x <= this.x){
+	this.SX = this.x - -100;
+	
+	
+	}
 	image(sword,this.SX,this.SY,this.SW,this.SH);
 if (this.SX >= this.opponent.x && this.SX <= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (this.opponent.y += 150) || this.SX <= this.opponent.x && this.SX >= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (tthis.opponent.y += 150)){
 this.opponent.hp -= SD;
