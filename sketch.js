@@ -43,8 +43,9 @@ var beam = function() {
 var drawScene1 = function() {
     currentScene = 1;
     background(255);
+  	image(imgbackg,0,0,500,500);
     image(img, 100, 150, 300, 120);
-    fill(0);
+    fill(255);
     text("Press Enter to Start!", 200, 300);
     text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
     beam();
@@ -53,7 +54,10 @@ var drawScene1 = function() {
 var drawScene3 = function() {
     currentScene = 3;
     background(255);
-
+		
+  if (Background === 0) {
+        image(imgbackg, 0, 0, 500, 500);
+    }
     if (Background === 1) {
         image(img2, 0, 0, 800, 500);
     }
@@ -176,9 +180,9 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 3;
       	AD = 150;    
-	SD = 150;
-	playeronespeed = 15;
-	playertwospeed = -15;
+		SD = 150;
+			playeronespeed = 15;
+		playertwospeed = -15;
 		
 			
         }
@@ -189,14 +193,14 @@ var drawScene2 = function(event) {
     var purpleguy = new optionButton({
 
 
-        x: 165,
-        y: 180,
+        x: 200,
+        y: 130,
         width: 50,
         height: 30,
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-	Lexus.setImg(imgc2);
+			  Lexus.setImg(imgc2);
 			
 		}
     })
@@ -205,48 +209,104 @@ var drawScene2 = function(event) {
     var greenguy = new optionButton({
 
 
-        x: 165,
+        x: 130,
         y: 130,
         width: 50,
         height: 30,
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-	Lexus.setImg(imgc1);
+				Lexus.setImg(imgc1);
 		}
     })
 		
-		
+		var redguy = new optionButton({
+
+
+        x: 200,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C4",
+        onClick: function() {
+			  Lexus.setImg(imgc4);
+			
+		}
+    })
+    
+    var RealLexus = new optionButton({
+
+
+        x: 130,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C3",
+        onClick: function() {
+			  Lexus.setImg(imgc3);
+			
+		}
+    })
 			
     var purpleguy2 = new optionButton({
 
 
-        x: 330,
-        y: 180,
+        x: 370,
+        y: 130,
         width: 50,
         height: 30,
         color: color(88, 104, 226),
         label: "C2",
         onClick: function() {
-	Bandit.setImg(imgc2);
+				Bandit.setImg(imgc2);
 		}
     })
 		
+    var redguy2 = new optionButton({
+
+
+        x: 370,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C4",
+        onClick: function() {
+			  Bandit.setImg(imgc4);
+			
+		}
+    })
 		
     var greenguy2 = new optionButton({
 
 
-        x: 330,
+        x: 300,
         y: 130,
         width: 50,
         height: 30,
         color: color(88, 104, 226),
         label: "C1",
         onClick: function() {
-	Bandit.setImg(imgc1);
+				Bandit.setImg(imgc1);
 		}
     })
 		
+    var RealLexus2 = new optionButton({
+
+
+        x: 300,
+        y: 180,
+        width: 50,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "C3",
+        onClick: function() {
+			  Bandit.setImg(imgc3);
+			
+		}
+    })
 		
     var Next = new optionButton({
         x: 430,
@@ -276,14 +336,18 @@ var drawScene2 = function(event) {
 				greenguy2.handleMouseClick();
 				purpleguy.handleMouseClick();
 				purpleguy2.handleMouseClick();
+      	redguy.handleMouseClick();
+        RealLexus.handleMouseClick();
+      redguy2.handleMouseClick();
+      	RealLexus.handleMouseClick();
 			
     } else {
         background(0, 0, 0);
         textSize(18);
         fill(250, 0, 0);
         text("Game Options", 250, 50);
-        text("Select Character", 60, 90)
-        text("Select Arena", 70, 200);
+        text("Select Character", 65, 90)
+        text("Select Arena", 70, 220);
         text("Select Difficulty", 70, 300);
         textSize(15);
         text("Player 1", 170, 90);
@@ -298,9 +362,13 @@ var drawScene2 = function(event) {
         FIELDS.draw();
         Next.draw();
 				purpleguy.draw();
+      	redguy.draw();
+      	RealLexus.draw();
 				purpleguy2.draw();
 				greenguy.draw();
 				greenguy2.draw();
+      	redguy2.draw();
+      	RealLexus2.draw();
     }
 
     var mouseClicked = function() {
@@ -309,12 +377,14 @@ var drawScene2 = function(event) {
         Difficultyh.handleMouseClick();
         Difficultye.handleMouseClick();
         Difficultym.handleMouseClick();
-        P1.handleMouseClick();
-        P2.handleMouseClick();
+        redguy.handleMouseClick();
+        RealLexus.handleMouseClick();
 			purpleguy.handleMouseClick();
 				purpleguy2.handleMouseClick();
 				greenguy.handleMouseClick();
 				greenguy2.handleMouseClick();
+      	redguy2.handleMouseClick();
+      	RealLexus.handleMouseClick();
 		}
 
 
@@ -416,4 +486,3 @@ mouseClicked = function() {
         drawScene2("click");
     }
 };
-
