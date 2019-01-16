@@ -55,7 +55,7 @@ var drawScene3 = function() {
     background(255);
 		
   if (Background === 0) {
-        image(imgbackg, 0, 0, 500, 500);
+        image(defaultbackground, 0, 0, 500, 500);
     }
     if (Background === 1) {
         image(img2, 0, 0, 800, 500);
