@@ -106,7 +106,7 @@ var drawScene2 = function(event) {
         label: "City",
         onClick: function() {
             Background = 1;
-            console.log("CITY has been clicked" + Background);
+          
         }
 
     });
@@ -122,7 +122,7 @@ var drawScene2 = function(event) {
         label: "Fields",
         onClick: function() {
             Background = 2;
-            console.log("FIELDS has been clicked" + Background);
+          
         }
 
     });
@@ -138,7 +138,7 @@ var drawScene2 = function(event) {
         label: "Normal",
         onClick: function() {
             Difficulty = 1;
-            console.log("NORMAL has been clicked" + Difficulty);
+            
 			AD = 20;
 			playeronespeed = 3;
 		playertwospeed = -3;
@@ -317,14 +317,14 @@ var drawScene2 = function(event) {
         onClick: function() {
             currentScene = 3;
             drawScene3();
-            //		console.log("NEXT: " + currentScene);
+         
         }
 
 
     });
 
     if (event === "click") {
-        //	console.log("scene2 click");
+       
         CITY.handleMouseClick();
         FIELDS.handleMouseClick();
         Difficultyh.handleMouseClick();
@@ -409,62 +409,59 @@ function draw() {
 
     if (currentScene === 3) {
         drawScene3();
-        if (keyIsPressed) {
-            console.log("KeyCode: " + keyCode);
-        }
-
-        // Up: w
-        if (keyIsPressed && keyCode === 116) {
-            Lexus.hop();
-        } else {
-            Lexus.fall();
-        }
-
-        // Up: ARROW_KEY
-        if (keyIsPressed && keyCode === 108){
-            Bandit.hop();
-        } else {
-            Bandit.fall();
-        }
-
-      	   if (keyIsPressed && keyCode === 107){
-            Bandit.forward();
-           }
-         if (keyIsPressed && keyCode === 106){
-            Bandit.Backward();
-        }
-
-      	if (keyIsPressed && keyCode === 101){
-            Lexus.Backward();
-        }
-      if (keyIsPressed && keyCode === 114){
-            Lexus.forward();
-        }
-
+//lexus control
+		if( isCharPressed('w') || isCharPressed('W') ) {
+Lexus.hop();
+} else {
+Lexus.fall();
+}
       
-        if (keyIsPressed && keyCode === 113) {
-            Lexus.startBeam();
-        }
+  		if( isCharPressed('d') || isCharPressed('D') ) {
+Lexus.right();
+}
+  
+  		if( isCharPressed('a') || isCharPressed('A') ) {
+Lexus.left();
+}
+  
+    		if( isCharPressed('q') || isCharPressed('Q') ) {
+Lexus.startBeam();
+}
+Lexus.continueBeam();
+  
+    		if( isCharPressed('e') || isCharPressed('E') ) {
+Lexus.drawSword();
+}
+      
+//Bandit controls
+		if( isCharPressed('i') || isCharPressed('I') ) {
+Bandit.hop();
+} else {
+Bandit.fall();
+}
+      
+  		if( isCharPressed('l') || isCharPressed('L') ) {
+Bandit.right();
+}
+  
+  		if( isCharPressed('j') || isCharPressed('J') ) {
+Bandit.left();
+}
+  
+    		if( isCharPressed('u') || isCharPressed('U') ) {
+Bandit.startBeam();
+}
+Bandit.continueBeam();
+  
+    		if( isCharPressed('o') || isCharPressed('O') ) {
+Bandit.drawSword();
+}
 
-				  
-			
-				Lexus.continueBeam();
-			
-			
-			 if (keyIsPressed && keyCode === 119) {
-            Lexus.drawSword();
-        }
-			
-				 if (keyIsPressed && keyCode === 104) {
-            Bandit.drawSword();
-        }
+
+
 
 			
-        if (keyIsPressed && keyCode === 103) {
-            Bandit.startBeam();
-        }
-        
-				Bandit.continueBeam();
+	
 
     }
 
