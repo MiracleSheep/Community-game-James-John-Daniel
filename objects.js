@@ -61,16 +61,50 @@ function setup() {
 //THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 
 
-/*
-MAKE KEY PRESSED AT SAMETIME STUFF HERE. URL TO WEB HERE: https://stackoverflow.com/questions/5203407/how-to-detect-if-multiple-keys-are-pressed-at-once-using-javascript
 
-var map = {}; // You could also use an array
-onkeydown = onkeyup = function(e){
-    e = e || event; // to deal with IE
-    map[e.keyCode] = e.type == 'keydown';
-     insert conditional here 
+var keys = [];
+
+function keyPressed() {
+keys[keyCode] = keyCode;
+//console.log("Key Pressed: " + keyCode);
 }
-*/
+
+function keyReleased() {
+keys[keyCode] = false;
+//console.log("Key Released: " + keyCode);
+}
+
+function isCharPressed(aChar) {
+ return isPressed(ascii(aChar));
+}
+
+function isPressed(aKey) {
+ // 1. Get the list of currently pressed keys
+// 2. See if "aKey" is in that list
+
+pressedKeys = getNumberArray(keys);
+for(var i = 0; i < pressedKeys.length; i++) {
+
+if( pressedKeys[i] === aKey )
+return true;
+}
+
+return false;
+}
+
+function ascii (a) { return a.charCodeAt(0); }
+
+function getNumberArray(arr){
+   var newArr = new Array();
+   for(var i = 0; i < arr.length; i++){
+       if(typeof arr[i] == "number"){
+           newArr[newArr.length] = arr[i];
+       }
+   }
+   return newArr;
+}
+
+
 //this is the button function for the options
 var optionButton = function(config) {
     this.x = config.x || 0;
@@ -85,7 +119,7 @@ var optionButton = function(config) {
 
 optionButton.prototype.draw = function() {
     if (this.isMouseInside() && mouseIsPressed) {
-        // 	  console.log("Filling all white");
+        
         fill(255, 255, 255);
     } else {
         fill(this.color);
@@ -126,7 +160,7 @@ var EnergyBeam = function(config) {
 	  this.startY = config.Y;
 	  this.xLimit = config.xLimit;
 	  this.direction = config.direction;	
-	  //console.log("New EnergyBeam " + this.name);
+	  
 	  this.started = 0;
 	  this.opponent = config.opponent;
 };
@@ -135,26 +169,26 @@ EnergyBeam.prototype.startBeam = function(player) {
 	this.X = player.x + 25;
 	this.Y = player.y + 30;
 	this.started = 1;
-	// console.log("startBeam " + this.name);
+	
 }
 
 EnergyBeam.prototype.draw = function() {
 	  if( this.started > 0 ) {
-			//console.log("EnergyBeam.draw " + this.name + " " + this.X);
+			
 			fill(this.R,this.G,this.B);
 			ellipse(this.X, this.Y, 20, 20);
 			this.X += this.direction;
 		}
     // How to end it.
 	  if( this.direction > 0 && this.X > this.xLimit ) {
- 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+ 			
 			//this.started=0;
       //this.X=this.startX;
 			this.reset();
 		}
     // How to end it.
 	  if( this.direction < 0 && this.X < this.xLimit ) {
- 			//console.log("EnergyBeam.draw Limit " + this.name + " " + this.xLimit);
+ 			
 			// this.started=0;
       // this.X=this.startX;
 			this.reset();
@@ -201,8 +235,7 @@ character.prototype.draw = function() {
     rect(this.hx, this.hy, this.hp, 20);
     //hitbox below  
 
-		console.log("w: " + this.w + " image: " + this.img + " x " + this.x + " y" + this.y);
-
+		
 
 		if (Lexus.hp <= 0) {
 			currentScene = 5;	
@@ -216,7 +249,7 @@ character.prototype.draw = function() {
 	
 };
 
-character.prototype.forward = function(){
+character.prototype.right = function(){
 
     
         this.x += 7;
@@ -224,7 +257,7 @@ character.prototype.forward = function(){
   
 }
 
-character.prototype.Backward = function(){
+character.prototype.left = function(){
 
   
    
@@ -255,7 +288,7 @@ character.prototype.setOpponent = function(theOpponent) {
 };
 
 character.prototype.setImg = function(anImage) {
-	console.log(this.name + " using image " + anImage);
+
   this.img = anImage;
 };
 
@@ -265,16 +298,16 @@ character.prototype.startBeam = function() {
 };
 
 character.prototype.continueBeam = function() {
-	// console.log("continueBeam " + this.energyBeam);
+	
 	// When should this continue/stop
 	this.energyBeam.draw();
 
 	if( this.energyBeam.started > 0 ) {
-    // console.log(this.energyBeam + " X,Y " + this.energyBeam.X + "," + this.energyBeam.Y  + " Trying to Score on [ x,y ]  [" + this.opponent.x, "," + this.opponent.y + "]");
+
 	  if( this.energyBeam.X >=  this.opponent.x && this.energyBeam.X <= (this.opponent.x + 50) ) 
 			if (  this.energyBeam.Y >= this.opponent.y &&  this.energyBeam.Y <= (this.opponent.y + 100) ) {
             this.opponent.hp -= AD;
-						console.log(this.energyBeam.name + " Score on " + this.opponent.name + " hp: " + this.opponent.hp)
+				
 				    // Scoring is done, end the beam
 				    this.energyBeam.reset();
 			}
@@ -289,7 +322,7 @@ character.prototype.drawSword = function(player){
 	image(sword,this.SX,this.SY,this.SW,this.SH);
 if (this.SX >= this.opponent.x && this.SX <= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (this.opponent.y += 150) || this.SX <= this.opponent.x && this.SX >= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (tthis.opponent.y += 150)){
 this.opponent.hp -= SD;
-	console.log("Owie that really hurted")
+	
 	
 
 }
