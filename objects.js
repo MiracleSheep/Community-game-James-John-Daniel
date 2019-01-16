@@ -185,7 +185,7 @@ var character = function(config) {
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
-	this.SX = this.x + 25;
+this.SX = this.x + 25;
 	this.SY = this.y + 30;
 };
 
@@ -286,11 +286,6 @@ character.prototype.continueBeam = function() {
 character.prototype.drawSword = function(player){
 	this.SW = 100;
 	this.SH = 50;
-	if(this.opponent.x <= this.x){
-	this.SX = this.x - -100;
-	
-	
-	}
 	image(sword,this.SX,this.SY,this.SW,this.SH);
 if (this.SX >= this.opponent.x && this.SX <= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (this.opponent.y += 150) || this.SX <= this.opponent.x && this.SX >= (this.opponent.x += 50) && this.SY >= this.opponent.y && this.SY <= (tthis.opponent.y += 150)){
 this.opponent.hp -= SD;
