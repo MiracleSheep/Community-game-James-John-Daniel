@@ -323,7 +323,8 @@ character.prototype.drawSword = function(player){
 	image(sword,this.SX,this.SY,this.SW,this.SH);
  	 if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 100) ) 
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= SD;	  
+            this.opponent.hp -= SD;	
+				console.log("stuff")
 			}
  
 };
