@@ -1,4 +1,4 @@
-
+// THESE ARE THE GLOBAL VARIABLES
 var currentScene = 1;
 var img;
 var defaultbackground;
@@ -12,6 +12,7 @@ var imgc2;
 var imgc3;
 var imgc4;
 var sword;
+var shield;
 var cnv;
 var mrx = 0;
 var mry = 0;
@@ -21,8 +22,9 @@ var Background = 0;
 var PlayerNum = 0;
 var AD = 0;
 var SD = 0;
+var SDN = 0;
 
-
+// THIS IS WHERE WE CENTER THE CANVAS
 function centerCanvas() {
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 0;
@@ -35,7 +37,7 @@ function windowResized() {
     centerCanvas();
 }
 
-
+//HERE WE LOAD THE IMAGES
 function setup() {
 
     cnv = createCanvas(500, 500);
@@ -53,15 +55,14 @@ function setup() {
 		imgc3 = loadImage("pictures/LEXUS.png");
 		imgc4 = loadImage("pictures/Untitled-2.png")
 		sword = loadImage("pictures/AC4_Altair's_Swords.png");
+  	shield = loadImage("pictures/Wood_Metal_Shield.png");
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc3);
 	  Bandit.setImg(imgc1);
 }
 
-//THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 
-
-
+//THIS IS WHAT LETS US PRESS KEYS AT THE SAMETIME
 var keys = [];
 
 function keyPressed() {
@@ -104,7 +105,7 @@ function getNumberArray(arr){
    return newArr;
 }
 
-
+//HERE IS THE CLASS OF BUTTON
 //this is the button function for the options
 var optionButton = function(config) {
     this.x = config.x || 0;
@@ -147,7 +148,7 @@ optionButton.prototype.handleMouseClick = function() {
     }
 };
 
-
+//HERE IS THE CLASS FOR ENERGYBEAM
 var EnergyBeam = function(config) {
     this.name = config.name;
 	  this.R = config.R;
@@ -205,7 +206,7 @@ EnergyBeam.prototype.reset = function() {
 
 
 
-//And here we will put the characters and prototypes
+//HERE IS THE CLASS FOR CHARACTERS
 var character = function(config) {
 	  this.name = config.name;
     this.color = config.color || 'blue';
@@ -217,9 +218,7 @@ var character = function(config) {
     this.hy = config.hy;
     this.hx = config.hx;
     this.AX = config.AX;
-    this.AY = config.AY;
-	this.SPX = config.SPX; 
-	this.SPY = config.SPY; 
+    this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
 
 };
@@ -249,7 +248,7 @@ character.prototype.draw = function() {
 		}	
 	
 };
-
+//CHARACTER RIGHT
 character.prototype.right = function(){
 
     
@@ -257,7 +256,7 @@ character.prototype.right = function(){
   
   
 }
-
+//CHARACTER LEFT
 character.prototype.left = function(){
 
   
@@ -265,7 +264,7 @@ character.prototype.left = function(){
         this.x -= 7;
     
 }
-
+//CHARACTER UP
 character.prototype.hop = function() {
 
     if (this.y >= this.h) {
@@ -274,7 +273,7 @@ character.prototype.hop = function() {
 
 };
 
-
+//CHARACTER DOWN
 character.prototype.fall = function() {
 
     if (this.y <= (500 - this.h)) {
@@ -316,23 +315,53 @@ character.prototype.continueBeam = function() {
 	
 };
 
-
+//DRAWS THE SWORD
 character.prototype.drawSword = function(player){
-	this.SX = this.x + this.SPX;
-	this.SY = this.y + this.SPY;
+	this.SX = this.x + 25;
+	this.SY = this.y + 30;
 	this.SW = 100;
 	this.SH = 50;
 	image(sword,this.SX,this.SY,this.SW,this.SH);
  	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) 
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= SD;	
-				console.log("stuff")
+
 			}
- 
+ console.log("drawingsword")
 };
 
-//And here we will put the characters and prototypes
+//THIS IS WHERE BLOCK GOES
+character.prototype.Block = function(){
+	this.BX = this.x;
+	this.BY = this.y + 30;
+	this.BW = 50;
+	this.BH = 50;
+  image(shield,this.BX,this.BY,this.BW,this.BH);
+  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) 
+			if (  this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
+        SD = 0;
+        console.log("your puny sword is useless")
+			} else {
+        console.log(SDN)
+if(SDN === 1) {
+SD = 5;
 
+	}
+
+        if(SDN === 2) {
+SD = 10;
+
+	}
+        
+        
+        if(SDN === 3) {
+SD = 150;
+
+	}
+        
+      }
+};
+
+//CHARACTER INSTANCES
 var Lexus = new character({name:'Lexus',
     color: 'red',
     x: 50,
@@ -343,8 +372,8 @@ var Lexus = new character({name:'Lexus',
     hp: 150,
     hy: 30,
     hx: 100,
-	SPX:30, 
-	SPY:25,
+
+		
     energyBeam: new EnergyBeam({name: 'lexusBeam',
     R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
 
@@ -356,8 +385,6 @@ var Bandit = new character({name:'Bandit',
     w: 50,
     h: 150,
 		img: imgc2,
-SPY:25,
-SPX:-100,
     hp: 150,
     hy: 30,
     hx: 400,
@@ -366,6 +393,6 @@ SPX:-100,
 
 })
 
-
+//SETS OPPONENTS
 Lexus.setOpponent(Bandit);
 Bandit.setOpponent(Lexus);
