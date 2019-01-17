@@ -143,6 +143,7 @@ var drawScene2 = function(event) {
 			playeronespeed = 3;
 		playertwospeed = -3;
 		SD = 5;
+      SDN = 1;
         }
 
     });
@@ -161,6 +162,7 @@ var drawScene2 = function(event) {
 			playeronespeed = 10;
 		playertwospeed = -10;
 		SD = 10;
+      SDN = 2;
         }
 
 
@@ -182,7 +184,7 @@ var drawScene2 = function(event) {
 		SD = 150;
 			playeronespeed = 15;
 		playertwospeed = -15;
-		
+		SDN = 3;
 			
         }
     })            
@@ -433,6 +435,10 @@ Lexus.continueBeam();
 Lexus.drawSword();
 }
       
+      		if( isCharPressed('s') || isCharPressed('S') ) {
+Lexus.Block();
+}  
+      
 //Bandit controls
 		if( isCharPressed('i') || isCharPressed('I') ) {
 Bandit.hop();
@@ -456,6 +462,11 @@ Bandit.continueBeam();
     		if( isCharPressed('o') || isCharPressed('O') ) {
 Bandit.drawSword();
 }
+      
+          		if( isCharPressed('k') || isCharPressed('K') ) {
+Bandit.Block();
+}
+
 
 
 
