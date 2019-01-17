@@ -322,6 +322,27 @@ var drawScene2 = function(event) {
 
 
     });
+	var RestartButton = new optionButton({
+
+
+        x: 130,
+        y: 460,
+        width: 70,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "Restart",
+        onClick: function() {
+				Background = 0;
+    		Bandit.hp = 150;
+    		Lexus.hp = 150;
+    		Bandit.x = 400;
+    		Bandit.y = 190;
+    		Lexus.x = 50;
+    		Lexus.y = 190;
+    		//
+    	
+		}
+    })
 
     if (event === "click") {
        
@@ -339,7 +360,7 @@ var drawScene2 = function(event) {
         RealLexus.handleMouseClick();
       redguy2.handleMouseClick();
       	RealLexus.handleMouseClick();
-			
+	RestartButton.handleMouseClick();		
     } else {
         background(0, 0, 0);
         textSize(18);
@@ -368,6 +389,7 @@ var drawScene2 = function(event) {
 				greenguy2.draw();
       	redguy2.draw();
       	RealLexus2.draw();
+	    RestartButton.draw();
     }
 
     var mouseClicked = function() {
@@ -384,6 +406,7 @@ var drawScene2 = function(event) {
 				greenguy2.handleMouseClick();
       	redguy2.handleMouseClick();
       	RealLexus.handleMouseClick();
+	    RestartButton.handleMouseClick();
 		}
 
 
