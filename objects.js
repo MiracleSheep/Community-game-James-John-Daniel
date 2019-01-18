@@ -220,6 +220,8 @@ var character = function(config) {
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
+	this.SPX = config.SPX;
+	this.SPY = config.SPY;
 
 };
 
@@ -368,7 +370,9 @@ var Lexus = new character({name:'Lexus',
     y: 190,
     w: 50,
     h: 150,
-		img: imgc1,								 
+		img: imgc1,
+SPX:25,
+SPY:30,
     hp: 150,
     hy: 30,
     hx: 100,
@@ -385,6 +389,8 @@ var Bandit = new character({name:'Bandit',
     w: 50,
     h: 150,
 		img: imgc2,
+SPX:-100,
+SPY:30,
     hp: 150,
     hy: 30,
     hx: 400,
