@@ -319,15 +319,16 @@ character.prototype.continueBeam = function() {
 
 //DRAWS THE SWORD
 character.prototype.drawSword = function(player){
-	this.SX = this.x + 25;
-	this.SY = this.y + 30;
+	this.SX = this.x + this.SPX;
+	this.SY = this.y + this.SPY;
 	this.SW = 100;
 	this.SH = 50;
 	image(sword,this.SX,this.SY,this.SW,this.SH);
- 	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) 
+ 	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
 
 			}
+	 }
  console.log("drawingsword")
 };
 
