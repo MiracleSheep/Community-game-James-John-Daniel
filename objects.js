@@ -222,6 +222,8 @@ var character = function(config) {
     this.energyBeam = config.energyBeam;
 	this.SPX = config.SPX;
 	this.SPY = config.SPY;
+	this.SH = config.SH;
+	this.SW = config.SW;
 
 };
 
@@ -321,8 +323,6 @@ character.prototype.continueBeam = function() {
 character.prototype.drawSword = function(player){
 	this.SX = this.x + this.SPX;
 	this.SY = this.y + this.SPY;
-	this.SW = 100;
-	this.SH = 50;
 	image(sword,this.SX,this.SY,this.SW,this.SH);
  	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
@@ -374,6 +374,8 @@ var Lexus = new character({name:'Lexus',
 		img: imgc1,
 SPX:25,
 SPY:30,
+			   		    SW: -100,
+    SH: -50
     hp: 150,
     hy: 30,
     hx: 100,
@@ -390,6 +392,8 @@ var Bandit = new character({name:'Bandit',
     w: 50,
     h: 150,
 		img: imgc2,
+			    SW: 100,
+    SH: 50
 SPX:-100,
 SPY:30,
     hp: 150,
