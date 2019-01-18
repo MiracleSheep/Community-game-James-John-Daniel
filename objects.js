@@ -330,16 +330,8 @@ this.opponent.hp -= SD;
 			}
 	 }
  console.log("drawingsword")
-};
-
-//THIS IS WHERE BLOCK GOES
-character.prototype.Block = function(){
-	this.BX = this.x;
-	this.BY = this.y + 30;
-	this.BW = 50;
-	this.BH = 50;
-  image(shield,this.BX,this.BY,this.BW,this.BH);
-  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) 
+	
+	  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) 
 			if (  this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
         SD = 0;
         console.log("your puny sword is useless")
@@ -364,6 +356,15 @@ SD = 150;
       }
 };
 
+//THIS IS WHERE BLOCK GOES
+character.prototype.Block = function(){
+	this.BX = this.x;
+	this.BY = this.y + 30;
+	this.BW = 50;
+	this.BH = 50;
+  image(shield,this.BX,this.BY,this.BW,this.BH);
+};
+
 //CHARACTER INSTANCES
 var Lexus = new character({name:'Lexus',
     color: 'red',
@@ -374,8 +375,8 @@ var Lexus = new character({name:'Lexus',
 		img: imgc1,
 SPX:25,
 SPY:30,
-SW: -100,
-    SH: -50,
+SW: 100,
+    SH: 50,
     hp: 150,
     hy: 30,
     hx: 100,
