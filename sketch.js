@@ -91,7 +91,7 @@ var drawScene6 = function() {
 };
 
 var drawScene2 = function(event) {
-
+	
     currentScene = 2;
 
 
@@ -392,6 +392,7 @@ var drawScene2 = function(event) {
       	redguy2.draw();
       	RealLexus2.draw();
 	    RestartButton.draw();
+	    beam();
     }
 
     var mouseClicked = function() {
