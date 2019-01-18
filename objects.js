@@ -374,7 +374,7 @@ var Lexus = new character({name:'Lexus',
 		img: imgc1,
 SPX:25,
 SPY:30,
-			   		    SW: -100,
+SW: -100,
     SH: -50
     hp: 150,
     hy: 30,
