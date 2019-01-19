@@ -1,6 +1,6 @@
 
-var beam = function(img1,img2) {
-    image(this.img1,470, mry, 30, 100);
+var beam = function(imgleft,imgright) {
+    image(this.imgright,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -13,7 +13,7 @@ var beam = function(img1,img2) {
 
     }
     fill(0);
-    image(this.img2,0, mry2, 30, 100);
+    image(this.imgleft,0, mry2, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
