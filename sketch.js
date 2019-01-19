@@ -1,6 +1,6 @@
 
-var beam = function(imgleft,imgright) {
-    image(this.imgright,470, mry, 30, 100);
+var beam = function() {
+    image(imgc1,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -13,7 +13,7 @@ var beam = function(imgleft,imgright) {
 
     }
     fill(0);
-    image(this.imgleft,0, mry2, 30, 100);
+    image(imgc3,0, mry2, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
@@ -47,7 +47,7 @@ var drawScene1 = function() {
     fill(0);
     text("Press Enter to Start!", 200, 300);
     text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
-    beam(imgc1,imgc2);
+    beam();
 };
 
 var drawScene3 = function() {
@@ -392,7 +392,7 @@ var drawScene2 = function(event) {
       	redguy2.draw();
       	RealLexus2.draw();
 	    RestartButton.draw();
-	    beam(imgc3,imgc4);
+	    beam();
     }
 
     var mouseClicked = function() {
