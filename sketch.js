@@ -47,7 +47,7 @@ var drawScene1 = function() {
     fill(0);
     text("Press Enter to Start!", 200, 300);
     text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
-    beam(imc1,imgc2);
+    beam(imgc1,imgc2);
 };
 
 var drawScene3 = function() {
