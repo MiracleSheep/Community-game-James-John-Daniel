@@ -336,7 +336,7 @@ this.opponent.hp -= SD;
         SD = 0;
         console.log("your puny sword is useless")
 			} else {
-        console.log(SDN)
+        console.log("SND is:" + SDN)
 if(SDN === 1) {
 SD = 5;
 
@@ -352,7 +352,8 @@ SD = 10;
 SD = 150;
 
 	}
-        
+        console.log("SND is:" + SDN)
+	console.log("SD is:" + SD)
       }
 };
 
