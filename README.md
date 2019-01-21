@@ -3,7 +3,7 @@ Hope: One who has a vision for the future must consider the past.
 <br>
 Which is why we're making a fighting game!<br>
 
-# Fight 2 Death!
+# Water Fight!
 
 # Log December 11
 1. Project Progress
