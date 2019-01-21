@@ -320,6 +320,15 @@ character.prototype.continueBeam = function() {
 };
 
 //DRAWS THE SWORD
+//THIS IS WHERE BLOCK GOES
+character.prototype.Block = function(){
+	this.BX = this.x;
+	this.BY = this.y + 30;
+	this.BW = 50;
+	this.BH = 50;
+  image(shield,this.BX,this.BY,this.BW,this.BH);
+};
+
 character.prototype.drawSword = function(player){
 	this.SX = this.x + this.SPX;
 	this.SY = this.y + this.SPY;
@@ -331,8 +340,8 @@ this.opponent.hp -= SD;
 	 }
  console.log("drawingsword")
 	
-	  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) {
-			if (  this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
+	  if(character.block  === true && this.SX <=  this.BX && (this.SX + 100 ) >= this.BX && this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
+
         SD = 0;
         console.log("your puny sword is useless")
 			} else {
@@ -355,17 +364,10 @@ SD = 150;
         console.log("SND is:" + SDN)
 	console.log("SD is:" + SD)
       }
-	  }
+	  
 };
 
-//THIS IS WHERE BLOCK GOES
-character.prototype.Block = function(){
-	this.BX = this.x;
-	this.BY = this.y + 30;
-	this.BW = 50;
-	this.BH = 50;
-  image(shield,this.BX,this.BY,this.BW,this.BH);
-};
+
 
 //CHARACTER INSTANCES
 var Lexus = new character({name:'Lexus',
