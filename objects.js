@@ -331,7 +331,7 @@ this.opponent.hp -= SD;
 	 }
  console.log("drawingsword")
 	
-	  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) 
+	  if( this.SX <=  this.BX && (this.SX + 100 ) >= this.BX  ) {
 			if (  this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
         SD = 0;
         console.log("your puny sword is useless")
@@ -355,6 +355,7 @@ SD = 150;
         console.log("SND is:" + SDN)
 	console.log("SD is:" + SD)
       }
+	  }
 };
 
 //THIS IS WHERE BLOCK GOES
