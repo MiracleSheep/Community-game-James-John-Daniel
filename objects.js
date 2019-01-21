@@ -41,7 +41,7 @@ function setup() {
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
-    img = loadImage("pictures/LogoMakr_0cfjro.png");
+    img = loadImage("pictures/LogoMakr_1IBZ40.png");
   defaultbackground = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
