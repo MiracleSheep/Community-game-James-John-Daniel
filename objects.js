@@ -348,18 +348,18 @@ this.opponent.hp -= SD;
         console.log("SND is:" + SDN)
 if(SDN === 1) {
 SD = 5;
-
+console.log("your sword does five damage")
 	}
 
         if(SDN === 2) {
 SD = 10;
-
+console.log("your sword does ten damage")
 	}
         
         
         if(SDN === 3) {
 SD = 150;
-
+console.log("your sword does a lot of damage")
 	}
         console.log("SND is:" + SDN)
 	console.log("SD is:" + SD)
