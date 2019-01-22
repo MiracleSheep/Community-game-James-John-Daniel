@@ -16,20 +16,27 @@ Which is why we're making a fighting game!<br>
 
 
 2. Still Needs To Be Done
-- Blocking button.
-- Large attack.
+Day 2
+John 
+- custom mode
+- Attacks face direction of opponent
+James
+- continue working pg
+- make barriers for the characters on either side if you are done(put barriers outside of map)
+Daniel
+change background on slides show (not related) 
  
 
 3. What We Are "Thinking" About Doing
-- We may change the start screen.
+
 
 
 
 # Wiki 
 - The game is kinda like "Super smash bros" and "street fighter".
 - Its a 3rd person game.
-- Theres 2 characters, a "ninja guy" and "lexus?".
-- The characters fight until one of them has no health left on the bar.
+- Theres 4 characters, each person picks one character.  
+- The characters water fight until one of them has no health left on the bar.
 
 
 # How to play
@@ -39,6 +46,7 @@ Which is why we're making a fighting game!<br>
 - (Moving up) buttons: for the left character it’s “t” and for the right character it’s “L”.
 - (Moving left and right) buttons: “e and r” for left and for the right character it’s “j and k”.
 - (Using sword) buttons: “W” for left character and “H” for the right character.
+- (shield) buttons:
 
 # Game Screenshots
 
