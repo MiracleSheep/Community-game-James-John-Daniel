@@ -460,8 +460,10 @@ Lexus.drawSword();
 }
       
       		if( isCharPressed('s') || isCharPressed('S') ) {
-Lexus.Block();
-}  
+Lexus.raiseShield();();
+}  else {
+	Lexus.lowerShield();
+}
       
 //Bandit controls
 		if( isCharPressed('i') || isCharPressed('I') ) {
@@ -487,8 +489,10 @@ Bandit.continueBeam();
 Bandit.drawSword();
 }
       
-          		if( isCharPressed('k') || isCharPressed('K') ) {
-Bandit.Block();
+        if( isCharPressed('k') || isCharPressed('K') ) {
+	Bandit.raiseShield();
+} else {
+	Bandit.lowerShield();
 }
 
 
