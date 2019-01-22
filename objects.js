@@ -337,12 +337,13 @@ character.prototype.drawSword = function(player){
 	image(sword,this.SX,this.SY,this.SW,this.SH);
  	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) {
 			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
+				
 this.opponent.hp -= SD;
 			}
 	 }
  console.log("drawingsword")
 	
-	  if(character.block  === true && this.SX <=  this.BX && (this.SX + 100 ) >= this.BX && this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
+	  if(character.block  === true && kkthis.SX <=  this.BX && (this.SX + 100 ) >= this.BX && this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
 
         SD = 0;
         console.log("your puny sword is useless")
@@ -414,3 +415,5 @@ SPY:30,
 //SETS OPPONENTS
 Lexus.setOpponent(Bandit);
 Bandit.setOpponent(Lexus);
+
+console.log(Block)
