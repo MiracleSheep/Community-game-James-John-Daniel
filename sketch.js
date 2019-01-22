@@ -460,7 +460,7 @@ Lexus.drawSword();
 }
       
       		if( isCharPressed('s') || isCharPressed('S') ) {
-Lexus.raiseShield();();
+Lexus.raiseShield();
 }  else {
 	Lexus.lowerShield();
 }
