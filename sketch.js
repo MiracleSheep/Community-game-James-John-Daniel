@@ -1,6 +1,8 @@
 
 var beam = function() {
-    image(imgc1,470, mry, 30, 100);
+
+    image(imgc3,470, mry, 30, 100);
+
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -332,7 +334,7 @@ var drawScene2 = function(event) {
         width: 70,
         height: 30,
         color: color(88, 104, 226),
-        label: "Restart",
+        label: "Reset",
         onClick: function() {
 				Background = 0;
     		Bandit.hp = 150;
@@ -341,7 +343,13 @@ var drawScene2 = function(event) {
     		Bandit.y = 190;
     		Lexus.x = 50;
     		Lexus.y = 190;
-    		//
+		AD = 20;
+			playeronespeed = 3;
+		playertwospeed = -3;
+		SD = 5;
+		Bandit.setImg(imgc2);
+		Lexus.setImg(imgc3);
+    		
     	
 		}
     })
@@ -509,6 +517,13 @@ Bandit.drawSword();
 
     if (keyIsPressed && keyCode === 13) {
         drawScene2();
+	    Background = 0;
+    		Bandit.hp = 150;
+    		Lexus.hp = 150;
+    		Bandit.x = 400;
+    		Bandit.y = 190;
+    		Lexus.x = 50;
+    		Lexus.y = 190;
     }
 
 
