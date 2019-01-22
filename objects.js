@@ -327,6 +327,7 @@ character.prototype.Block = function(){
 	this.BW = 50;
 	this.BH = 50;
   image(shield,this.BX,this.BY,this.BW,this.BH);
+	console.log(this.BX + this.BY)
 };
 
 character.prototype.drawSword = function(player){
