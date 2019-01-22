@@ -224,6 +224,7 @@ var character = function(config) {
 	this.SPY = config.SPY;
 	this.SH = config.SH;
 	this.SW = config.SW;
+	this.blocking = false;
 
 };
 
@@ -321,14 +322,19 @@ character.prototype.continueBeam = function() {
 
 //DRAWS THE SWORD
 //THIS IS WHERE BLOCK GOES
-character.prototype.Block = function(){
+character.prototype.raiseShield = function(){
+	this.blocking = true;
 	this.BX = this.x;
 	this.BY = this.y + 30;
 	this.BW = 50;
 	this.BH = 50;
-  image(shield,this.BX,this.BY,this.BW,this.BH);
-	console.log("Shield X is:" + this.BX)
-	console.log("Shield y is:" + this.BY)
+        image(shield,this.BX,this.BY,this.BW,this.BH);
+	console.log("Shield X is:" + this.BX);
+	console.log("Shield y is:" + this.BY);
+};
+
+character.prototype.lowerShield = function(){
+	this.blocking = false;
 };
 
 character.prototype.drawSword = function(player){
@@ -343,8 +349,7 @@ this.opponent.hp -= SD;
 	 }
  console.log("drawingsword")
 	
-	  if(character.block  === true && kkthis.SX <=  this.BX && (this.SX + 100 ) >= this.BX && this.SY >= this.BY &&  this.SY <= (this.BY + 100) ) {
-
+	  if(this.opponent.blocking === true && this.SX <=  this.opponent.BX && (this.SX + 100 ) >= this.opponent.BX && this.SY >= this.opponent.BY &&  this.SY <= (this.opponent.BY + 100) ) {
         SD = 0;
         console.log("your puny sword is useless")
 			} else {
