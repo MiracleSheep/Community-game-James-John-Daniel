@@ -1,4 +1,4 @@
-
+// THESE ARE THE GLOBAL VARIABLES
 var currentScene = 1;
 var img;
 var defaultbackground;
@@ -12,6 +12,7 @@ var imgc2;
 var imgc3;
 var imgc4;
 var sword;
+var shield;
 var cnv;
 var mrx = 0;
 var mry = 0;
@@ -21,8 +22,9 @@ var Background = 0;
 var PlayerNum = 0;
 var AD = 0;
 var SD = 0;
+var SDN = 0;
 
-
+// THIS IS WHERE WE CENTER THE CANVAS
 function centerCanvas() {
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 0;
@@ -35,7 +37,7 @@ function windowResized() {
     centerCanvas();
 }
 
-
+//HERE WE LOAD THE IMAGES
 function setup() {
 
     cnv = createCanvas(500, 500);
@@ -53,15 +55,15 @@ function setup() {
 		imgc3 = loadImage("pictures/LEXUS.png");
 		imgc4 = loadImage("pictures/Untitled-2.png")
 		sword = loadImage("pictures/PoolNoodle.png");
+  	shield = loadImage("pictures/Wood_Metal_Shield.png");
+
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc3);
 	  Bandit.setImg(imgc1);
 }
 
-//THESE ARE WHERE THE VARIABLES FOR THE OPTIONS GO
 
-
-
+//THIS IS WHAT LETS US PRESS KEYS AT THE SAMETIME
 var keys = [];
 
 function keyPressed() {
@@ -104,7 +106,7 @@ function getNumberArray(arr){
    return newArr;
 }
 
-
+//HERE IS THE CLASS OF BUTTON
 //this is the button function for the options
 var optionButton = function(config) {
     this.x = config.x || 0;
@@ -147,7 +149,7 @@ optionButton.prototype.handleMouseClick = function() {
     }
 };
 
-
+//HERE IS THE CLASS FOR ENERGYBEAM
 var EnergyBeam = function(config) {
     this.name = config.name;
 	  this.R = config.R;
@@ -205,7 +207,7 @@ EnergyBeam.prototype.reset = function() {
 
 
 
-//And here we will put the characters and prototypes
+//HERE IS THE CLASS FOR CHARACTERS
 var character = function(config) {
 	  this.name = config.name;
     this.color = config.color || 'blue';
@@ -219,6 +221,11 @@ var character = function(config) {
     this.AX = config.AX;
     this.AY = config.AY;  
     this.energyBeam = config.energyBeam;
+	this.SPX = config.SPX;
+	this.SPY = config.SPY;
+	this.SH = config.SH;
+	this.SW = config.SW;
+	this.blocking = false;
 
 };
 
@@ -247,7 +254,7 @@ character.prototype.draw = function() {
 		}	
 	
 };
-
+//CHARACTER RIGHT
 character.prototype.right = function(){
 
     
@@ -255,7 +262,7 @@ character.prototype.right = function(){
   
   
 }
-
+//CHARACTER LEFT
 character.prototype.left = function(){
 
   
@@ -263,7 +270,7 @@ character.prototype.left = function(){
         this.x -= 7;
     
 }
-
+//CHARACTER UP
 character.prototype.hop = function() {
 
     if (this.y >= this.h) {
@@ -272,7 +279,7 @@ character.prototype.hop = function() {
 
 };
 
-
+//CHARACTER DOWN
 character.prototype.fall = function() {
 
     if (this.y <= (500 - this.h)) {
@@ -314,29 +321,75 @@ character.prototype.continueBeam = function() {
 	
 };
 
-
-character.prototype.drawSword = function(player){
-	this.SX = this.x + 25;
-	this.SY = this.y + 30;
-	this.SW = 100;
-	this.SH = 50;
-	image(sword,this.SX,this.SY,this.SW,this.SH);
- 	 if( this.SX >=  this.opponent.x && this.SX <= (this.opponent.x + 50) ) 
-			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
-            this.opponent.hp -= SD;	  
-			}
- 
+//DRAWS THE SWORD
+//THIS IS WHERE BLOCK GOES
+character.prototype.raiseShield = function(){
+	this.blocking = true;
+	this.BX = this.x;
+	this.BY = this.y + 30;
+	this.BW = 50;
+	this.BH = 50;
+        image(shield,this.BX,this.BY,this.BW,this.BH);
+	console.log("Shield X is:" + this.BX);
+	console.log("Shield y is:" + this.BY);
 };
 
-//And here we will put the characters and prototypes
+character.prototype.lowerShield = function(){
+	this.blocking = false;
+};
 
+character.prototype.drawSword = function(player){
+	this.SX = this.x + this.SPX;
+	this.SY = this.y + this.SPY;
+	image(sword,this.SX,this.SY,this.SW,this.SH);
+ 	 if( this.SX <=  this.opponent.x && (this.SX + 100 ) >= this.opponent.x  ) {
+			if (  this.SY >= this.opponent.y &&  this.SY <= (this.opponent.y + 100) ) {
+				
+this.opponent.hp -= SD;
+			}
+	 }
+ console.log("drawingsword")
+	
+	  if(this.opponent.blocking === true && this.SX <=  this.opponent.BX && (this.SX + 100 ) >= this.opponent.BX && this.SY >= this.opponent.BY &&  this.SY <= (this.opponent.BY + 100) ) {
+        SD = 0;
+        console.log("your puny sword is useless")
+			} else {
+        console.log("SND is:" + SDN)
+if(SDN === 1) {
+SD = 5;
+console.log("your sword does five damage")
+	}
+
+        if(SDN === 2) {
+SD = 10;
+console.log("your sword does ten damage")
+	}
+        
+        
+        if(SDN === 3) {
+SD = 150;
+console.log("your sword does a lot of damage")
+	}
+        console.log("SND is:" + SDN)
+	console.log("SD is:" + SD)
+      }
+	  
+};
+
+
+
+//CHARACTER INSTANCES
 var Lexus = new character({name:'Lexus',
     color: 'red',
     x: 50,
     y: 190,
     w: 50,
     h: 150,
-		img: imgc1,								 
+		img: imgc1,
+SPX:25,
+SPY:30,
+SW: 100,
+    SH: 50,
     hp: 150,
     hy: 30,
     hx: 100,
@@ -353,6 +406,10 @@ var Bandit = new character({name:'Bandit',
     w: 50,
     h: 150,
 		img: imgc2,
+			    SW: 100,
+    SH: 50,
+SPX:-100,
+SPY:30,
     hp: 150,
     hy: 30,
     hx: 400,
@@ -361,6 +418,8 @@ var Bandit = new character({name:'Bandit',
 
 })
 
-
+//SETS OPPONENTS
 Lexus.setOpponent(Bandit);
 Bandit.setOpponent(Lexus);
+
+

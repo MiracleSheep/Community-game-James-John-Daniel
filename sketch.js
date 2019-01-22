@@ -1,6 +1,8 @@
 
 var beam = function() {
+
     image(imgc3,470, mry, 30, 100);
+
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -13,7 +15,7 @@ var beam = function() {
 
     }
     fill(0);
-    image(imgc1,0, mry2, 30, 100);
+    image(imgc3,0, mry2, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx2, mry2, 40, 40);
 
@@ -91,7 +93,7 @@ var drawScene6 = function() {
 };
 
 var drawScene2 = function(event) {
-
+	
     currentScene = 2;
 
 
@@ -143,6 +145,7 @@ var drawScene2 = function(event) {
 			playeronespeed = 3;
 		playertwospeed = -3;
 		SD = 5;
+      SDN = 1;
         }
 
     });
@@ -161,6 +164,7 @@ var drawScene2 = function(event) {
 			playeronespeed = 10;
 		playertwospeed = -10;
 		SD = 10;
+      SDN = 2;
         }
 
 
@@ -182,7 +186,7 @@ var drawScene2 = function(event) {
 		SD = 150;
 			playeronespeed = 15;
 		playertwospeed = -15;
-		
+		SDN = 3;
 			
         }
     })            
@@ -396,6 +400,7 @@ var drawScene2 = function(event) {
       	redguy2.draw();
       	RealLexus2.draw();
 	    RestartButton.draw();
+	    beam();
     }
 
     var mouseClicked = function() {
@@ -462,6 +467,12 @@ Lexus.continueBeam();
 Lexus.drawSword();
 }
       
+      		if( isCharPressed('s') || isCharPressed('S') ) {
+Lexus.raiseShield();
+}  else {
+	Lexus.lowerShield();
+}
+      
 //Bandit controls
 		if( isCharPressed('i') || isCharPressed('I') ) {
 Bandit.hop();
@@ -485,6 +496,13 @@ Bandit.continueBeam();
     		if( isCharPressed('o') || isCharPressed('O') ) {
 Bandit.drawSword();
 }
+      
+        if( isCharPressed('k') || isCharPressed('K') ) {
+	Bandit.raiseShield();
+} else {
+	Bandit.lowerShield();
+}
+
 
 
 
