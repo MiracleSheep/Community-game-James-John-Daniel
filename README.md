@@ -16,15 +16,27 @@ Which is why we're making a fighting game!<br>
 
 
 2. Still Needs To Be Done
-Day 2
+# Day 2
 John 
 - custom mode
 - Attacks face direction of opponent
+
 James
 - continue working pg
 - make barriers for the characters on either side if you are done(put barriers outside of map)
+
+# Day 3
+
+John:
+- Cosmetic features
+-continue tasks if not done
+-think of new ideas for today
+
+James
+- do whatever task is left over
+
 Daniel
-change background on slides show (not related) 
+- fix readme and update 
  
 
 3. What We Are "Thinking" About Doing
