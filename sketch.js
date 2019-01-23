@@ -1,8 +1,6 @@
 
 var beam = function() {
-
-    image(imgc3,470, mry, 30, 100);
-
+    image(imgc1,470, mry, 30, 100);
     fill(35, 211, 211);
     ellipse(mrx, mry, 40, 40);
 
@@ -183,7 +181,7 @@ var drawScene2 = function(event) {
         onClick: function() {
             Difficulty = 3;
       	AD = 150;    
-		SD = 150;
+		SD = 100;
 			playeronespeed = 15;
 		playertwospeed = -15;
 		SDN = 3;
@@ -329,12 +327,12 @@ var drawScene2 = function(event) {
 	var RestartButton = new optionButton({
 
 
-        x: 130,
+        x: 50,
         y: 460,
         width: 70,
         height: 30,
         color: color(88, 104, 226),
-        label: "Reset",
+        label: "Restart",
         onClick: function() {
 				Background = 0;
     		Bandit.hp = 150;
@@ -343,29 +341,39 @@ var drawScene2 = function(event) {
     		Bandit.y = 190;
     		Lexus.x = 50;
     		Lexus.y = 190;
-		AD = 20;
-			playeronespeed = 3;
-		playertwospeed = -3;
-		SD = 5;
-		Bandit.setImg(imgc2);
-		Lexus.setImg(imgc3);
-    		
+    		//
     	
+		}
+    })
+	
+	
+		var Custommode = new optionButton({
+
+
+       x: 250,
+        y: 460,
+        width: 100,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "advanced",
+        onClick: function() {
+    	currentscene = 7;
+	drawScene7();
 		}
     })
 
     if (event === "click") {
-       
+       	Custommode.handleMouseClick();
         CITY.handleMouseClick();
         FIELDS.handleMouseClick();
         Difficultyh.handleMouseClick();
         Difficultym.handleMouseClick();
         Difficultye.handleMouseClick();
         Next.handleMouseClick();
-				greenguy.handleMouseClick();
-				greenguy2.handleMouseClick();
-				purpleguy.handleMouseClick();
-				purpleguy2.handleMouseClick();
+greenguy.handleMouseClick();
+greenguy2.handleMouseClick();
+purpleguy.handleMouseClick();
+purpleguy2.handleMouseClick();
       	redguy.handleMouseClick();
         RealLexus.handleMouseClick();
       redguy2.handleMouseClick();
@@ -400,6 +408,7 @@ var drawScene2 = function(event) {
       	redguy2.draw();
       	RealLexus2.draw();
 	    RestartButton.draw();
+      	Custommode.draw();
 	    beam();
     }
 
@@ -418,10 +427,456 @@ var drawScene2 = function(event) {
       	redguy2.handleMouseClick();
       	RealLexus.handleMouseClick();
 	    RestartButton.handleMouseClick();
+      	Custommode.handleMouseClick();
 		}
 
 
 };
+
+
+var drawScene7 = function(event) {
+	
+    currentScene = 7;
+
+  
+  	
+		var B5 = new optionButton({
+
+
+       x: 80,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "5",
+        onClick: function() {
+AD = 5;
+		}
+    })
+    
+    		var B10 = new optionButton({
+
+
+       x: 110,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "10",
+        onClick: function() {
+AD = 10;
+		}
+    })
+        
+        		var B20 = new optionButton({
+
+
+       x: 140,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "20",
+        onClick: function() {
+AD = 20;
+		}
+    })
+            
+var B40 = new optionButton({
+
+
+       x: 170,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "40",
+        onClick: function() {
+AD = 40;
+		}
+    })
+                
+var B60 = new optionButton({
+
+
+       x: 200,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "60",
+        onClick: function() {
+AD = 60;
+		}
+    })
+                                
+var B80 = new optionButton({
+
+
+       x: 230,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "80",
+        onClick: function() {
+AD = 80;
+		}
+    })
+
+var B100 = new optionButton({
+
+
+       x: 260,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "100",
+        onClick: function() {
+AD = 100;
+		}
+    })
+
+var B120 = new optionButton({
+
+
+       x: 290,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "120",
+        onClick: function() {
+AD = 120;
+		}
+    })
+  
+var B140 = new optionButton({
+
+
+       x: 320,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "140",
+        onClick: function() {
+AD = 140;
+		}
+    })
+
+
+var B150 = new optionButton({
+
+
+       x: 350,
+        y: 140,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "150",
+        onClick: function() {
+AD = 150;
+		}
+    })
+		
+//sword damage
+
+		var S5 = new optionButton({
+
+
+       x: 80,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "5",
+        onClick: function() {
+SD = 5;
+SDN = 4;
+		}
+    })
+    
+    		var S10 = new optionButton({
+
+
+       x: 110,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "10",
+        onClick: function() {
+SD = 10;
+SDN = 5;
+          
+		}
+    })
+        
+        		var S20 = new optionButton({
+
+
+       x: 140,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "20",
+        onClick: function() {
+SD = 20;
+              SDN = 6;
+		}
+    })
+            
+var S40 = new optionButton({
+
+
+       x: 170,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "40",
+        onClick: function() {
+SD = 40;
+  SDN = 7;
+		}
+    })
+                
+var S60 = new optionButton({
+
+
+       x: 200,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "60",
+        onClick: function() {
+SD = 60;
+  SDN = 8;
+		}
+    })
+                                
+var S80 = new optionButton({
+
+
+       x: 230,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "80",
+        onClick: function() {
+SD = 80;
+  SDN = 9;
+		}
+    })
+
+var S100 = new optionButton({
+
+
+       x: 260,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "100",
+        onClick: function() {
+SD = 100;
+  SDN = 10;
+		}
+    })
+
+var S120 = new optionButton({
+
+
+       x: 290,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "120",
+        onClick: function() {
+SD = 120;
+  SDN = 11;
+		}
+    })
+  
+var S140 = new optionButton({
+
+
+       x: 320,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "140",
+        onClick: function() {
+SD = 140;
+  SDN = 11;
+		}
+    })
+
+
+var S150 = new optionButton({
+
+
+       x: 350,
+        y: 240,
+        width: 30,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "150",
+        onClick: function() {
+SD = 150;
+  SDN = 12;
+		}
+    })
+
+
+
+
+    var Next = new optionButton({
+        x: 430,
+        y: 460,
+        width: 60,
+        height: 20,
+        color: color(255),
+        label: "NEXT",
+        onClick: function() {
+            currentScene = 2;
+            drawScene2();
+         
+        }
+
+
+    });
+	var RestartButton = new optionButton({
+
+
+        x: 130,
+        y: 460,
+        width: 70,
+        height: 30,
+        color: color(88, 104, 226),
+        label: "Restart",
+        onClick: function() {
+				Background = 0;
+    		Bandit.hp = 150;
+    		Lexus.hp = 150;
+    		Bandit.x = 400;
+    		Bandit.y = 190;
+    		Lexus.x = 50;
+    		Lexus.y = 190;
+    		//
+    	
+		}
+    })
+	
+
+
+	
+	
+
+    if (event === "click") {
+      
+      B5.handleMouseClick();
+      B10.handleMouseClick();
+      B20.handleMouseClick();
+      B40.handleMouseClick();
+      B60.handleMouseClick();
+      B80.handleMouseClick();
+      B100.handleMouseClick();
+      B120.handleMouseClick();
+    	B140.handleMouseClick();
+      B150.handleMouseClick();
+       S5.handleMouseClick();
+      S10.handleMouseClick();
+      S20.handleMouseClick();
+      S40.handleMouseClick();
+      S60.handleMouseClick();
+      S80.handleMouseClick();
+      S100.handleMouseClick();
+      S120.handleMouseClick();
+    	S140.handleMouseClick();
+      S150.handleMouseClick();
+       Next.handleMouseClick();
+        RestartButton.handleMouseClick();
+		
+    } else {
+        background(0, 0, 0);
+        textSize(18);
+        fill(250, 0, 0);
+        text("Custom mode", 250, 50);
+       textSize(18);
+        fill(250, 0, 0);
+        text("Beam Damage", 65, 100);
+     
+      text("Sword Damage",70,200);
+      textSize(12);
+      text("Note *when using sword it will do its damage once before blocking.",200,300);
+      text("That means it is an instant kill if you do 150 damage for sword damage.",200,330);
+      text("Also, 150 is how much health you have",200,360);
+       
+      
+      	
+        noStroke();
+        RestartButton.draw();
+       Next.draw();
+      B5.draw();
+      B10.draw();
+      B20.draw();
+      B40.draw();
+      B60.draw();
+      B80.draw();
+      B100.draw();
+      B120.draw();
+      B140.draw();
+      B150.draw();
+        S5.draw();
+      S10.draw();
+      S20.draw();
+      S40.draw();
+      S60.draw();
+      S80.draw();
+      S100.draw();
+      S120.draw();
+      S140.draw();
+      S150.draw();
+	    beam();
+    }
+
+    var mouseClicked = function() {
+       Next.handleMouseClick();
+        RestartButton.handleMouseClick();
+        B5.handleMouseClick();
+      B10.handleMouseClick();
+      B20.handleMouseClick();
+      B40.handleMouseClick();
+      B60.handleMouseClick();
+      B80.handleMouseClick();
+      B100.handleMouseClick();
+      B120.handleMouseClick();
+    	B140.handleMouseClick();
+      B150.handleMouseClick();
+      S5.handleMouseClick();
+      S10.handleMouseClick();
+      S20.handleMouseClick();
+      S40.handleMouseClick();
+      S60.handleMouseClick();
+      S80.handleMouseClick();
+      S100.handleMouseClick();
+      S120.handleMouseClick();
+    	S140.handleMouseClick();
+      S150.handleMouseClick();
+       
+		}
+
+
+};
+
 
 var beam1=0;
 
@@ -431,7 +886,7 @@ var beam2=0;
 function draw() {
 
     if (currentScene === 1) {
-        drawScene1();
+        drawScene7();
 
     }
 
@@ -441,6 +896,10 @@ function draw() {
 
     }
 
+  if (currentScene === 7){
+   drawScene7();
+}
+  	
     if (currentScene === 3) {
         drawScene3();
 //lexus control
@@ -517,13 +976,6 @@ Bandit.drawSword();
 
     if (keyIsPressed && keyCode === 13) {
         drawScene2();
-	    Background = 0;
-    		Bandit.hp = 150;
-    		Lexus.hp = 150;
-    		Bandit.x = 400;
-    		Bandit.y = 190;
-    		Lexus.x = 50;
-    		Lexus.y = 190;
     }
 
 
@@ -534,5 +986,8 @@ mouseClicked = function() {
     //	  console.log("Mouse was clicked");
     if (currentScene === 2) {
         drawScene2("click");
+    }
+	 if (currentScene === 7) {
+        drawScene7("click");
     }
 };
