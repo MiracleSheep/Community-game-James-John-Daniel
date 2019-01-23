@@ -43,20 +43,19 @@ function setup() {
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
-    img = loadImage("pictures/LogoMakr_1IBZ40.png");
+    img = loadImage("pictures/LogoMakr_0cfjro.png");
   defaultbackground = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
-    img3 = loadImage("pictures/Splash.png");
+    img3 = loadImage("pictures/RealPow.png");
 		imgp1w = loadImage("pictures/ShrekP1.jpg");
 		imgp2w = loadImage("pictures/ShrekP2.jpg");
 		imgc1 = loadImage("pictures/Player1.png");
 		imgc2 = loadImage("pictures/Player2.png");
 		imgc3 = loadImage("pictures/LEXUS.png");
 		imgc4 = loadImage("pictures/Untitled-2.png")
-		sword = loadImage("pictures/PoolNoodle.png");
+		sword = loadImage("pictures/AC4_Altair's_Swords.png");
   	shield = loadImage("pictures/Wood_Metal_Shield.png");
-
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc3);
 	  Bandit.setImg(imgc1);
@@ -367,13 +366,56 @@ console.log("your sword does ten damage")
         
         
         if(SDN === 3) {
-SD = 150;
+SD = 100;
 console.log("your sword does a lot of damage")
 	}
         console.log("SND is:" + SDN)
 	console.log("SD is:" + SD)
-      }
-	  
+     
+              if(SDN === 4) {
+SD = 5;
+              }
+        
+          if(SDN === 5) {
+SD = 10;
+ 
+	}
+      
+                  if(SDN === 5) {
+SD = 20;
+ 
+	}
+        
+                  if(SDN === 6) {
+SD = 40;
+ 
+	}
+                  if(SDN === 7) {
+SD = 60;
+ 
+	}
+                  if(SDN === 8) {
+SD = 80;
+ 
+	}
+                  if(SDN === 9) {
+SD = 100;
+ 
+	}
+        
+                    if(SDN === 10) {
+SD = 120;
+ 
+	}
+                            if(SDN === 11) {
+SD = 140;
+ 
+	}
+                            if(SDN === 12) {
+SD = 150;
+ 
+	}
+      }  
 };
 
 
