@@ -886,7 +886,7 @@ var beam2=0;
 function draw() {
 
     if (currentScene === 1) {
-        drawScene7();
+        drawScene1();
 
     }
 
