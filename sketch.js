@@ -178,7 +178,7 @@ var drawScene2 = function(event) {
         width: 135,
         height: 50,
         color: color(244, 176, 66),
-        label: "Death Sentence",
+        label: "impossible mode",
         onClick: function() {
             Difficulty = 3;
       	AD = 150;    
