@@ -964,13 +964,13 @@ Bandit.left();
 }
   
     		if( isCharPressed('u') || isCharPressed('U') ) {
+			Bandit.drawSword();
+		}
+  
+    		if( isCharPressed('o') || isCharPressed('O') ) {
 Bandit.startBeam();
 }
 Bandit.continueBeam();
-  
-    		if( isCharPressed('o') || isCharPressed('O') ) {
-Bandit.drawSword();
-}
       
         if( isCharPressed('k') || isCharPressed('K') ) {
 	Bandit.raiseShield();
