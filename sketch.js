@@ -916,11 +916,28 @@ function draw() {
     
     //ADDING START AND STOP MUSIC
    if (isCharPressed('v') || isCharPressed('V')) {
-          song.play();
+          song1.play();
         }
         
         if (isCharPressed('b') || isCharPressed('B')) {
-          song.stop();
+          song1.stop();
+        }
+    
+       if (isCharPressed('x') || isCharPressed('X')) {
+          song2.play();
+        }
+        
+        if (isCharPressed('c') || isCharPressed('C')) {
+          song2.stop();
+        }
+    
+    
+       if (isCharPressed('n') || isCharPressed('N')) {
+          song3.play();
+        }
+        
+        if (isCharPressed('m') || isCharPressed('M')) {
+          song3.stop();
         }
         
     
