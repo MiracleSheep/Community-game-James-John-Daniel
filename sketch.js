@@ -48,13 +48,13 @@ var drawScene1 = function() {
     text("Press Enter to Start!", startscreenx, startscreeny);
     text("Made by John Khalife, Daniel Figotin and James Yee", startscreenx2, startscreeny2);
     beam();
-    fightingscenesound.play();
+    
 };
 //THIS DRAWS THE ACTUAL GAME PART (THE NUMBERED SCENES ARE NOT IN ORDER)
 var drawScene3 = function() {
     currentScene = 3;
     background(255);
-    fightingscenesound.play();
+   
 
 
     if (Background === 0) {
@@ -93,7 +93,7 @@ var drawScene6 = function() {
 var drawScene2 = function(event) {
 
     currentScene = 2;
-    fightingscenesound.play();
+   
 
 
 //THESE ARE THE INSTANCES OF OUR BUTTON CLASS
@@ -976,7 +976,16 @@ function draw() {
         } else {
             Bandit.lowerShield();
         }
+//ADDING START AND STOP MUSIC
 
+        if (isCharPressed('v') || isCharPressed('V')) {
+          fightingscenesound.play();
+        }
+        
+        if (isCharPressed('b') || isCharPressed('B')) {
+          fightingscenesound.pause();
+        }
+        
 
 
 
