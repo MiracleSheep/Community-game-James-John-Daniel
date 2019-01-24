@@ -29,9 +29,9 @@ var startscreenx = 200;
 var startscreeny = 300;
 var startscreenx2 = 110;
 var startscreeny2 = 480;
-var song;
- 
-
+var song1;
+var song2;
+var song3;
 
 
 // THIS IS WHERE WE CENTER THE CANVAS
@@ -66,8 +66,11 @@ function setup() {
     imgc4 = loadImage("pictures/Untitled-2.png")
     sword = loadImage("pictures/PoolNoodle.png");
     shield = loadImage("pictures/Wood_Metal_Shield.png");
-      song = loadSound('Music/About Nothing.mp3');
+      song1 = loadSound('Music/About Nothing.mp3');
+     song2 = loadSound('Music/Defense Line.mp3');
+ song3 = loadSound('Music/Platformer2.mp3');
 
+ Defense Line.mp3
 
     // Setting intial images for Characters
     Lexus.setImg(imgc3);
