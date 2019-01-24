@@ -979,11 +979,11 @@ function draw() {
 //ADDING START AND STOP MUSIC
 
         if (isCharPressed('v') || isCharPressed('V')) {
-          fightingscenesound.play();
+          song.play();
         }
         
         if (isCharPressed('b') || isCharPressed('B')) {
-          fightingscenesound.pause();
+          song.pause();
         }
         
 
