@@ -912,6 +912,12 @@ function draw() {
 
     if (keyIsPressed && keyCode === 13) {
         drawScene2();
+        Bandit.hp = 150;
+            Lexus.hp = 150;
+            Bandit.x = 400;
+            Bandit.y = 190;
+            Lexus.x = 50;
+            Lexus.y = 190;
     }
     
     //ADDING START AND STOP MUSIC
