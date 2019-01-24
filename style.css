@@ -1,69 +1,70 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-canvas {
-  display: block;
- justify-content: center;
-}
+html,
 body {
-background-color:rgb(48, 174, 229);
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+    justify-content: center;
+}
+
+body {
+    background-color: rgb(48, 174, 229);
 
 }
 
 h1 {
-text-Align:center;
-	background-color:rgb(255, 159, 5);
-	
-	border:ridge 5px;
-margin-left:30%;
-	margin-right:30%;
+    text-Align: center;
+    background-color: rgb(255, 159, 5);
+
+    border: ridge 5px;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .What {
-	background-color:rgb(246, 255, 5);
-	margin-top:10%;
-	
-margin-left:80%;
+    background-color: rgb(246, 255, 5);
+    margin-top: 10%;
+
+    margin-left: 80%;
 }
+
 .about {
 
 
-margin-left:65%;
-	padding:5%;
+    margin-left: 65%;
+    padding: 5%;
 
-	background-color:rgb(255, 255, 255)
+    background-color: rgb(255, 255, 255)
+}
+
+
+.how {
+    margin-top: 10%;
+    background-color: rgb(246, 255, 5);
+    margin-right: 80%;
 
 
 
 }
 
+ul {
+    background-color: rgb(255, 255, 255);
+    margin-right: 65%;
 
-.how{
-	margin-top:10%;
-background-color: rgb(246, 255, 5);
-margin-right:80%;
+    padding: 5%;
 
 
-
-}
-
-ul{
-background-color: rgb(255,255,255);
-margin-right:65%;
-
-	padding:5%;
-
-	
 
 }
 
 
 .Credits {
-	background-color:rgb(246, 255, 5);
-	margin-top:10%;
-	
-margin-left:80%;
+    background-color: rgb(246, 255, 5);
+    margin-top: 10%;
+
+    margin-left: 80%;
 
 
 
@@ -72,9 +73,8 @@ margin-left:80%;
 
 
 .Credits2 {
-margin-left:65%;
-	padding:5%;
+    margin-left: 65%;
+    padding: 5%;
 
-	background-color:rgb(255, 255, 255)
-
+    background-color: rgb(255, 255, 255)
 }
