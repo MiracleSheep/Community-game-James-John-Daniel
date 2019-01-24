@@ -70,7 +70,7 @@ function setup() {
      song2 = loadSound('Music/Defense Line.mp3');
  song3 = loadSound('Music/Platformer2.mp3');
 
- Defense Line.mp3
+
 
     // Setting intial images for Characters
     Lexus.setImg(imgc3);
