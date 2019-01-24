@@ -920,7 +920,7 @@ function draw() {
         }
         
         if (isCharPressed('b') || isCharPressed('B')) {
-          song.pause();
+          song.stop();
         }
         
     
