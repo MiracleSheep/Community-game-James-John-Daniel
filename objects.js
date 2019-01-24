@@ -29,13 +29,11 @@ var startscreenx = 200;
 var startscreeny = 300;
 var startscreenx2 = 110;
 var startscreeny2 = 480;
-var fightingscenesound;
+var song;
+ 
+  song = loadSound('Music/About Nothing.mp3');
 
-//HERE WE LOAD THE SOUND
-function preload() {
-    fightingscenesound = loadSound('Music/About Nothing.mp3');
 
-}
 
 // THIS IS WHERE WE CENTER THE CANVAS
 function centerCanvas() {
@@ -69,6 +67,7 @@ function setup() {
     imgc4 = loadImage("pictures/Untitled-2.png")
     sword = loadImage("pictures/PoolNoodle.png");
     shield = loadImage("pictures/Wood_Metal_Shield.png");
+      song = loadSound('Music/About Nothing.mp3');
     // Setting intial images for Characters
     Lexus.setImg(imgc3);
     Bandit.setImg(imgc1);
