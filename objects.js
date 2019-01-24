@@ -57,7 +57,7 @@ function setup() {
     defaultbackground = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
-    img3 = loadImage("pictures/RealPow.png");
+    img3 = loadImage("pictures/Splash.png");
     imgp1w = loadImage("pictures/ShrekP1.jpg");
     imgp2w = loadImage("pictures/ShrekP2.jpg");
     imgc1 = loadImage("pictures/Player1.png");
