@@ -3,17 +3,17 @@ body {
     margin: 0;
     padding: 0;
 }
-
+//CANVAS IS WHERE THE GAME IS
 canvas {
     display: block;
     justify-content: center;
 }
-
+//BODY IS THE ENITRE SITE
 body {
     background-color: rgb(48, 174, 229);
 
 }
-
+//TITLE
 h1 {
     text-Align: center;
     background-color: rgb(255, 159, 5);
@@ -22,7 +22,7 @@ h1 {
     margin-left: 30%;
     margin-right: 30%;
 }
-
+//ABOUT THE GAME
 .What {
     background-color: rgb(246, 255, 5);
     margin-top: 10%;
@@ -39,7 +39,7 @@ h1 {
     background-color: rgb(255, 255, 255)
 }
 
-
+//HOW TO PLAY THE GAME
 .how {
     margin-top: 10%;
     background-color: rgb(246, 255, 5);
@@ -59,7 +59,7 @@ ul {
 
 }
 
-
+//CREDITS
 .Credits {
     background-color: rgb(246, 255, 5);
     margin-top: 10%;
