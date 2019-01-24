@@ -990,7 +990,7 @@ function draw() {
 }
 
 mouseClicked = function() {
-    //	  console.log("Mouse was clicked");
+
     if (currentScene === 2) {
         drawScene2("click");
     }
