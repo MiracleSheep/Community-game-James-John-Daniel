@@ -30,7 +30,6 @@ var startscreeny = 300;
 var startscreenx2 = 110;
 var startscreeny2 = 480;
 var startscreensound;
-var optionscreensound;
 var fightingscenesound;
 
 
