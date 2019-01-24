@@ -70,7 +70,7 @@ Daniel
 
 ![character 2](https://github.com/NeighborhoodDeficiency/Community-game-James-John-Daniel/blob/master/pictures/monke2.PNG)
 
-##Update January 24 2019:We are finished!
+## Update January 24 2019:We are finished!
 
 
 
