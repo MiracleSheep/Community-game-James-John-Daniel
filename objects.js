@@ -29,13 +29,10 @@ var startscreenx = 200;
 var startscreeny = 300;
 var startscreenx2 = 110;
 var startscreeny2 = 480;
-var startscreensound;
 var fightingscenesound;
 
 //HERE WE LOAD THE SOUND
 function preload() {
-    startscreensound = loadSound('Music/Platformer2.mp3');
-    optionscreensound = loadSound('Music/Superboy.mp3');
     fightingscenesound = loadSound('Music/Defense Line.mp3');
 
 }
