@@ -45,8 +45,8 @@ var drawScene1 = function() {
     background(255);
     image(img, 100, 150, 300, 120);
     fill(0);
-    text("Press Enter to Start!", 200, 300);
-    text("Made by John Khalife, Daniel Figotin and James Yee", 110, 480);
+    text("Press Enter to Start!", startscreenx, startscreeny);
+    text("Made by John Khalife, Daniel Figotin and James Yee", startscreenx2, startscreeny2);
     beam();
 };
 
@@ -68,7 +68,8 @@ var drawScene3 = function() {
 
     Lexus.draw();
     Bandit.draw();
-
+  Lexus.faceopponent();
+	Bandit.faceopponent();
 };
 
 var drawScene4 = function() {
@@ -341,6 +342,11 @@ var drawScene2 = function(event) {
     		Bandit.y = 190;
     		Lexus.x = 50;
     		Lexus.y = 190;
+    		currentScene = 1;
+    textSize(12);
+    startscreenx = 245;
+    startscreenx2 = 240;
+    	drawScene1();
     		//
     	
 		}
