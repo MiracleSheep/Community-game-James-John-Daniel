@@ -31,7 +31,6 @@ var startscreenx2 = 110;
 var startscreeny2 = 480;
 var song;
  
-  song = loadSound('Music/About Nothing.mp3');
 
 
 
@@ -68,6 +67,8 @@ function setup() {
     sword = loadImage("pictures/PoolNoodle.png");
     shield = loadImage("pictures/Wood_Metal_Shield.png");
       song = loadSound('Music/About Nothing.mp3');
+
+
     // Setting intial images for Characters
     Lexus.setImg(imgc3);
     Bandit.setImg(imgc1);
