@@ -892,7 +892,10 @@ var beam2 = 0;
 
 function draw() {
 //HERE WE CALL THE DRAWING OF THE SCENES
-    if (currentScene === 1) {
+  
+    
+    
+  if (currentScene === 1) {
         drawScene1();
 
     }
@@ -910,6 +913,16 @@ function draw() {
     if (keyIsPressed && keyCode === 13) {
         drawScene2();
     }
+    
+    //ADDING START AND STOP MUSIC
+   if (isCharPressed('v') || isCharPressed('V')) {
+          song.play();
+        }
+        
+        if (isCharPressed('b') || isCharPressed('B')) {
+          song.pause();
+        }
+        
     
     if (currentScene === 3) {
         drawScene3();
@@ -976,16 +989,8 @@ function draw() {
         } else {
             Bandit.lowerShield();
         }
-//ADDING START AND STOP MUSIC
 
-        if (isCharPressed('v') || isCharPressed('V')) {
-          song.play();
-        }
-        
-        if (isCharPressed('b') || isCharPressed('B')) {
-          song.pause();
-        }
-        
+     
 
 
 
@@ -1005,3 +1010,4 @@ mouseClicked = function() {
         drawScene7("click");
     }
 };
+
