@@ -48,14 +48,12 @@ var drawScene1 = function() {
     text("Press Enter to Start!", startscreenx, startscreeny);
     text("Made by John Khalife, Daniel Figotin and James Yee", startscreenx2, startscreeny2);
     beam();
-    fightingscenesound.pause();
-    startscreensound.play();
+    fightingscenesound.play();
 };
 //THIS DRAWS THE ACTUAL GAME PART (THE NUMBERED SCENES ARE NOT IN ORDER)
 var drawScene3 = function() {
     currentScene = 3;
     background(255);
-    startscreensound.pause();
     fightingscenesound.play();
 
 
@@ -95,8 +93,8 @@ var drawScene6 = function() {
 var drawScene2 = function(event) {
 
     currentScene = 2;
-    fightingscenesound.pause();
-    startscreensound.play();
+    fightingscenesound.play();
+
 
 //THESE ARE THE INSTANCES OF OUR BUTTON CLASS
     var CITY = new optionButton({
