@@ -49,7 +49,7 @@ function setup() {
     cnv = createCanvas(500, 500);
     centerCanvas();
     background(0);
-    img = loadImage("pictures/LogoMakr_0cfjro.png");
+    img = loadImage("pictures/LogoMakr_1IBZ40.png");
   defaultbackground = loadImage("pictures/download.jpg");
     img1 = loadImage("pictures/grassland01a_soruve.png");
     img2 = loadImage("pictures/japan_street01.png");
@@ -60,7 +60,7 @@ function setup() {
 		imgc2 = loadImage("pictures/Player2.png");
 		imgc3 = loadImage("pictures/LEXUS.png");
 		imgc4 = loadImage("pictures/Untitled-2.png")
-		sword = loadImage("pictures/AC4_Altair's_Swords.png");
+		sword = loadImage("pictures/PoolNoodle.png");
   	shield = loadImage("pictures/Wood_Metal_Shield.png");
 	  // Setting intial images for Characters
 	  Lexus.setImg(imgc3);
