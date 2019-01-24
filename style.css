@@ -1,69 +1,69 @@
-html,body {
-    margin: 0;
-    padding: 0;
+html, body {
+  margin: 0;
+  padding: 0;
 }
-//CANVAS IS WHERE THE GAME IS
 canvas {
-    display: block;
-    justify-content: center;
+  display: block;
+ justify-content: center;
 }
-//BODY IS THE ENITRE SITE
 body {
-    background-color: rgb(48, 174, 229);
+background-color:rgb(48, 174, 229);
 
 }
-//TITLE
+
 h1 {
-    text-Align: center;
-    background-color: rgb(255, 159, 5);
-
-    border: ridge 5px;
-    margin-left: 30%;
-    margin-right: 30%;
+text-Align:center;
+	background-color:rgb(255, 159, 5);
+	
+	border:ridge 5px;
+margin-left:30%;
+	margin-right:30%;
 }
-//ABOUT THE GAME
+
 .What {
-    background-color: rgb(246, 255, 5);
-    margin-top: 10%;
-
-    margin-left: 80%;
+	background-color:rgb(246, 255, 5);
+	margin-top:10%;
+	
+margin-left:80%;
 }
-
 .about {
 
 
-    margin-left: 65%;
-    padding: 5%;
+margin-left:65%;
+	padding:5%;
 
-    background-color: rgb(255, 255, 255)
-}
-
-//HOW TO PLAY THE GAME
-.how {
-    margin-top: 10%;
-    background-color: rgb(246, 255, 5);
-    margin-right: 80%;
+	background-color:rgb(255, 255, 255)
 
 
 
 }
 
-ul {
-    background-color: rgb(255, 255, 255);
-    margin-right: 65%;
 
-    padding: 5%;
+.how{
+	margin-top:10%;
+background-color: rgb(246, 255, 5);
+margin-right:80%;
 
 
 
 }
 
-//CREDITS
+ul{
+background-color: rgb(255,255,255);
+margin-right:65%;
+
+	padding:5%;
+
+	
+
+}
+
+
 .Credits {
-    background-color: rgb(246, 255, 5);
-    margin-top: 10%;
-
-    margin-left: 80%;
+	background-color:rgb(246, 255, 5);
+	margin-top:10%;
+	
+margin-left:80%;
 
 
 
@@ -72,8 +72,9 @@ ul {
 
 
 .Credits2 {
-    margin-left: 65%;
-    padding: 5%;
+margin-left:65%;
+	padding:5%;
 
-    background-color: rgb(255, 255, 255)
+	background-color:rgb(255, 255, 255)
+
 }
