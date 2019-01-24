@@ -32,7 +32,7 @@ var startscreeny2 = 480;
 var startscreensound;
 var fightingscenesound;
 
-
+//HERE WE LOAD THE SOUND
 function preload() {
     startscreensound = loadSound('Music/Platformer2.mp3');
     optionscreensound = loadSound('Music/Superboy.mp3');
@@ -47,13 +47,13 @@ function centerCanvas() {
     cnv.position(x, y);
 }
 
-
-
 function windowResized() {
     centerCanvas();
 }
 
-//HERE WE LOAD THE IMAGES
+
+
+//HERE WE LOAD THE IMAGES AND DEFAULT THINGS
 function setup() {
 
     cnv = createCanvas(500, 500);
@@ -174,7 +174,6 @@ var EnergyBeam = function(config) {
     this.B = config.B;
     this.X = config.X
     this.Y = config.Y;
-
     this.startX = config.X;
     this.startY = config.Y;
     this.xLimit = config.xLimit;
@@ -182,19 +181,19 @@ var EnergyBeam = function(config) {
     this.started = 0;
     this.opponent = config.opponent;
 };
-
+//STARTS BEAM
 EnergyBeam.prototype.startBeam = function(player) {
     this.X = player.x + 25;
     this.Y = player.y + 30;
     this.started = 1;
 
 }
-
+//SETS DIRECTION OF BEAM RELATIVE TO OPPONENT
 EnergyBeam.prototype.setDirection = function(newDirection) {
     this.direction = newDirection;
 
 }
-
+//DRAWS ENERGYBEAM
 EnergyBeam.prototype.draw = function() {
     if (this.started > 0) {
 
@@ -202,24 +201,22 @@ EnergyBeam.prototype.draw = function() {
         ellipse(this.X, this.Y, 20, 20);
         this.X += this.direction;
     }
-    // How to end it.
+    
     if (this.direction > 0 && this.X > this.xLimit) {
 
-        //this.started=0;
-        //this.X=this.startX;
+        
         this.reset();
     }
-    // How to end it.
+    
     if (this.direction < 0 && this.X < this.xLimit) {
 
-        // this.started=0;
-        // this.X=this.startX;
+        
         this.reset();
     }
 
 
 }
-
+//RESETS POSITION OF ENERGYBEAM
 EnergyBeam.prototype.reset = function() {
     this.started = 0;
     this.X = this.startX;
@@ -249,7 +246,7 @@ var character = function(config) {
     this.blocking = false;
 
 };
-
+//DRAWS THE CHARACTER
 character.prototype.draw = function() {
 
 
@@ -309,21 +306,21 @@ character.prototype.fall = function() {
 
 
 };
-
+//SETS OPPONENT OF CHARACTER
 character.prototype.setOpponent = function(theOpponent) {
     this.opponent = theOpponent;
 };
-
+//HELPS TO CHANGE THE IMAGE OF THE CHARACTER
 character.prototype.setImg = function(anImage) {
 
     this.img = anImage;
 };
 
-
+//STARTS THE ENERGYBEAM
 character.prototype.startBeam = function() {
     this.energyBeam.startBeam(this);
 };
-
+//KEEPS THE BEAM GOING
 character.prototype.continueBeam = function() {
 
     // When should this continue/stop
@@ -342,8 +339,8 @@ character.prototype.continueBeam = function() {
 
 };
 
-//DRAWS THE SWORD
-//THIS IS WHERE BLOCK GOES
+
+//CODE FOR THE SHIELD
 character.prototype.raiseShield = function() {
     this.blocking = true;
     this.BX = this.x;
@@ -358,7 +355,7 @@ character.prototype.raiseShield = function() {
 character.prototype.lowerShield = function() {
     this.blocking = false;
 };
-
+//CODE FOR FACING THE OPPONENT
 character.prototype.faceopponent = function() {
     if (this.opponent.x <= this.x) {
         this.SPX = -100;
@@ -372,7 +369,7 @@ character.prototype.faceopponent = function() {
     }
 };
 
-
+//DRAWS AND MAKES HITBOXES FOR SWORDS
 character.prototype.drawSword = function(player) {
     this.SX = this.x + this.SPX;
     this.SY = this.y + this.SPY;
@@ -514,6 +511,6 @@ var Bandit = new character({
 
 })
 
-//SETS OPPONENTS
+//SETS OPPONENTS FOR INSTANCES OF CHARACTERS
 Lexus.setOpponent(Bandit);
 Bandit.setOpponent(Lexus);
