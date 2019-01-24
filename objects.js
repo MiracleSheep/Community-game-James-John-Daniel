@@ -23,6 +23,12 @@ var PlayerNum = 0;
 var AD = 0;
 var SD = 0;
 var SDN = 0;
+var P1D = 5;
+var P2D = -5;
+var startscreenx = 200;
+var startscreeny = 300;
+var startscreenx2 = 110;
+var startscreeny2 = 480;
 
 // THIS IS WHERE WE CENTER THE CANVAS
 function centerCanvas() {
@@ -161,7 +167,6 @@ var EnergyBeam = function(config) {
 	  this.startY = config.Y;
 	  this.xLimit = config.xLimit;
 	  this.direction = config.direction;	
-	  
 	  this.started = 0;
 	  this.opponent = config.opponent;
 };
@@ -170,6 +175,11 @@ EnergyBeam.prototype.startBeam = function(player) {
 	this.X = player.x + 25;
 	this.Y = player.y + 30;
 	this.started = 1;
+	
+}
+
+EnergyBeam.prototype.setDirection = function(newDirection) {
+	this.direction = newDirection;
 	
 }
 
@@ -329,13 +339,27 @@ character.prototype.raiseShield = function(){
 	this.BW = 50;
 	this.BH = 50;
         image(shield,this.BX,this.BY,this.BW,this.BH);
-	console.log("Shield X is:" + this.BX);
-	console.log("Shield y is:" + this.BY);
+	//console.log("Shield X is:" + this.BX);
+	//console.log("Shield y is:" + this.BY);
 };
 
 character.prototype.lowerShield = function(){
 	this.blocking = false;
 };
+
+character.prototype.faceopponent = function(){
+if(this.opponent.x <= this.x){
+this.SPX = -100; 
+  this.energyBeam.setDirection(-5);
+//console.log("shoot backwards")
+}
+if(this.opponent.x >= this.x){
+this.SPX = 25; 
+  this.energyBeam.setDirection(5);
+//console.log("shoot forwards")
+}
+};
+
 
 character.prototype.drawSword = function(player){
 	this.SX = this.x + this.SPX;
@@ -347,30 +371,30 @@ character.prototype.drawSword = function(player){
 this.opponent.hp -= SD;
 			}
 	 }
- console.log("drawingsword")
+ //console.log("drawingsword")
 	
 	  if(this.opponent.blocking === true && this.SX <=  this.opponent.BX && (this.SX + 100 ) >= this.opponent.BX && this.SY >= this.opponent.BY &&  this.SY <= (this.opponent.BY + 100) ) {
         SD = 0;
-        console.log("your puny sword is useless")
+ //       console.log("your puny sword is useless")
 			} else {
         console.log("SND is:" + SDN)
 if(SDN === 1) {
 SD = 5;
-console.log("your sword does five damage")
+//console.log("your sword does five damage")
 	}
 
         if(SDN === 2) {
 SD = 10;
-console.log("your sword does ten damage")
+//console.log("your sword does ten damage")
 	}
         
         
         if(SDN === 3) {
 SD = 100;
-console.log("your sword does a lot of damage")
+//console.log("your sword does a lot of damage")
 	}
-        console.log("SND is:" + SDN)
-	console.log("SD is:" + SD)
+  //console.log("SND is:" + SDN)
+	//console.log("SD is:" + SD)
      
               if(SDN === 4) {
 SD = 5;
@@ -438,7 +462,7 @@ SW: 100,
 
 		
     energyBeam: new EnergyBeam({name: 'lexusBeam',
-    R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 5 })	  
+    R: 10, G: 201, B: 195 , Y: 400, X: 120,xLimit : 500, direction: 0 })	  
 
 })
 
@@ -456,7 +480,7 @@ SPY:30,
     hy: 30,
     hx: 400,
 	  energyBeam: new EnergyBeam({name: 'banditBeam',
-    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: -5 })	  
+    R: 252, G: 7 , B: 48 , Y: 400, X: 385, xLimit: 0, direction: 0 })	  
 
 })
 
