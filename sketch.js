@@ -1,3 +1,4 @@
+//THIS IS THE CODE FOR THE FUNCTION WHERE THE CHARACTERS SHOOT ENERGYBEAMS
 var beam = function() {
     image(imgc1, 470, mry, 30, 100);
     fill(35, 211, 211);
@@ -38,7 +39,7 @@ var beam = function() {
 
 };
 
-
+//THIS DRAWS THE START MENU
 var drawScene1 = function() {
     currentScene = 1;
     background(255);
@@ -50,7 +51,7 @@ var drawScene1 = function() {
     fightingscenesound.pause();
     startscreensound.play();
 };
-
+//THIS DRAWS THE ACTUAL GAME PART (THE NUMBERED SCENES ARE NOT IN ORDER)
 var drawScene3 = function() {
     currentScene = 3;
     background(255);
@@ -76,32 +77,28 @@ var drawScene3 = function() {
     Bandit.faceopponent();
 };
 
-var drawScene4 = function() {
-    currentScene = 4;
-    background(255, 255, 255);
-};
-
+//THIS DRAWS THE PLAYERONEWINSSCENE
 var drawScene5 = function() {
     currentScene = 5;
     background(150, 150, 175);
     image(imgp2w, 0, 0, 500, 500);
 
 };
-
+//THIS DRAWS THE PLAYERTWOWINSSCENE
 var drawScene6 = function() {
     currentScene = 6;
     background(150, 150, 175);
     image(imgp1w, 0, 0, 500, 500);
 
 };
-
+//THIS DRAWS THE OPTIONS PAGE
 var drawScene2 = function(event) {
 
     currentScene = 2;
     fightingscenesound.pause();
     startscreensound.play();
 
-
+//THESE ARE THE INSTANCES OF OUR BUTTON CLASS
     var CITY = new optionButton({
 
 
@@ -373,7 +370,7 @@ var drawScene2 = function(event) {
             drawScene7();
         }
     })
-
+      
     if (event === "click") {
         Custommode.handleMouseClick();
         CITY.handleMouseClick();
@@ -392,6 +389,7 @@ var drawScene2 = function(event) {
         RealLexus.handleMouseClick();
         RestartButton.handleMouseClick();
     } else {
+        //THIS IS WHERE WE DRAW THE BUTTONS AND TEXT
         background(0, 0, 0);
         textSize(18);
         fill(250, 0, 0);
@@ -445,13 +443,13 @@ var drawScene2 = function(event) {
 
 };
 
-
+//THIS IS THE CUSTOM MODE SCENE
 var drawScene7 = function(event) {
 
     currentScene = 7;
 
 
-
+//HERE ARE THE INSTANCES OF BUTTONS AGAIN
     var B5 = new optionButton({
 
 
@@ -816,6 +814,7 @@ var drawScene7 = function(event) {
         RestartButton.handleMouseClick();
 
     } else {
+        //HERE WE DRAW IT AGAIN
         background(0, 0, 0);
         textSize(18);
         fill(250, 0, 0);
@@ -894,7 +893,7 @@ var beam2 = 0;
 
 
 function draw() {
-
+//HERE WE CALL THE DRAWING OF THE SCENES
     if (currentScene === 1) {
         drawScene1();
 
@@ -910,9 +909,17 @@ function draw() {
         drawScene7();
     }
 
+    if (keyIsPressed && keyCode === 13) {
+        drawScene2();
+    }
+    
     if (currentScene === 3) {
         drawScene3();
-        //lexus control
+        
+
+        
+        //HERE ARE THE CONTROLS FOR THE CHARACTERS
+        //PLAYER ONE CONTROLS(PLAYER ONE IS CALLED LEXUS)
         if (isCharPressed('w') || isCharPressed('W')) {
             Lexus.hop();
         } else {
@@ -942,7 +949,7 @@ function draw() {
             Lexus.lowerShield();
         }
 
-        //Bandit controls
+        //PLAYER 2 CONTROLS(PLAYER TWO IS CALLED BANDIT)
         if (isCharPressed('i') || isCharPressed('I')) {
             Bandit.hop();
         } else {
@@ -977,12 +984,6 @@ function draw() {
 
     }
 
-
-
-
-    if (keyIsPressed && keyCode === 13) {
-        drawScene2();
-    }
 
 
 
