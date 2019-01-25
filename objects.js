@@ -360,11 +360,13 @@ character.prototype.faceopponent = function() {
     if (this.opponent.x <= this.x) {
         this.SPX = -100;
         this.energyBeam.setDirection(-5);
+        this.xLimit = 0;
         //console.log("shoot backwards")
     }
     if (this.opponent.x >= this.x) {
         this.SPX = 25;
         this.energyBeam.setDirection(5);
+        this.xLimit = 500;
         //console.log("shoot forwards")
     }
 };
