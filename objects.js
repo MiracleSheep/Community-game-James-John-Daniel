@@ -481,7 +481,7 @@ var Lexus = new character({
         Y: 400,
         X: 120,
         xLimit: 500,
-        direction: 0
+        direction: -5
     })
 
 })
@@ -508,7 +508,7 @@ var Bandit = new character({
         Y: 400,
         X: 385,
         xLimit: 0,
-        direction: 0
+        direction: 5
     })
 
 })
