@@ -255,7 +255,7 @@ character.prototype.draw = function() {
     //image(imgc1, this.x, this.y, this.w, this.h);
 
 
-    fill(234, 247, 0);
+    fill(0, 255, 42);
     rect(this.hx, this.hy, this.hp, 20);
     //hitbox below  
 
