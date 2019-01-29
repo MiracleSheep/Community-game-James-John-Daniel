@@ -6,43 +6,6 @@ Which is why we're making a fighting game!<br>
 # Water Fight!
 
 # Log December 11
-1. Project Progress
-- We have an option scene.
-- We have the start screen.
-- We have different maps for the game.
-- We have different diffculties.
-- We have different fighting buttons.
-- We have characters.
-
-
-2. Still Needs To Be Done
-# Day 2
-John 
-- custom mode
-- Attacks face direction of opponent
-
-James
-- continue working pg
-- make barriers for the characters on either side if you are done(put barriers outside of map)
-
-# Day 3
-
-John:
-- Cosmetic features
--continue tasks if not done
--think of new ideas for today
-
-James
-- do whatever task is left over
-
-Daniel
-- fix readme and update 
- 
-
-3. What We Are "Thinking" About Doing
-
-
-
 
 # Wiki 
 - The game is kinda like "Super smash bros" and "street fighter".
@@ -58,7 +21,7 @@ Daniel
 - (Moving up) buttons: for the left character it’s “t” and for the right character it’s “L”.
 - (Moving left and right) buttons: “e and r” for left and for the right character it’s “j and k”.
 - (Using sword) buttons: “W” for left character and “H” for the right character.
-- (shield) buttons:
+- (shield) buttons: "s" for the left player and "k" for the right player.
 
 # Game Screenshots
 
