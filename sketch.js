@@ -921,13 +921,13 @@ function draw() {
     }
     
     //ADDING START AND STOP MUSIC
-   if (isCharPressed('v') || isCharPressed('V')) {
+   if (isCharPressed('1') || isCharPressed('v')) {
           song1.play();
        song3.stop();
             song2.stop();
    }
     
-       if (isCharPressed('x') || isCharPressed('X')) {
+       if (isCharPressed('2') || isCharPressed('x')) {
           song2.play();
           song1.stop();
             song3.stop()
@@ -936,7 +936,7 @@ function draw() {
         
   
     
-       if (isCharPressed('n') || isCharPressed('N')) {
+       if (isCharPressed('3') || isCharPressed('n')) {
           song3.play();
            song2.stop();
            song1.stop();
