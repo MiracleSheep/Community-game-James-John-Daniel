@@ -264,12 +264,14 @@ character.prototype.draw = function() {
 
     if (Lexus.hp <= 0) {
         currentScene = 5;
+        roundnum += 1;
         drawScene5();
     }
 
     if (Bandit.hp <= 0) {
         currentScene = 6;
         drawScene6();
+        roundnum += 1;
     }
 
 };
