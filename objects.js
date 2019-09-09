@@ -32,6 +32,7 @@ var startscreeny2 = 480;
 var song1;
 var song2;
 var song3;
+var roundnum = 0;
 
 
 // THIS IS WHERE WE CENTER THE CANVAS
